@@ -1,0 +1,17 @@
+/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.Persistence/bin/Debug/net7.0/ReDoProject.Persistence.deps.json
+/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.Persistence/bin/Debug/net7.0/ReDoProject.Persistence.runtimeconfig.json
+/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.Persistence/bin/Debug/net7.0/ReDoProject.Persistence.dll
+/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.Persistence/bin/Debug/net7.0/ReDoProject.Persistence.pdb
+/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.Persistence/bin/Debug/net7.0/ReDoProject.Domain.dll
+/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.Persistence/bin/Debug/net7.0/ReDoProject.Domain.pdb
+/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.Persistence/obj/Debug/net7.0/ReDoProject.Persistence.csproj.AssemblyReference.cache
+/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.Persistence/obj/Debug/net7.0/ReDoProject.Persistence.GeneratedMSBuildEditorConfig.editorconfig
+/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.Persistence/obj/Debug/net7.0/ReDoProject.Persistence.AssemblyInfoInputs.cache
+/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.Persistence/obj/Debug/net7.0/ReDoProject.Persistence.AssemblyInfo.cs
+/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.Persistence/obj/Debug/net7.0/ReDoProject.Persistence.csproj.CoreCompileInputs.cache
+/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.Persistence/obj/Debug/net7.0/ReDoProject.Persistence.csproj.CopyComplete
+/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.Persistence/obj/Debug/net7.0/ReDoProject.Persistence.dll
+/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.Persistence/obj/Debug/net7.0/refint/ReDoProject.Persistence.dll
+/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.Persistence/obj/Debug/net7.0/ReDoProject.Persistence.pdb
+/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.Persistence/obj/Debug/net7.0/ReDoProject.Persistence.genruntimeconfig.cache
+/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.Persistence/obj/Debug/net7.0/ref/ReDoProject.Persistence.dll

@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/ReDoProject.MVC.props" />
+</Project>

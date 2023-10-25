@@ -1,0 +1,3 @@
+/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.Domain/bin/Release/net7.0/publish/ReDoProject.Domain.dll
+/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.Domain/bin/Release/net7.0/publish/ReDoProject.Domain.deps.json
+/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.Domain/bin/Release/net7.0/publish/ReDoProject.Domain.pdb
