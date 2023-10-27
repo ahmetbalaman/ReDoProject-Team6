@@ -14,8 +14,9 @@ namespace ReDoProject.Domain.Entities
         public string Description { get; set; }
         public Brand Brand { get; set; }
         public decimal Price { get; set; }
-        public Color Color { get; set; }
+        public List<Color> Color { get; set; }
         public string Barcode { get; set; }
         public string PictureUrl { get; set; }
+        public InstrumentType Type { get; set; }
     }
 }

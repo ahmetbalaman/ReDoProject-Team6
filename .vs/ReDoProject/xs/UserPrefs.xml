@@ -1,45 +1,26 @@
 ﻿<Properties StartupConfiguration="{E26B4475-4C81-4815-A0DB-16A533CAB0B4}|https">
-  <MultiItemStartupConfigurations>
-    <MultiItemSolutionRunConfiguration Id="asd" Name="asd" />
-  </MultiItemStartupConfigurations>
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.Presentation.ReDoProject.MVC PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
   <MonoDevelop.Ide.Workbench ActiveDocument="ReDoProject.Persistence/Contexts/ReDoMusicDbContext.cs">
     <Files>
-      <File FileName="ReDoProject.MVC/Views/Brand/Index.cshtml" Line="1" Column="1" />
-      <File FileName="ReDoProject.Persistence/Contexts/ReDoMusicDbContext.cs" Line="19" Column="1" />
+      <File FileName="ReDoProject.Persistence/Migrations/20231027165538_mig2_deneme.cs" Line="1" Column="1" />
+      <File FileName="ReDoProject.Persistence/Contexts/ReDoMusicDbContext.cs" Line="19" Column="160" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="ReDoProject">
-            <Node name="NuGet.Config files" expanded="True" />
+          <Node name="ReDoProject" expanded="True">
             <Node name="Core" expanded="True">
               <Node name="ReDoProject.Domain" expanded="True">
-                <Node name="Common" expanded="True" />
                 <Node name="Entities" expanded="True" />
               </Node>
             </Node>
-            <Node name="Infrastructure">
-              <Node name="ReDoProject.Persistence">
-                <Node name="Dependencies" expanded="True" />
-                <Node name="Contexts" expanded="True">
-                  <Node name="ReDoMusicDbContext.cs" selected="True" />
-                </Node>
-                <Node name="Migrations" expanded="True" />
+            <Node name="Infrastructure" expanded="True">
+              <Node name="ReDoProject.Persistence" expanded="True" selected="True">
+                <Node name="Contexts" expanded="True" />
               </Node>
             </Node>
-            <Node name="Presentation">
-              <Node name="ReDoProject.MVC">
+            <Node name="Presentation" expanded="True">
+              <Node name="ReDoProject.MVC" expanded="True">
                 <Node name="Controllers" expanded="True" />
-                <Node name="Views">
-                  <Node name="Instrument" expanded="True" />
-                </Node>
-                <Node name="appsettings.json" expanded="True" />
               </Node>
             </Node>
           </Node>
@@ -47,4 +28,21 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <DisabledProjects>
+    <String>ReDoProject.MVC/ReDoProject.API/ReDoProject.API.csproj</String>
+  </DisabledProjects>
+  <MultiItemStartupConfigurations>
+    <MultiItemSolutionRunConfiguration Id="asd" Name="asd">
+      <Items>
+        <StartupItem ItemId="{BC76E6BD-BD6A-44B3-A9E8-9C0F3E0B603A}" ItemName="ReDoProject.API" ConfigurationId="https" />
+        <StartupItem ItemId="{E26B4475-4C81-4815-A0DB-16A533CAB0B4}" ItemName="ReDoProject.MVC" ConfigurationId="https" />
+      </Items>
+    </MultiItemSolutionRunConfiguration>
+  </MultiItemStartupConfigurations>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.Presentation.ReDoProject.MVC PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
 </Properties>

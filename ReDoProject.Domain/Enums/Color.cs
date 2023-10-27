@@ -8,6 +8,6 @@ namespace ReDoProject.Domain.Enums
 {
     public enum Color
     {
-        A, B, C, D, E, F,
+        Red, Green, Dark, Black, White, Orange,Brown,Gray,Gold
     }
 }

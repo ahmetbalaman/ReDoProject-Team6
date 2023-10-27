@@ -12,5 +12,7 @@ namespace ReDoProject.Domain.Entities
         public string Name { get; set; }
         public string DisplayingText { get; set; }
         public string Address { get; set; }
+        public string SupportMail { get; set; }
+        public string SupportPhone { get; set; }
     }
 }

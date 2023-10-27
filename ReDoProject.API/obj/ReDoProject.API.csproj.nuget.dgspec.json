@@ -1,0 +1,220 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.API/ReDoProject.API.csproj": {}
+  },
+  "projects": {
+    "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.API/ReDoProject.API.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.API/ReDoProject.API.csproj",
+        "projectName": "ReDoProject.API",
+        "projectPath": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.API/ReDoProject.API.csproj",
+        "packagesPath": "/Users/ahmetbalaman/.nuget/packages/",
+        "outputPath": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.API/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/ahmetbalaman/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/sdk/7.0.309/Sdks/Microsoft.NET.Sdk.Web/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.Domain/ReDoProject.Domain.csproj": {
+                "projectPath": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.Domain/ReDoProject.Domain.csproj"
+              },
+              "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.Persistence/ReDoProject.Persistence.csproj": {
+                "projectPath": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.Persistence/ReDoProject.Persistence.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[7.0.12, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.5.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.309/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.Domain/ReDoProject.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.Domain/ReDoProject.Domain.csproj",
+        "projectName": "ReDoProject.Domain",
+        "projectPath": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.Domain/ReDoProject.Domain.csproj",
+        "packagesPath": "/Users/ahmetbalaman/.nuget/packages/",
+        "outputPath": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.Domain/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/ahmetbalaman/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.309/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.Persistence/ReDoProject.Persistence.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.Persistence/ReDoProject.Persistence.csproj",
+        "projectName": "ReDoProject.Persistence",
+        "projectPath": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.Persistence/ReDoProject.Persistence.csproj",
+        "packagesPath": "/Users/ahmetbalaman/.nuget/packages/",
+        "outputPath": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.Persistence/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/ahmetbalaman/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.Domain/ReDoProject.Domain.csproj": {
+                "projectPath": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.Domain/ReDoProject.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.13, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.13, )"
+            },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.FileExtensions": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[7.0.11, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.309/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

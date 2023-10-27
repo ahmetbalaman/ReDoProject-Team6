@@ -37,6 +37,8 @@ namespace ReDoProject.MVC.Controllers
                 Address = brandAddress,
                 Id = Guid.NewGuid(),
                 CreatedOn = DateTime.UtcNow,
+                SupportMail = "1231231",
+                SupportPhone = "1231321",
             };
 
             _dbContext.Brands.Add(brand);
