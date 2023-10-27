@@ -1,41 +1,50 @@
 ﻿<Properties StartupConfiguration="{E26B4475-4C81-4815-A0DB-16A533CAB0B4}|https">
-  <MonoDevelop.Ide.Workbench ActiveDocument="../../.nuget/NuGet/NuGet.Config">
-    <Files>
-      <File FileName="ReDoProject.Domain/Common/EntityBase.cs" />
-      <File FileName="ReDoProject.Domain/Common/ICreatedOn.cs" />
-      <File FileName="ReDoProject.Domain/Common/IDeletedOn.cs" />
-      <File FileName="ReDoProject.Domain/Common/IModifiedOn.cs" />
-      <File FileName="ReDoProject.Domain/Entities/Instrument.cs" />
-      <File FileName="ReDoProject.Domain/Entities/Brand.cs" />
-      <File FileName="ReDoProject.Domain/Enums/Color.cs" />
-      <File FileName="ReDoProject.Persistence/Configuration.cs" />
-      <File FileName="ReDoProject.Persistence/Contexts/ReDoMusicDbContext.cs" />
-      <File FileName="../../.nuget/NuGet/NuGet.Config" Line="1" Column="1" />
-    </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="ReDoProject" expanded="True" selected="True">
-            <Node name="NuGet.Config files" expanded="True" />
-            <Node name="Core" expanded="True" />
-            <Node name="Infrastructure" expanded="True">
-              <Node name="ReDoProject.Persistence" expanded="True">
-                <Node name="Dependencies" expanded="True" />
-              </Node>
-            </Node>
-            <Node name="Presentation" expanded="True" />
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
-  </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.Presentation.ReDoProject.MVC PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
+  <MultiItemStartupConfigurations>
+    <MultiItemSolutionRunConfiguration Id="asd" Name="asd" />
+  </MultiItemStartupConfigurations>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MultiItemStartupConfigurations>
-    <MultiItemSolutionRunConfiguration Id="asd" Name="asd" />
-  </MultiItemStartupConfigurations>
+  <MonoDevelop.Ide.ItemProperties.Presentation.ReDoProject.MVC PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="ReDoProject.Persistence/Contexts/ReDoMusicDbContext.cs">
+    <Files>
+      <File FileName="ReDoProject.MVC/Views/Brand/Index.cshtml" Line="1" Column="1" />
+      <File FileName="ReDoProject.Persistence/Contexts/ReDoMusicDbContext.cs" Line="19" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="ReDoProject">
+            <Node name="NuGet.Config files" expanded="True" />
+            <Node name="Core" expanded="True">
+              <Node name="ReDoProject.Domain" expanded="True">
+                <Node name="Common" expanded="True" />
+                <Node name="Entities" expanded="True" />
+              </Node>
+            </Node>
+            <Node name="Infrastructure">
+              <Node name="ReDoProject.Persistence">
+                <Node name="Dependencies" expanded="True" />
+                <Node name="Contexts" expanded="True">
+                  <Node name="ReDoMusicDbContext.cs" selected="True" />
+                </Node>
+                <Node name="Migrations" expanded="True" />
+              </Node>
+            </Node>
+            <Node name="Presentation">
+              <Node name="ReDoProject.MVC">
+                <Node name="Controllers" expanded="True" />
+                <Node name="Views">
+                  <Node name="Instrument" expanded="True" />
+                </Node>
+                <Node name="appsettings.json" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
 </Properties>
