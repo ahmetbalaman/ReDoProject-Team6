@@ -21,4 +21,10 @@
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Remove="Validators\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Validators\" />
+  </ItemGroup>
 </Project>

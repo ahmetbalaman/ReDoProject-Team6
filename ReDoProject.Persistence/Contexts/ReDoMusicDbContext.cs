@@ -13,6 +13,8 @@ namespace ReDoProject.Persistence.Contexts
         public DbSet<Basket> Baskets { get; set; }
         public DbSet<OrderedInstrument> OrderedInstruments { get; set; }
 
+     
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             // optionsBuilder.UseNpgsql(Configurations.GetString("ConnectionStrings:PostgreSQL
