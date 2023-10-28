@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace ReDoProject.Persistence.Migrations
 {
     /// <inheritdoc />
-    public partial class try_this : Migration
+    public partial class mig_1_init : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -83,13 +83,13 @@ namespace ReDoProject.Persistence.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
-                    Name = table.Column<string>(type: "text", nullable: false),
-                    Description = table.Column<string>(type: "text", nullable: false),
-                    BrandId = table.Column<Guid>(type: "uuid", nullable: false),
-                    Price = table.Column<decimal>(type: "numeric", nullable: false),
-                    Color = table.Column<int[]>(type: "integer[]", nullable: false),
-                    Barcode = table.Column<string>(type: "text", nullable: false),
-                    PictureUrl = table.Column<string>(type: "text", nullable: false),
+                    Name = table.Column<string>(type: "text", nullable: true),
+                    Description = table.Column<string>(type: "text", nullable: true),
+                    BrandId = table.Column<Guid>(type: "uuid", nullable: true),
+                    Price = table.Column<decimal>(type: "numeric", nullable: true),
+                    Color = table.Column<int[]>(type: "integer[]", nullable: true),
+                    Barcode = table.Column<string>(type: "text", nullable: true),
+                    PictureUrl = table.Column<string>(type: "text", nullable: true),
                     Type = table.Column<int>(type: "integer", nullable: false),
                     CreatedByUserId = table.Column<string>(type: "text", nullable: true),
                     CreatedOn = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
@@ -106,8 +106,7 @@ namespace ReDoProject.Persistence.Migrations
                         name: "FK_Instruments_Brands_BrandId",
                         column: x => x.BrandId,
                         principalTable: "Brands",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(

@@ -1,7 +1,9 @@
-﻿<Properties StartupConfiguration="{E26B4475-4C81-4815-A0DB-16A533CAB0B4}|https">
+﻿<Properties StartupConfiguration="{BC76E6BD-BD6A-44B3-A9E8-9C0F3E0B603A}|https">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Presentation.ReDoProject.API PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
   <MonoDevelop.Ide.Workbench ActiveDocument="ReDoProject.Persistence/Contexts/ReDoMusicDbContext.cs">
     <Files>
-      <File FileName="ReDoProject.Persistence/Migrations/20231027165538_mig2_deneme.cs" Line="1" Column="1" />
+      <File FileName="ReDoProject.Persistence/Migrations/20231027165538_mig2_deneme.cs" />
       <File FileName="ReDoProject.Persistence/Contexts/ReDoMusicDbContext.cs" Line="19" Column="160" />
     </Files>
     <Pads>
@@ -14,8 +16,11 @@
               </Node>
             </Node>
             <Node name="Infrastructure" expanded="True">
-              <Node name="ReDoProject.Persistence" expanded="True" selected="True">
-                <Node name="Contexts" expanded="True" />
+              <Node name="ReDoProject.Persistence" expanded="True">
+                <Node name="Contexts" expanded="True">
+                  <Node name="ReDoMusicDbContext.cs" selected="True" />
+                </Node>
+                <Node name="Migrations" expanded="True" />
               </Node>
             </Node>
             <Node name="Presentation" expanded="True">
@@ -28,13 +33,10 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <DisabledProjects>
     <String>ReDoProject.MVC/ReDoProject.API/ReDoProject.API.csproj</String>
   </DisabledProjects>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints />
   <MultiItemStartupConfigurations>
     <MultiItemSolutionRunConfiguration Id="asd" Name="asd">
       <Items>
@@ -43,6 +45,6 @@
       </Items>
     </MultiItemSolutionRunConfiguration>
   </MultiItemStartupConfigurations>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.Presentation.ReDoProject.MVC PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

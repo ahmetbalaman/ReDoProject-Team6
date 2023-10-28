@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ReDoProject.Persistence.Contexts;
+using ReDoProject.Persistence.Contexts;
+using ReDoProject.Domain;
 
 namespace ReDoProject.MVC.Controllers
 {
@@ -15,7 +17,13 @@ namespace ReDoProject.MVC.Controllers
 
         public IActionResult Index() //All Instruments will be shown
         {
+
+
+
             var products = _dbContext.Instruments.ToList();
+           // _dbContext.Instruments.AddRange(ExampleData.GetInstruments());
+
+           // _dbContext.SaveChanges();
 
             return View(products);
         }
@@ -32,16 +40,29 @@ namespace ReDoProject.MVC.Controllers
         public IActionResult Add(string name, string description, string brandId, string price, string barcode, string pictureUrl)
         {
             var brand = _dbContext.Brands.Where(x => x.Id == Guid.Parse(brandId)).FirstOrDefault();
-
-            var instrument = new Domain.Entities.Instrument()
+            decimal priceCorrect = 0;
+            if(price != null)
             {
+                priceCorrect = decimal.Parse(price);
+            }
+
+
+            Domain.Entities.Instrument instrument = new Domain.Entities.Instrument();
+
+
+            instrument = new Domain.Entities.Instrument(){
                 Id = Guid.NewGuid(),
-                Name = name,
-                Description = description,
-                Barcode = barcode,
+               Name = "name",
+                Description = "description",
+                Barcode = "barcode",
+                Price = priceCorrect,
+                Color = new List<Domain.Enums.Color>(){Domain.Enums.Color.Black},
                 Brand = brand,
                 CreatedOn = DateTime.UtcNow,
-                PictureUrl = pictureUrl
+                PictureUrl = "pictureUrl",
+
+               Type = Domain.Enums.InstrumentType.AcousticPiano,
+
             };
 
             _dbContext.Instruments.Add(instrument);

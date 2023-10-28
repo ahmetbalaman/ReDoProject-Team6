@@ -12,8 +12,8 @@ using ReDoProject.Persistence.Contexts;
 namespace ReDoProject.Persistence.Migrations
 {
     [DbContext(typeof(ReDoMusicDbContext))]
-    [Migration("20231027161430_mig_1")]
-    partial class mig_1
+    [Migration("20231028102152_mig_1_init")]
+    partial class mig_1_init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -119,14 +119,12 @@ namespace ReDoProject.Persistence.Migrations
                         .HasColumnType("uuid");
 
                     b.Property<string>("Barcode")
-                        .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<Guid>("BrandId")
+                    b.Property<Guid?>("BrandId")
                         .HasColumnType("uuid");
 
                     b.Property<int[]>("Color")
-                        .IsRequired()
                         .HasColumnType("integer[]");
 
                     b.Property<string>("CreatedByUserId")
@@ -142,7 +140,6 @@ namespace ReDoProject.Persistence.Migrations
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<bool>("IsDeleted")
@@ -155,14 +152,12 @@ namespace ReDoProject.Persistence.Migrations
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("PictureUrl")
-                        .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<decimal>("Price")
+                    b.Property<decimal?>("Price")
                         .HasColumnType("numeric");
 
                     b.Property<int>("Type")
@@ -283,9 +278,7 @@ namespace ReDoProject.Persistence.Migrations
                 {
                     b.HasOne("ReDoProject.Domain.Entities.Brand", "Brand")
                         .WithMany()
-                        .HasForeignKey("BrandId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("BrandId");
 
                     b.Navigation("Brand");
                 });

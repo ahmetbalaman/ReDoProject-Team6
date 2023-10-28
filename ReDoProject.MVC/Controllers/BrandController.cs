@@ -18,6 +18,8 @@ namespace ReDoProject.MVC.Controllers
         {
             var brands = _dbContext.Brands.ToList();
 
+           
+
             return View(brands);
         }
 
