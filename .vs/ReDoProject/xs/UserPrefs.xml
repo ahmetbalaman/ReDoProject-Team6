@@ -1,4 +1,4 @@
-﻿<Properties StartupConfiguration="{BC76E6BD-BD6A-44B3-A9E8-9C0F3E0B603A}|https">
+﻿<Properties StartupConfiguration="{E26B4475-4C81-4815-A0DB-16A533CAB0B4}|https">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.Presentation.ReDoProject.API PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
   <MonoDevelop.Ide.Workbench ActiveDocument="ReDoProject.Persistence/Contexts/ReDoMusicDbContext.cs">
