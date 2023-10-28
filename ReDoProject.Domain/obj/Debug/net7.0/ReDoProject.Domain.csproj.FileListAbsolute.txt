@@ -10,3 +10,15 @@
 /Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.Domain/obj/Debug/net7.0/refint/ReDoProject.Domain.dll
 /Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.Domain/obj/Debug/net7.0/ReDoProject.Domain.pdb
 /Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.Domain/obj/Debug/net7.0/ref/ReDoProject.Domain.dll
+C:\Users\Özge Dinçer\Source\Repos\ReDoProject-Team6\ReDoProject.Domain\bin\Debug\net7.0\ReDoProject.Domain.deps.json
+C:\Users\Özge Dinçer\Source\Repos\ReDoProject-Team6\ReDoProject.Domain\bin\Debug\net7.0\ReDoProject.Domain.dll
+C:\Users\Özge Dinçer\Source\Repos\ReDoProject-Team6\ReDoProject.Domain\bin\Debug\net7.0\ReDoProject.Domain.pdb
+C:\Users\Özge Dinçer\Source\Repos\ReDoProject-Team6\ReDoProject.Domain\obj\Debug\net7.0\ReDoProject.Domain.csproj.AssemblyReference.cache
+C:\Users\Özge Dinçer\Source\Repos\ReDoProject-Team6\ReDoProject.Domain\obj\Debug\net7.0\ReDoProject.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Özge Dinçer\Source\Repos\ReDoProject-Team6\ReDoProject.Domain\obj\Debug\net7.0\ReDoProject.Domain.AssemblyInfoInputs.cache
+C:\Users\Özge Dinçer\Source\Repos\ReDoProject-Team6\ReDoProject.Domain\obj\Debug\net7.0\ReDoProject.Domain.AssemblyInfo.cs
+C:\Users\Özge Dinçer\Source\Repos\ReDoProject-Team6\ReDoProject.Domain\obj\Debug\net7.0\ReDoProject.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Özge Dinçer\Source\Repos\ReDoProject-Team6\ReDoProject.Domain\obj\Debug\net7.0\ReDoProject.Domain.dll
+C:\Users\Özge Dinçer\Source\Repos\ReDoProject-Team6\ReDoProject.Domain\obj\Debug\net7.0\refint\ReDoProject.Domain.dll
+C:\Users\Özge Dinçer\Source\Repos\ReDoProject-Team6\ReDoProject.Domain\obj\Debug\net7.0\ReDoProject.Domain.pdb
+C:\Users\Özge Dinçer\Source\Repos\ReDoProject-Team6\ReDoProject.Domain\obj\Debug\net7.0\ref\ReDoProject.Domain.dll

@@ -1598,36 +1598,38 @@
     ]
   },
   "packageFolders": {
-    "/Users/ahmetbalaman/.nuget/packages/": {}
+    "C:\\Users\\Özge Dinçer\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.API/ReDoProject.API.csproj",
+      "projectUniqueName": "C:\\Users\\Özge Dinçer\\source\\repos\\ReDoProject-Team6\\ReDoProject.API\\ReDoProject.API.csproj",
       "projectName": "ReDoProject.API",
-      "projectPath": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.API/ReDoProject.API.csproj",
-      "packagesPath": "/Users/ahmetbalaman/.nuget/packages/",
-      "outputPath": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.API/obj/",
+      "projectPath": "C:\\Users\\Özge Dinçer\\source\\repos\\ReDoProject-Team6\\ReDoProject.API\\ReDoProject.API.csproj",
+      "packagesPath": "C:\\Users\\Özge Dinçer\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Özge Dinçer\\source\\repos\\ReDoProject-Team6\\ReDoProject.API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/ahmetbalaman/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\Özge Dinçer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
-        "/usr/local/share/dotnet/sdk/7.0.310/Sdks/Microsoft.NET.Sdk.Web/library-packs": {},
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\sdk\\7.0.306\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.Domain/ReDoProject.Domain.csproj": {
-              "projectPath": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.Domain/ReDoProject.Domain.csproj"
+            "C:\\Users\\Özge Dinçer\\source\\repos\\ReDoProject-Team6\\ReDoProject.Domain\\ReDoProject.Domain.csproj": {
+              "projectPath": "C:\\Users\\Özge Dinçer\\source\\repos\\ReDoProject-Team6\\ReDoProject.Domain\\ReDoProject.Domain.csproj"
             },
-            "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.Persistence/ReDoProject.Persistence.csproj": {
-              "projectPath": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.Persistence/ReDoProject.Persistence.csproj"
+            "C:\\Users\\Özge Dinçer\\source\\repos\\ReDoProject-Team6\\ReDoProject.Persistence\\ReDoProject.Persistence.csproj": {
+              "projectPath": "C:\\Users\\Özge Dinçer\\source\\repos\\ReDoProject-Team6\\ReDoProject.Persistence\\ReDoProject.Persistence.csproj"
             }
           }
         }
@@ -1670,7 +1672,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.310/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
       }
     }
   }

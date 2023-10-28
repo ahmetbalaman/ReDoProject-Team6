@@ -15,3 +15,20 @@
 /Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.Persistence/obj/Debug/net7.0/ReDoProject.Persistence.pdb
 /Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.Persistence/obj/Debug/net7.0/ReDoProject.Persistence.genruntimeconfig.cache
 /Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.Persistence/obj/Debug/net7.0/ref/ReDoProject.Persistence.dll
+C:\Users\Özge Dinçer\Source\Repos\ReDoProject-Team6\ReDoProject.Persistence\bin\Debug\net7.0\ReDoProject.Persistence.deps.json
+C:\Users\Özge Dinçer\Source\Repos\ReDoProject-Team6\ReDoProject.Persistence\bin\Debug\net7.0\ReDoProject.Persistence.runtimeconfig.json
+C:\Users\Özge Dinçer\Source\Repos\ReDoProject-Team6\ReDoProject.Persistence\bin\Debug\net7.0\ReDoProject.Persistence.dll
+C:\Users\Özge Dinçer\Source\Repos\ReDoProject-Team6\ReDoProject.Persistence\bin\Debug\net7.0\ReDoProject.Persistence.pdb
+C:\Users\Özge Dinçer\Source\Repos\ReDoProject-Team6\ReDoProject.Persistence\bin\Debug\net7.0\ReDoProject.Domain.dll
+C:\Users\Özge Dinçer\Source\Repos\ReDoProject-Team6\ReDoProject.Persistence\bin\Debug\net7.0\ReDoProject.Domain.pdb
+C:\Users\Özge Dinçer\Source\Repos\ReDoProject-Team6\ReDoProject.Persistence\obj\Debug\net7.0\ReDoProject.Persistence.csproj.AssemblyReference.cache
+C:\Users\Özge Dinçer\Source\Repos\ReDoProject-Team6\ReDoProject.Persistence\obj\Debug\net7.0\ReDoProject.Persistence.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Özge Dinçer\Source\Repos\ReDoProject-Team6\ReDoProject.Persistence\obj\Debug\net7.0\ReDoProject.Persistence.AssemblyInfoInputs.cache
+C:\Users\Özge Dinçer\Source\Repos\ReDoProject-Team6\ReDoProject.Persistence\obj\Debug\net7.0\ReDoProject.Persistence.AssemblyInfo.cs
+C:\Users\Özge Dinçer\Source\Repos\ReDoProject-Team6\ReDoProject.Persistence\obj\Debug\net7.0\ReDoProject.Persistence.csproj.CoreCompileInputs.cache
+C:\Users\Özge Dinçer\Source\Repos\ReDoProject-Team6\ReDoProject.Persistence\obj\Debug\net7.0\ReDoProject.Persistence.csproj.CopyComplete
+C:\Users\Özge Dinçer\Source\Repos\ReDoProject-Team6\ReDoProject.Persistence\obj\Debug\net7.0\ReDoProject.Persistence.dll
+C:\Users\Özge Dinçer\Source\Repos\ReDoProject-Team6\ReDoProject.Persistence\obj\Debug\net7.0\refint\ReDoProject.Persistence.dll
+C:\Users\Özge Dinçer\Source\Repos\ReDoProject-Team6\ReDoProject.Persistence\obj\Debug\net7.0\ReDoProject.Persistence.pdb
+C:\Users\Özge Dinçer\Source\Repos\ReDoProject-Team6\ReDoProject.Persistence\obj\Debug\net7.0\ReDoProject.Persistence.genruntimeconfig.cache
+C:\Users\Özge Dinçer\Source\Repos\ReDoProject-Team6\ReDoProject.Persistence\obj\Debug\net7.0\ref\ReDoProject.Persistence.dll

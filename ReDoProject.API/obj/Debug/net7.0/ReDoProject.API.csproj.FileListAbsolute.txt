@@ -40,3 +40,45 @@
 /Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.API/bin/Debug/net7.0/ReDoProject.Persistence.dll
 /Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.API/bin/Debug/net7.0/ReDoProject.Domain.pdb
 /Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.API/bin/Debug/net7.0/ReDoProject.Persistence.pdb
+C:\Users\Özge Dinçer\Source\Repos\ReDoProject-Team6\ReDoProject.API\bin\Debug\net7.0\appsettings.Development.json
+C:\Users\Özge Dinçer\Source\Repos\ReDoProject-Team6\ReDoProject.API\bin\Debug\net7.0\appsettings.json
+C:\Users\Özge Dinçer\Source\Repos\ReDoProject-Team6\ReDoProject.API\bin\Debug\net7.0\ReDoProject.API.exe
+C:\Users\Özge Dinçer\Source\Repos\ReDoProject-Team6\ReDoProject.API\bin\Debug\net7.0\ReDoProject.API.deps.json
+C:\Users\Özge Dinçer\Source\Repos\ReDoProject-Team6\ReDoProject.API\bin\Debug\net7.0\ReDoProject.API.runtimeconfig.json
+C:\Users\Özge Dinçer\Source\Repos\ReDoProject-Team6\ReDoProject.API\bin\Debug\net7.0\ReDoProject.API.dll
+C:\Users\Özge Dinçer\Source\Repos\ReDoProject-Team6\ReDoProject.API\bin\Debug\net7.0\ReDoProject.API.pdb
+C:\Users\Özge Dinçer\Source\Repos\ReDoProject-Team6\ReDoProject.API\bin\Debug\net7.0\Microsoft.AspNetCore.OpenApi.dll
+C:\Users\Özge Dinçer\Source\Repos\ReDoProject-Team6\ReDoProject.API\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\Özge Dinçer\Source\Repos\ReDoProject-Team6\ReDoProject.API\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Özge Dinçer\Source\Repos\ReDoProject-Team6\ReDoProject.API\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\Özge Dinçer\Source\Repos\ReDoProject-Team6\ReDoProject.API\bin\Debug\net7.0\Microsoft.OpenApi.dll
+C:\Users\Özge Dinçer\Source\Repos\ReDoProject-Team6\ReDoProject.API\bin\Debug\net7.0\Npgsql.dll
+C:\Users\Özge Dinçer\Source\Repos\ReDoProject-Team6\ReDoProject.API\bin\Debug\net7.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+C:\Users\Özge Dinçer\Source\Repos\ReDoProject-Team6\ReDoProject.API\bin\Debug\net7.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Özge Dinçer\Source\Repos\ReDoProject-Team6\ReDoProject.API\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Özge Dinçer\Source\Repos\ReDoProject-Team6\ReDoProject.API\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Özge Dinçer\Source\Repos\ReDoProject-Team6\ReDoProject.API\bin\Debug\net7.0\ReDoProject.Domain.dll
+C:\Users\Özge Dinçer\Source\Repos\ReDoProject-Team6\ReDoProject.API\bin\Debug\net7.0\ReDoProject.Persistence.dll
+C:\Users\Özge Dinçer\Source\Repos\ReDoProject-Team6\ReDoProject.API\bin\Debug\net7.0\ReDoProject.Domain.pdb
+C:\Users\Özge Dinçer\Source\Repos\ReDoProject-Team6\ReDoProject.API\bin\Debug\net7.0\ReDoProject.Persistence.pdb
+C:\Users\Özge Dinçer\Source\Repos\ReDoProject-Team6\ReDoProject.API\obj\Debug\net7.0\ReDoProject.API.csproj.AssemblyReference.cache
+C:\Users\Özge Dinçer\Source\Repos\ReDoProject-Team6\ReDoProject.API\obj\Debug\net7.0\ReDoProject.API.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Özge Dinçer\Source\Repos\ReDoProject-Team6\ReDoProject.API\obj\Debug\net7.0\ReDoProject.API.AssemblyInfoInputs.cache
+C:\Users\Özge Dinçer\Source\Repos\ReDoProject-Team6\ReDoProject.API\obj\Debug\net7.0\ReDoProject.API.AssemblyInfo.cs
+C:\Users\Özge Dinçer\Source\Repos\ReDoProject-Team6\ReDoProject.API\obj\Debug\net7.0\ReDoProject.API.csproj.CoreCompileInputs.cache
+C:\Users\Özge Dinçer\Source\Repos\ReDoProject-Team6\ReDoProject.API\obj\Debug\net7.0\ReDoProject.API.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Özge Dinçer\Source\Repos\ReDoProject-Team6\ReDoProject.API\obj\Debug\net7.0\ReDoProject.API.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Özge Dinçer\Source\Repos\ReDoProject-Team6\ReDoProject.API\obj\Debug\net7.0\staticwebassets\msbuild.ReDoProject.API.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\Özge Dinçer\Source\Repos\ReDoProject-Team6\ReDoProject.API\obj\Debug\net7.0\staticwebassets\msbuild.build.ReDoProject.API.props
+C:\Users\Özge Dinçer\Source\Repos\ReDoProject-Team6\ReDoProject.API\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.ReDoProject.API.props
+C:\Users\Özge Dinçer\Source\Repos\ReDoProject-Team6\ReDoProject.API\obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.ReDoProject.API.props
+C:\Users\Özge Dinçer\Source\Repos\ReDoProject-Team6\ReDoProject.API\obj\Debug\net7.0\staticwebassets.pack.json
+C:\Users\Özge Dinçer\Source\Repos\ReDoProject-Team6\ReDoProject.API\obj\Debug\net7.0\staticwebassets.build.json
+C:\Users\Özge Dinçer\Source\Repos\ReDoProject-Team6\ReDoProject.API\obj\Debug\net7.0\staticwebassets.development.json
+C:\Users\Özge Dinçer\Source\Repos\ReDoProject-Team6\ReDoProject.API\obj\Debug\net7.0\scopedcss\bundle\ReDoProject.API.styles.css
+C:\Users\Özge Dinçer\Source\Repos\ReDoProject-Team6\ReDoProject.API\obj\Debug\net7.0\ReDoProject.API.csproj.CopyComplete
+C:\Users\Özge Dinçer\Source\Repos\ReDoProject-Team6\ReDoProject.API\obj\Debug\net7.0\ReDoProject.API.dll
+C:\Users\Özge Dinçer\Source\Repos\ReDoProject-Team6\ReDoProject.API\obj\Debug\net7.0\refint\ReDoProject.API.dll
+C:\Users\Özge Dinçer\Source\Repos\ReDoProject-Team6\ReDoProject.API\obj\Debug\net7.0\ReDoProject.API.pdb
+C:\Users\Özge Dinçer\Source\Repos\ReDoProject-Team6\ReDoProject.API\obj\Debug\net7.0\ReDoProject.API.genruntimeconfig.cache
+C:\Users\Özge Dinçer\Source\Repos\ReDoProject-Team6\ReDoProject.API\obj\Debug\net7.0\ref\ReDoProject.API.dll
