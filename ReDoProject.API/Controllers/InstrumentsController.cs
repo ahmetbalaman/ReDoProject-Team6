@@ -6,9 +6,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ReDoProject.API.Validators;
 using ReDoProject.Domain.Entities;
+using ReDoProject.Domain.Enums;
 using ReDoProject.Persistence.Contexts;
-
-// For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace ReDoProject.API.Controllers.Instrunments
 {
@@ -16,64 +16,118 @@ namespace ReDoProject.API.Controllers.Instrunments
     [ApiController]
     public class InstrumentsController : ControllerBase
     {
+        private readonly ErrorModel _error;
         private readonly ReDoMusicDbContext _context;
         private readonly ValidationInstrument _validation;
         public InstrumentsController()
         {
+            _error = new ErrorModel()
+            {
+                ErrorResponseType = 0,
+                ErrorMessage = new List<string>(),
+            };
+            
             _context = new ReDoMusicDbContext();
             _validation = new ValidationInstrument(_context);
         }
 
         [HttpGet("All")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<List<Instrument>>))]
-        [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(string))]
-        [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(string))]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(string))]
+        [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ErrorModel))]
+        [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(ErrorModel))]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(ErrorModel))]
         public IActionResult Get()
         {
-            List<Instrument> _instruments = _context.Instruments.ToList();
-            if (_instruments is null)
+            // Include, ThenInclude çalış.
+            List<Instrument> _instruments = _context.Instruments.Include(x => x.Brand).ToList();
+
+
+
+            if (_instruments.Count == 0)
             {
-                return NotFound("There is no Instruments");
+                _error.ErrorResponseType = 404;
+                _error.ErrorMessage.Add("There is no intruments");
+                return NotFound(_error);
             }
+
+
+
 
             return Ok(_instruments);
         }
 
 
         [HttpGet("id:Guid")]
-        [ProducesResponseType(StatusCodes.Status200OK,Type = typeof(Instrument))]
-        [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(string))]
-        [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(string))]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(string))]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Instrument))]
+        [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ErrorModel))]
+        [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(ErrorModel))]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(ErrorModel))]
         public IActionResult GetById(Guid id)
         {
 
-          
-            if(!_validation.validId(id)){
-                return NotFound("there is no data with this Id");
+
+            if (!_validation.validId(id))
+            {
+                _error.ErrorMessage.Add("there is no data with this Id");
+                _error.ErrorResponseType = 404;
+                return NotFound(_error);
             }
 
 
-            Instrument _instrument = _context.Instruments.Where(x => x.Id == id).FirstOrDefault();
+            Instrument _instrument = _context.Instruments.FirstOrDefault(x => x.Id == id);
             return Ok(_instrument);
-            
-            
+
+
+        }
+
+        [HttpGet("type:Int")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Instrument))]
+        [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ErrorModel))]
+        [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(ErrorModel))]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(ErrorModel))]
+        public IActionResult GetByType(int type)
+        {
+            if (type < 0)
+            {
+                _error.ErrorResponseType = 400;
+                _error.ErrorMessage.Add("U cant give me negative number");
+                return BadRequest(_error);
+            }
+
+            List<Instrument> _instrument = _context.Instruments.Where(x => ((int)x.Type) == type).ToList();
+
+
+           
+            if(_instrument.Count == 0)
+            {
+                _error.ErrorMessage.Add("i dont have any instrument with this type");
+                _error.ErrorResponseType = 404;
+                // Making a error model?
+                return NotFound(_error);
+            }
+
+            return Ok(_instrument);
+
+
         }
 
         [HttpPost("Add")]
         [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(Instrument))]
-        [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(string))]
-        [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(string))]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(string))]
+        [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ErrorModel))]
+        [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(ErrorModel))]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(ErrorModel))]
         public IActionResult Add([FromBody] Instrument model)
         {
             if(_validation.validId(model.Id)){
-                return BadRequest($"This {model.Id.GetType()} is already in database.");
+                _error.ErrorResponseType = 400;
+                _error.ErrorMessage.Add($"This {model.Id.GetType()} is already in database.");
+                return BadRequest(_error);
             }
             if (_validation.validModel(model))
             {
-                return BadRequest("this is not a Instrument model");
+                _error.ErrorResponseType = 400;
+                _error.ErrorMessage.Add("this is not a Instrument model");
+                return BadRequest(_error);
             }
 
             _context.Instruments.Add(model);
@@ -85,18 +139,22 @@ namespace ReDoProject.API.Controllers.Instrunments
 
         [HttpPut("Update")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(string))]
-        [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(string))]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(string))]
+        [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ErrorModel))]
+        [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(ErrorModel))]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(ErrorModel))]
         public IActionResult Update([FromBody] Instrument updatedInstrument)
         {
             if (!_validation.validId(updatedInstrument.Id))
             {
-                return BadRequest($"there is no {updatedInstrument.Id} in database.");
+                _error.ErrorResponseType = 400;
+                _error.ErrorMessage.Add($"there is no {updatedInstrument.Id} in database.");
+                return BadRequest(_error);
             }
             if (_validation.validModel(updatedInstrument))
             {
-                return BadRequest("this is not a Instrument model");
+                _error.ErrorResponseType = 400;
+                _error.ErrorMessage.Add("this is not a Instrument model");
+                return BadRequest(_error);
             }
             Instrument existingInstrument = _context.Instruments.FirstOrDefault(s=> s.Id == updatedInstrument.Id);
           
@@ -112,16 +170,48 @@ namespace ReDoProject.API.Controllers.Instrunments
             return NoContent();
 
         }
+
+        [HttpPatch("UpdatePrice")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ErrorModel))]
+        [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(ErrorModel))]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(ErrorModel))]
+        public IActionResult UpdatePrice([FromBody] Guid intrumentId,decimal price)
+        {
+            if(price < 0)
+            {
+                _error.ErrorResponseType = 400;
+                _error.ErrorMessage.Add("u cant define price negative.");
+                return BadRequest(_error);
+
+            }
+            if (!_validation.validId(intrumentId))
+            {
+                _error.ErrorResponseType = 400;
+                _error.ErrorMessage.Add($"there is no {intrumentId} in database.");
+                return BadRequest(_error);
+            }
+            
+            Instrument existingInstrument = _context.Instruments.FirstOrDefault(s => s.Id == intrumentId);
+
+            existingInstrument.Price = price;
+          
+            _context.SaveChanges();
+            return NoContent();
+
+        }
         [HttpDelete("Delete")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(string))]
-        [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(string))]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(string))]
+        [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ErrorModel))]
+        [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(ErrorModel))]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(ErrorModel))]
         public IActionResult Delete([FromBody] Guid id)
         {
             if (!_validation.validId(id))
             {
-                return NotFound("There is no data with this id");
+                _error.ErrorResponseType = 404;
+                _error.ErrorMessage.Add("There is no data with this id");
+                return NotFound(_error);
             }
             Instrument deletingInstrument = _context.Instruments.FirstOrDefault(s => s.Id == id);
             _context.Instruments.Remove(deletingInstrument);

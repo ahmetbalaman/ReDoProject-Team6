@@ -3,18 +3,18 @@ namespace ReDoProject.Domain.Enums
 {
     public enum InstrumentType
     {
-        AcousticGuitar,
-        ElectricGuitar,
-        BassGuitar,
-        AcousticPiano,
-        DigitalPiano,
-        Violin,
-        DrumSet,
-        Trumpet,
-        Saxophone,
-        Flute,
-        Clarinet,
-        Other
+        AcousticGuitar=0,
+        ElectricGuitar=1,
+        BassGuitar=2,
+        AcousticPiano=3,
+        DigitalPiano=4,
+        Violin=5,
+        DrumSet=6,
+        Trumpet=7,
+        Saxophone=8,
+        Flute=9,
+        Clarinet=10,
+        Other=11
     }
 
 }
