@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using ReDoProject.API.Validators;
+using ReDoProject.Domain.Common;
 using ReDoProject.Domain.Entities;
 using ReDoProject.Persistence.Contexts;
 using static System.Runtime.InteropServices.JavaScript.JSType;
@@ -14,8 +15,9 @@ namespace ReDoProject.API.Controllers
 {
     [Route("api/brands")]
     [ApiController]
-    public class BrandsController : ControllerBase
+    public class BrandsController : ControllerBase, IMyLogger
     {
+
         private readonly ErrorModel _error;
         private readonly ReDoMusicDbContext _context;
         private readonly ValidationBrand _validation;
@@ -39,21 +41,16 @@ namespace ReDoProject.API.Controllers
         public IActionResult Get()
         {
             // Include, ThenInclude çalış.
-            List<Brand> _brands = _context.Brands.ToList();
-
-
-
+            List<Brand> _brands = _context.Brands.Where(x=> x.IsDeleted == false).ToList();
             if (_brands.Count == 0)
             {
                 _error.ErrorMessage.Add("There is no brands");
                 _error.ErrorResponseType = 404;
                 return NotFound(_error);
             }
-
-
-
-
+            LogToDatabase("called by id");
             return Ok(_brands);
+            
         }
 
         [HttpGet("id:Guid")]
@@ -74,6 +71,7 @@ namespace ReDoProject.API.Controllers
 
 
             Brand _brand = _context.Brands.FirstOrDefault(x => x.Id == id);
+            LogToDatabase("called id by id");
             return Ok(_brand);
 
 
@@ -101,7 +99,7 @@ namespace ReDoProject.API.Controllers
 
             _context.Brands.Add(model);
             _context.SaveChanges();
-
+            LogToDatabase("added by id");
             return CreatedAtRoute("GetById", new { id = model.Id }, model);
 
         }
@@ -134,6 +132,7 @@ namespace ReDoProject.API.Controllers
             existingBrand.SupportPhone = updatedBrand.SupportPhone;
 
             _context.SaveChanges();
+            LogToDatabase("updated by id");
             return NoContent();
 
         }
@@ -151,9 +150,38 @@ namespace ReDoProject.API.Controllers
                 return NotFound(_error);
             }
             Brand deletingBrand = _context.Brands.FirstOrDefault(s => s.Id == id);
+            deletingBrand.IsDeleted = true;
+            //_context.Brands.Remove(deletingBrand);
+            _context.SaveChanges();
+            LogToDatabase("deleted by id");
+            return NoContent();
+        }
+        [HttpDelete("DeleteForce")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ErrorModel))]
+        [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(ErrorModel))]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(ErrorModel))]
+        public IActionResult DeleteForce([FromBody] Guid id)
+        {
+            if (!_validation.validId(id))
+            {
+                _error.ErrorMessage.Add("There is no data with this id");
+                _error.ErrorResponseType = 404;
+                return NotFound(_error);
+            }
+            Brand deletingBrand = _context.Brands.FirstOrDefault(s => s.Id == id);
+           
             _context.Brands.Remove(deletingBrand);
             _context.SaveChanges();
+            LogToDatabase("deleted forcefully by id");
             return NoContent();
+        }
+
+       
+
+        public void LogToDatabase(string message)
+        {
+            _context.Logs.Add(new MyLogger() { logMessage = message });
         }
     }
 }

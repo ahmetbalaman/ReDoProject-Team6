@@ -1,22 +1,4 @@
-﻿<Properties StartupConfiguration="{BC76E6BD-BD6A-44B3-A9E8-9C0F3E0B603A}|https">
-  <DisabledProjects>
-    <String>ReDoProject.MVC/ReDoProject.API/ReDoProject.API.csproj</String>
-  </DisabledProjects>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.ItemProperties.Presentation.ReDoProject.API PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
-  <MonoDevelop.Ide.ItemProperties.Presentation.ReDoProject.MVC PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
-  <MultiItemStartupConfigurations>
-    <MultiItemSolutionRunConfiguration Id="asd" Name="asd">
-      <Items>
-        <StartupItem ItemId="{BC76E6BD-BD6A-44B3-A9E8-9C0F3E0B603A}" ItemName="ReDoProject.API" ConfigurationId="https" />
-        <StartupItem ItemId="{E26B4475-4C81-4815-A0DB-16A533CAB0B4}" ItemName="ReDoProject.MVC" ConfigurationId="https" />
-      </Items>
-    </MultiItemSolutionRunConfiguration>
-  </MultiItemStartupConfigurations>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+﻿<Properties StartupConfiguration="{E26B4475-4C81-4815-A0DB-16A533CAB0B4}|https">
   <MonoDevelop.Ide.Workbench ActiveDocument="../../../../usr/local/share/dotnet/sdk/7.0.310/Microsoft.Common.CurrentVersion.targets">
     <Files>
       <File FileName="ReDoProject.API/Controllers/InstrumentsController.cs" Line="85" Column="14" />
@@ -58,4 +40,20 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.Presentation.ReDoProject.API PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
+  <DisabledProjects>
+    <String>ReDoProject.MVC/ReDoProject.API/ReDoProject.API.csproj</String>
+  </DisabledProjects>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Presentation.ReDoProject.MVC PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
+  <MultiItemStartupConfigurations>
+    <MultiItemSolutionRunConfiguration Id="asd" Name="asd">
+      <Items>
+        <StartupItem ItemId="{BC76E6BD-BD6A-44B3-A9E8-9C0F3E0B603A}" ItemName="ReDoProject.API" ConfigurationId="https" />
+        <StartupItem ItemId="{E26B4475-4C81-4815-A0DB-16A533CAB0B4}" ItemName="ReDoProject.MVC" ConfigurationId="https" />
+      </Items>
+    </MultiItemSolutionRunConfiguration>
+  </MultiItemStartupConfigurations>
 </Properties>

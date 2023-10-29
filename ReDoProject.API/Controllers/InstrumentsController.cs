@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ReDoProject.API.Validators;
+using ReDoProject.Domain.Common;
 using ReDoProject.Domain.Entities;
 using ReDoProject.Domain.Enums;
 using ReDoProject.Persistence.Contexts;
@@ -14,7 +15,7 @@ namespace ReDoProject.API.Controllers.Instrunments
 {
     [Route("api/instruments")]
     [ApiController]
-    public class InstrumentsController : ControllerBase
+    public class InstrumentsController : ControllerBase, IMyLogger
     {
         private readonly ErrorModel _error;
         private readonly ReDoMusicDbContext _context;
@@ -39,20 +40,14 @@ namespace ReDoProject.API.Controllers.Instrunments
         public IActionResult Get()
         {
             // Include, ThenInclude çalış.
-            List<Instrument> _instruments = _context.Instruments.Include(x => x.Brand).ToList();
-
-
-
+            List<Instrument> _instruments = _context.Instruments.Where(x=> x.IsDeleted == false).Include(x => x.Brand).ToList();
             if (_instruments.Count == 0)
             {
                 _error.ErrorResponseType = 404;
                 _error.ErrorMessage.Add("There is no intruments");
                 return NotFound(_error);
             }
-
-
-
-
+            LogToDatabase($"called by $id");
             return Ok(_instruments);
         }
 
@@ -75,6 +70,7 @@ namespace ReDoProject.API.Controllers.Instrunments
 
 
             Instrument _instrument = _context.Instruments.FirstOrDefault(x => x.Id == id);
+            LogToDatabase($"called id by $id");
             return Ok(_instrument);
 
 
@@ -106,6 +102,7 @@ namespace ReDoProject.API.Controllers.Instrunments
                 return NotFound(_error);
             }
 
+            LogToDatabase($"called type by $id");
             return Ok(_instrument);
 
 
@@ -132,7 +129,7 @@ namespace ReDoProject.API.Controllers.Instrunments
 
             _context.Instruments.Add(model);
             _context.SaveChanges();
-
+            LogToDatabase($"added by $id");
             return CreatedAtRoute("GetById", new { id = model.Id }, model);
 
         }
@@ -167,6 +164,7 @@ namespace ReDoProject.API.Controllers.Instrunments
             existingInstrument.PictureUrl = updatedInstrument.PictureUrl;
             existingInstrument.Type = updatedInstrument.Type;
             _context.SaveChanges();
+            LogToDatabase($"Updated by $id");
             return NoContent();
 
         }
@@ -178,7 +176,8 @@ namespace ReDoProject.API.Controllers.Instrunments
         [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(ErrorModel))]
         public IActionResult UpdatePrice([FromBody] Guid intrumentId,decimal price)
         {
-            if(price < 0)
+           
+            if (price < 0)
             {
                 _error.ErrorResponseType = 400;
                 _error.ErrorMessage.Add("u cant define price negative.");
@@ -195,7 +194,7 @@ namespace ReDoProject.API.Controllers.Instrunments
             Instrument existingInstrument = _context.Instruments.FirstOrDefault(s => s.Id == intrumentId);
 
             existingInstrument.Price = price;
-          
+            LogToDatabase($"updated price by $id");
             _context.SaveChanges();
             return NoContent();
 
@@ -207,6 +206,7 @@ namespace ReDoProject.API.Controllers.Instrunments
         [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(ErrorModel))]
         public IActionResult Delete([FromBody] Guid id)
         {
+          
             if (!_validation.validId(id))
             {
                 _error.ErrorResponseType = 404;
@@ -214,13 +214,38 @@ namespace ReDoProject.API.Controllers.Instrunments
                 return NotFound(_error);
             }
             Instrument deletingInstrument = _context.Instruments.FirstOrDefault(s => s.Id == id);
-            _context.Instruments.Remove(deletingInstrument);
+            deletingInstrument.IsDeleted = true;
+            //_context.Instruments.Remove(deletingInstrument);
+            LogToDatabase($"deleted by $id");
             _context.SaveChanges();
             return NoContent();
         }
 
+        [HttpDelete("DeleteForce")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ErrorModel))]
+        [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(ErrorModel))]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(ErrorModel))]
+        public IActionResult DeleteForce([FromBody] Guid id)
+        {
+            if (!_validation.validId(id))
+            {
+                _error.ErrorResponseType = 404;
+                _error.ErrorMessage.Add("There is no data with this id");
+                return NotFound(_error);
+            }
+            Instrument deletingInstrument = _context.Instruments.FirstOrDefault(s => s.Id == id);
+          
+            _context.Instruments.Remove(deletingInstrument);
+            _context.SaveChanges();
+            LogToDatabase("deleted forcefully by id");
+            return NoContent();
+        }
 
-
+        public void LogToDatabase(string message)
+        {
+            _context.Logs.Add(new MyLogger() { logMessage = message });
+        }
     }
 }
 
