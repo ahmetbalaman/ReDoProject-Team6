@@ -30,3 +30,4 @@ namespace ReDoProject.Domain.Entities
         public InstrumentType Type { get; set; }
     }
 }
+

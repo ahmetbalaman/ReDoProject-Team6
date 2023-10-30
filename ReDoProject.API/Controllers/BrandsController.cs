@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using ReDoProject.API.Validators;
 using ReDoProject.Domain.Common;
 using ReDoProject.Domain.Entities;
 using ReDoProject.Persistence.Contexts;
-using static System.Runtime.InteropServices.JavaScript.JSType;
+
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -15,7 +11,7 @@ namespace ReDoProject.API.Controllers
 {
     [Route("api/brands")]
     [ApiController]
-    public class BrandsController : ControllerBase, IMyLogger
+    public class BrandsController : ControllerBase
     {
 
         private readonly ErrorModel _error;
@@ -48,7 +44,7 @@ namespace ReDoProject.API.Controllers
                 _error.ErrorResponseType = 404;
                 return NotFound(_error);
             }
-            LogToDatabase("called by id");
+            //LogToDatabase("called by id");
             return Ok(_brands);
             
         }
@@ -71,7 +67,7 @@ namespace ReDoProject.API.Controllers
 
 
             Brand _brand = _context.Brands.FirstOrDefault(x => x.Id == id);
-            LogToDatabase("called id by id");
+            //LogToDatabase("called id by id");
             return Ok(_brand);
 
 
@@ -99,7 +95,7 @@ namespace ReDoProject.API.Controllers
 
             _context.Brands.Add(model);
             _context.SaveChanges();
-            LogToDatabase("added by id");
+            //LogToDatabase("added by id");
             return CreatedAtRoute("GetById", new { id = model.Id }, model);
 
         }
@@ -132,7 +128,7 @@ namespace ReDoProject.API.Controllers
             existingBrand.SupportPhone = updatedBrand.SupportPhone;
 
             _context.SaveChanges();
-            LogToDatabase("updated by id");
+            //LogToDatabase("updated by id");
             return NoContent();
 
         }
@@ -153,7 +149,7 @@ namespace ReDoProject.API.Controllers
             deletingBrand.IsDeleted = true;
             //_context.Brands.Remove(deletingBrand);
             _context.SaveChanges();
-            LogToDatabase("deleted by id");
+            //LogToDatabase("deleted by id");
             return NoContent();
         }
         [HttpDelete("DeleteForce")]
@@ -173,16 +169,13 @@ namespace ReDoProject.API.Controllers
            
             _context.Brands.Remove(deletingBrand);
             _context.SaveChanges();
-            LogToDatabase("deleted forcefully by id");
+            //LogToDatabase("deleted forcefully by id");
             return NoContent();
         }
 
        
 
-        public void LogToDatabase(string message)
-        {
-            _context.Logs.Add(new MyLogger() { logMessage = message });
-        }
+       
     }
 }
 

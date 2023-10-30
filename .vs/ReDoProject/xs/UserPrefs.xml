@@ -1,36 +1,7 @@
-﻿<Properties StartupConfiguration="{E26B4475-4C81-4815-A0DB-16A533CAB0B4}|https">
-  <MonoDevelop.Ide.Workbench>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="ReDoProject">
-            <Node name="Core">
-              <Node name="ReDoProject.Domain">
-                <Node name="Common" expanded="True" />
-                <Node name="Entities" expanded="True" />
-              </Node>
-            </Node>
-            <Node name="Presentation" expanded="True">
-              <Node name="ReDoProject.API" expanded="True">
-                <Node name="Controllers" expanded="True" />
-                <Node name="Properties" expanded="True" />
-              </Node>
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
-  </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.Presentation.ReDoProject.API PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
-  <DisabledProjects>
-    <String>ReDoProject.MVC/ReDoProject.API/ReDoProject.API.csproj</String>
-  </DisabledProjects>
+﻿<Properties StartupConfiguration="{BC76E6BD-BD6A-44B3-A9E8-9C0F3E0B603A}|https">
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Presentation.ReDoProject.MVC PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
   <MultiItemStartupConfigurations>
     <MultiItemSolutionRunConfiguration Id="asd" Name="asd">
       <Items>
@@ -39,4 +10,54 @@
       </Items>
     </MultiItemSolutionRunConfiguration>
   </MultiItemStartupConfigurations>
+  <MonoDevelop.Ide.ItemProperties.Presentation.ReDoProject.API PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="ReDoProject.Domain/Entities/Log.cs">
+    <Files>
+      <File FileName="ReDoProject.Domain/Common/EntityBase.cs" Line="9" Column="33" />
+      <File FileName="ReDoProject.Domain/Common/ICreatedOn.cs" Line="9" Column="32" />
+      <File FileName="ReDoProject.Domain/Common/IDeletedOn.cs" Line="1" Column="1" />
+      <File FileName="ReDoProject.Domain/Common/IModifiedOn.cs" Line="1" Column="1" />
+      <File FileName="ReDoProject.Domain/Common/IMyLogger.cs" Line="4" Column="28" />
+      <File FileName="ReDoProject.Domain/Entities/Basket.cs" Line="9" Column="33" />
+      <File FileName="ReDoProject.Domain/Entities/OrderedInstruments.cs" Line="10" Column="32" />
+      <File FileName="ReDoProject.Domain/Entities/Brand.cs" Line="18" Column="17" />
+      <File FileName="ReDoProject.Domain/Entities/Customer.cs" Line="11" Column="1" />
+      <File FileName="ReDoProject.Domain/Entities/Person.cs" Line="7" Column="38" />
+      <File FileName="ReDoProject.Domain/Entities/ErrorModel.cs" Line="4" Column="15" />
+      <File FileName="ReDoProject.Domain/Entities/Instrument.cs" Line="16" Column="28" />
+      <File FileName="ReDoProject.Domain/ExampleData.cs" Line="1" Column="1" />
+      <File FileName="ReDoProject.Persistence/Configuration.cs" Line="15" Column="74" />
+      <File FileName="ReDoProject.Persistence/Contexts/ReDoMusicDbContext.cs" Line="21" Column="1" />
+      <File FileName="ReDoProject.Persistence/Migrations/20231029115823_mig_2_added_logs.cs" Line="72" Column="43" />
+      <File FileName="ReDoProject.API/Controllers/BrandsController.cs" Line="39" Column="43" />
+      <File FileName="ReDoProject.API/Validators/ValidationBrand.cs" Line="25" Column="10" />
+      <File FileName="ReDoProject.API/Validators/ValidationCustomer.cs" Line="1" Column="1" />
+      <File FileName="ReDoProject.MVC/Views/Brand/Add.cshtml" Line="1" Column="1" />
+      <File FileName="ReDoProject.MVC/Models/ErrorViewModel.cs" Line="10" Column="1" />
+      <File FileName="ReDoProject.MVC/Controllers/BrandController.cs" Line="20" Column="1" />
+      <File FileName="ReDoProject.MVC/Views/Shared/_Layout.cshtml" Line="9" Column="35" />
+      <File FileName="ReDoProject.API/Program.cs" Line="9" Column="1" />
+      <File FileName="ReDoProject.API/appsettings.json" Line="8" Column="22" />
+      <File FileName="ReDoProject.API/Controllers/InstrumentsController.cs" Line="245" Column="8" />
+      <File FileName="ReDoProject.API/Properties/launchSettings.json" Line="26" Column="48" />
+      <File FileName="ReDoProject.Domain/Entities/Log.cs" Line="12" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="ReDoProject">
+            <Node name="NuGet.Config files" expanded="True" />
+            <Node name="Core" expanded="True" />
+            <Node name="Presentation" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <DisabledProjects>
+    <String>ReDoProject.MVC/ReDoProject.API/ReDoProject.API.csproj</String>
+  </DisabledProjects>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.Presentation.ReDoProject.MVC PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
 </Properties>

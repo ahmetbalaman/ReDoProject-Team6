@@ -14,7 +14,6 @@ namespace ReDoProject.Persistence.Contexts
         public DbSet<OrderedInstrument> OrderedInstruments { get; set; }
         public DbSet<MyLogger> Logs { get; set; }
 
-
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             // optionsBuilder.UseNpgsql(Configurations.GetString("ConnectionStrings:PostgreSQL

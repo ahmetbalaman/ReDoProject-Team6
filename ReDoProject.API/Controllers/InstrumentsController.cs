@@ -15,7 +15,7 @@ namespace ReDoProject.API.Controllers.Instrunments
 {
     [Route("api/instruments")]
     [ApiController]
-    public class InstrumentsController : ControllerBase, IMyLogger
+    public class InstrumentsController : ControllerBase
     {
         private readonly ErrorModel _error;
         private readonly ReDoMusicDbContext _context;
@@ -47,7 +47,7 @@ namespace ReDoProject.API.Controllers.Instrunments
                 _error.ErrorMessage.Add("There is no intruments");
                 return NotFound(_error);
             }
-            LogToDatabase($"called by $id");
+            //LogToDatabase($"called by $id");
             return Ok(_instruments);
         }
 
@@ -70,7 +70,7 @@ namespace ReDoProject.API.Controllers.Instrunments
 
 
             Instrument _instrument = _context.Instruments.FirstOrDefault(x => x.Id == id);
-            LogToDatabase($"called id by $id");
+            //LogToDatabase($"called id by $id");
             return Ok(_instrument);
 
 
@@ -102,7 +102,7 @@ namespace ReDoProject.API.Controllers.Instrunments
                 return NotFound(_error);
             }
 
-            LogToDatabase($"called type by $id");
+            //LogToDatabase($"called type by $id");
             return Ok(_instrument);
 
 
@@ -129,7 +129,7 @@ namespace ReDoProject.API.Controllers.Instrunments
 
             _context.Instruments.Add(model);
             _context.SaveChanges();
-            LogToDatabase($"added by $id");
+            //LogToDatabase($"added by $id");
             return CreatedAtRoute("GetById", new { id = model.Id }, model);
 
         }
@@ -164,7 +164,7 @@ namespace ReDoProject.API.Controllers.Instrunments
             existingInstrument.PictureUrl = updatedInstrument.PictureUrl;
             existingInstrument.Type = updatedInstrument.Type;
             _context.SaveChanges();
-            LogToDatabase($"Updated by $id");
+            //LogToDatabase($"Updated by $id");
             return NoContent();
 
         }
@@ -194,7 +194,7 @@ namespace ReDoProject.API.Controllers.Instrunments
             Instrument existingInstrument = _context.Instruments.FirstOrDefault(s => s.Id == intrumentId);
 
             existingInstrument.Price = price;
-            LogToDatabase($"updated price by $id");
+            //LogToDatabase($"updated price by $id");
             _context.SaveChanges();
             return NoContent();
 
@@ -216,7 +216,7 @@ namespace ReDoProject.API.Controllers.Instrunments
             Instrument deletingInstrument = _context.Instruments.FirstOrDefault(s => s.Id == id);
             deletingInstrument.IsDeleted = true;
             //_context.Instruments.Remove(deletingInstrument);
-            LogToDatabase($"deleted by $id");
+            //LogToDatabase($"deleted by $id");
             _context.SaveChanges();
             return NoContent();
         }
@@ -238,14 +238,11 @@ namespace ReDoProject.API.Controllers.Instrunments
           
             _context.Instruments.Remove(deletingInstrument);
             _context.SaveChanges();
-            LogToDatabase("deleted forcefully by id");
+            //LogToDatabase("deleted forcefully by id");
             return NoContent();
         }
 
-        public void LogToDatabase(string message)
-        {
-            _context.Logs.Add(new MyLogger() { logMessage = message });
-        }
+       
     }
 }
 

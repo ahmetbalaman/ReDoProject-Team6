@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "I9KZ3SUrrl14yNJ8uqzMIjqcVTD1RBjV91u5L0hSpQJ6AbOcDAWhPpJOVQZMy1yJbnUgGWDE7IXXxRp03R3a0w==",
+  "dgSpecHash": "/pkhw0KJRMZD3P83wRU5HcIpnwZFupcTx0NA5S8qsqqtsSa2orAthCC1rzW1tkbQ2Gk7boK4vlvIZ1TrIG6IiQ==",
   "success": true,
   "projectFilePath": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.API/ReDoProject.API.csproj",
   "expectedPackageFiles": [
+    "/Users/ahmetbalaman/.nuget/packages/fluentvalidation/11.8.0/fluentvalidation.11.8.0.nupkg.sha512",
+    "/Users/ahmetbalaman/.nuget/packages/fluentvalidation.aspnetcore/11.3.0/fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
+    "/Users/ahmetbalaman/.nuget/packages/fluentvalidation.dependencyinjectionextensions/11.8.0/fluentvalidation.dependencyinjectionextensions.11.8.0.nupkg.sha512",
     "/Users/ahmetbalaman/.nuget/packages/microsoft.aspnetcore.openapi/7.0.13/microsoft.aspnetcore.openapi.7.0.13.nupkg.sha512",
     "/Users/ahmetbalaman/.nuget/packages/microsoft.entityframeworkcore/7.0.13/microsoft.entityframeworkcore.7.0.13.nupkg.sha512",
     "/Users/ahmetbalaman/.nuget/packages/microsoft.entityframeworkcore.abstractions/7.0.13/microsoft.entityframeworkcore.abstractions.7.0.13.nupkg.sha512",
