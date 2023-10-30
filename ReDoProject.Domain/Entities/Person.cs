@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using ReDoProject.Domain.Common;
+using ReDoProject.Domain.Enums;
 
 namespace ReDoProject.Domain.Entities
 {
@@ -16,12 +17,12 @@ namespace ReDoProject.Domain.Entities
         public string Password { get; set; }
         [Required]
         public string Address { get; set; }
-        [Required]
+        [Phone]
         public string PhoneNumber { get; set; }
-        [Required]
-        public DateTime BirthDate { get; set; }
 
-      
+        public DateTime? BirthDate { get; set; }
+
+        public Role Role { get; set; } = Role.Customer;
     }
 }
 

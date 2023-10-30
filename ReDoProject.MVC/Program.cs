@@ -1,7 +1,43 @@
-﻿var builder = WebApplication.CreateBuilder(args);
+﻿using System.Security.Claims;
+using Microsoft.AspNetCore.Authentication.Cookies;
+
+var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+//Authtenticationa Cookie ekleme ve şemayı düzenleme
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(
+    x => {
+        x.LoginPath = "/Login";
+        x.LogoutPath = "/Instrument";
+
+        // yetkisiz işlem erişim yaparsa bu sayfaya gitsin.
+        x.AccessDeniedPath = "/Instrument";
+
+        x.Cookie.Name = "Login";
+
+        // 2 günlük çerez vermesi belki uzatma yapabilirsin not et
+        x.Cookie.MaxAge = TimeSpan.FromDays(2);
+
+        x.Cookie.IsEssential = true;
+
+        
+
+});
+
+builder.Services.AddAuthorization(
+    x => {
+        x.AddPolicy("AdminPolicy", policy => {
+            policy.RequireClaim(ClaimTypes.Role, "Admin");
+        });
+        x.AddPolicy("CustomerPolicy", policy => {
+            policy.RequireClaim(ClaimTypes.Role, "Admin","Customer");
+        });
+
+        
+
+    });
 
 var app = builder.Build();
 
@@ -16,13 +52,17 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
+
+
 app.UseRouting();
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Brand}/{action=Add}/{id?}");
+    pattern: "{controller=Instrument}/{action=Index}/{id?}");
 
 app.Run();
 

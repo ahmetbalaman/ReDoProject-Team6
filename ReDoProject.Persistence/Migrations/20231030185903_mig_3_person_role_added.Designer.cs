@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using ReDoProject.Persistence.Contexts;
@@ -11,9 +12,11 @@ using ReDoProject.Persistence.Contexts;
 namespace ReDoProject.Persistence.Migrations
 {
     [DbContext(typeof(ReDoMusicDbContext))]
-    partial class ReDoMusicDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231030185903_mig_3_person_role_added")]
+    partial class mig_3_person_role_added
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -33,9 +36,6 @@ namespace ReDoProject.Persistence.Migrations
 
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("timestamp with time zone");
-
-                    b.Property<Guid?>("CustomerId")
-                        .HasColumnType("uuid");
 
                     b.Property<string>("DeletedByUserId")
                         .HasColumnType("text");
@@ -57,8 +57,6 @@ namespace ReDoProject.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CustomerId");
-
                     b.ToTable("Baskets");
                 });
 
@@ -77,9 +75,6 @@ namespace ReDoProject.Persistence.Migrations
 
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("timestamp with time zone");
-
-                    b.Property<Guid?>("CustomerId")
-                        .HasColumnType("uuid");
 
                     b.Property<string>("DeletedByUserId")
                         .HasColumnType("text");
@@ -114,71 +109,7 @@ namespace ReDoProject.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CustomerId");
-
                     b.ToTable("Brands");
-                });
-
-            modelBuilder.Entity("ReDoProject.Domain.Entities.Customer", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
-
-                    b.Property<string>("Address")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<DateTime?>("BirthDate")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<string>("CreatedByUserId")
-                        .HasColumnType("text");
-
-                    b.Property<DateTime>("CreatedOn")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<string>("DeletedByUserId")
-                        .HasColumnType("text");
-
-                    b.Property<DateTime>("DeletedOn")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("boolean");
-
-                    b.Property<string>("ModifiedByUserId")
-                        .HasColumnType("text");
-
-                    b.Property<DateTime>("ModifiedOn")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("Password")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("PhoneNumber")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<int>("Role")
-                        .HasColumnType("integer");
-
-                    b.Property<string>("Surname")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Customers");
                 });
 
             modelBuilder.Entity("ReDoProject.Domain.Entities.Instrument", b =>
@@ -201,9 +132,6 @@ namespace ReDoProject.Persistence.Migrations
 
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("timestamp with time zone");
-
-                    b.Property<Guid?>("CustomerId")
-                        .HasColumnType("uuid");
 
                     b.Property<string>("DeletedByUserId")
                         .HasColumnType("text");
@@ -243,8 +171,6 @@ namespace ReDoProject.Persistence.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("BrandId");
-
-                    b.HasIndex("CustomerId");
 
                     b.ToTable("Instruments");
                 });
@@ -330,18 +256,66 @@ namespace ReDoProject.Persistence.Migrations
                     b.ToTable("OrderedInstruments");
                 });
 
-            modelBuilder.Entity("ReDoProject.Domain.Entities.Basket", b =>
+            modelBuilder.Entity("ReDoProject.Domain.Entities.Person", b =>
                 {
-                    b.HasOne("ReDoProject.Domain.Entities.Customer", null)
-                        .WithMany("Baskets")
-                        .HasForeignKey("CustomerId");
-                });
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
 
-            modelBuilder.Entity("ReDoProject.Domain.Entities.Brand", b =>
-                {
-                    b.HasOne("ReDoProject.Domain.Entities.Customer", null)
-                        .WithMany("FavBrands")
-                        .HasForeignKey("CustomerId");
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("BirthDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("CreatedByUserId")
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("DeletedByUserId")
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("DeletedOn")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("boolean");
+
+                    b.Property<string>("ModifiedByUserId")
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("ModifiedOn")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("Role")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Surname")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Customers");
                 });
 
             modelBuilder.Entity("ReDoProject.Domain.Entities.Instrument", b =>
@@ -351,10 +325,6 @@ namespace ReDoProject.Persistence.Migrations
                         .HasForeignKey("BrandId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.HasOne("ReDoProject.Domain.Entities.Customer", null)
-                        .WithMany("FavInstruments")
-                        .HasForeignKey("CustomerId");
 
                     b.Navigation("Brand");
                 });
@@ -377,15 +347,6 @@ namespace ReDoProject.Persistence.Migrations
             modelBuilder.Entity("ReDoProject.Domain.Entities.Basket", b =>
                 {
                     b.Navigation("OrderedInstruments");
-                });
-
-            modelBuilder.Entity("ReDoProject.Domain.Entities.Customer", b =>
-                {
-                    b.Navigation("Baskets");
-
-                    b.Navigation("FavBrands");
-
-                    b.Navigation("FavInstruments");
                 });
 #pragma warning restore 612, 618
         }

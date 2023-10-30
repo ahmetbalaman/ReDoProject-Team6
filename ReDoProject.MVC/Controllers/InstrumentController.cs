@@ -3,11 +3,14 @@ using Microsoft.EntityFrameworkCore;
 using ReDoProject.Persistence.Contexts;
 using ReDoProject.Persistence.Contexts;
 using ReDoProject.Domain;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ReDoProject.MVC.Controllers
 {
+   
     public class InstrumentController : Controller
     {
+        
         private readonly ReDoMusicDbContext _dbContext;
 
         public InstrumentController()
@@ -17,17 +20,14 @@ namespace ReDoProject.MVC.Controllers
 
         public IActionResult Index() //All Instruments will be shown
         {
-
-
-
             var products = _dbContext.Instruments.ToList();
            // _dbContext.Instruments.AddRange(ExampleData.GetInstruments());
-
            // _dbContext.SaveChanges();
-
             return View(products);
         }
 
+
+        [Authorize(Policy = "CustomerPolicy")]
         [HttpGet]
         public IActionResult Add()
         {

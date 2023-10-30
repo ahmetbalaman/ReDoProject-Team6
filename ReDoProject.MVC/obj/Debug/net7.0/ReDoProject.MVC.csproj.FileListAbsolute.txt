@@ -48,3 +48,4 @@
 /Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.MVC/bin/Debug/net7.0/FluentValidation.AspNetCore.dll
 /Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.MVC/bin/Debug/net7.0/FluentValidation.DependencyInjectionExtensions.dll
 /Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.MVC/obj/Debug/net7.0/ReDoProject.MVC.MvcApplicationPartsAssemblyInfo.cs
+/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.MVC/bin/Debug/net7.0/System.Security.Permissions.dll
