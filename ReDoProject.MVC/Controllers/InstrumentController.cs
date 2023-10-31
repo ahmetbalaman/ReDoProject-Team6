@@ -24,7 +24,6 @@ namespace ReDoProject.MVC.Controllers
 
         public IActionResult Index() //All Instruments will be shown
         {
-
             try
             {
                 String id = User.FindFirst(ClaimTypes.UserData)?.Value;

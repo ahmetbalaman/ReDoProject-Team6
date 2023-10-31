@@ -12,8 +12,8 @@ using ReDoProject.Persistence.Contexts;
 namespace ReDoProject.Persistence.Migrations
 {
     [DbContext(typeof(ReDoMusicDbContext))]
-    [Migration("20231031161909_mig1_new_start")]
-    partial class mig1_new_start
+    [Migration("20231031221331_mig_1")]
+    partial class mig_1
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
