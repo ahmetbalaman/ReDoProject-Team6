@@ -300,6 +300,9 @@ namespace ReDoProject.Persistence.Migrations
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("timestamp with time zone");
 
+                    b.Property<Guid?>("CustomerId")
+                        .HasColumnType("uuid");
+
                     b.Property<string>("DeletedByUserId")
                         .HasColumnType("text");
 
@@ -325,6 +328,8 @@ namespace ReDoProject.Persistence.Migrations
 
                     b.HasIndex("BasketId");
 
+                    b.HasIndex("CustomerId");
+
                     b.HasIndex("InstrumentId");
 
                     b.ToTable("OrderedInstruments");
@@ -333,7 +338,7 @@ namespace ReDoProject.Persistence.Migrations
             modelBuilder.Entity("ReDoProject.Domain.Entities.Basket", b =>
                 {
                     b.HasOne("ReDoProject.Domain.Entities.Customer", null)
-                        .WithMany("Baskets")
+                        .WithMany("Orders")
                         .HasForeignKey("CustomerId");
                 });
 
@@ -365,6 +370,10 @@ namespace ReDoProject.Persistence.Migrations
                         .WithMany("OrderedInstruments")
                         .HasForeignKey("BasketId");
 
+                    b.HasOne("ReDoProject.Domain.Entities.Customer", null)
+                        .WithMany("Basket")
+                        .HasForeignKey("CustomerId");
+
                     b.HasOne("ReDoProject.Domain.Entities.Instrument", "Instrument")
                         .WithMany()
                         .HasForeignKey("InstrumentId")
@@ -381,11 +390,13 @@ namespace ReDoProject.Persistence.Migrations
 
             modelBuilder.Entity("ReDoProject.Domain.Entities.Customer", b =>
                 {
-                    b.Navigation("Baskets");
+                    b.Navigation("Basket");
 
                     b.Navigation("FavBrands");
 
                     b.Navigation("FavInstruments");
+
+                    b.Navigation("Orders");
                 });
 #pragma warning restore 612, 618
         }

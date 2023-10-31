@@ -17,7 +17,7 @@ namespace ReDoProject.Persistence.Contexts
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             // optionsBuilder.UseNpgsql(Configurations.GetString("ConnectionStrings:PostgreSQL
-            optionsBuilder.UseNpgsql("Server=91.151.83.102;Port=5432;Database=!06TeamReDoProject;User Id=yunusemresenteam;Password=3*ZM44j3bgIBULDrlsyjKB595;");
+            optionsBuilder.UseNpgsql("Server=91.151.83.102;Port=5432;Database=!006TeamReDoProject;User Id=yunusemresenteam;Password=3*ZM44j3bgIBULDrlsyjKB595;");
 
             optionsBuilder.EnableSensitiveDataLogging();
         }

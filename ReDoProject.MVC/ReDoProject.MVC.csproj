@@ -21,9 +21,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Remove="Views\Login\" />
+    <None Remove="Views\Account\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Views\Login\" />
+    <Folder Include="Views\Account\" />
   </ItemGroup>
 </Project>

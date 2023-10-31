@@ -12,25 +12,35 @@ using ReDoProject.Persistence.Contexts;
 
 namespace ReDoProject.MVC.Controllers
 {
-    public class LoginController : Controller
+    public class AccountController : Controller
     {
         private readonly ReDoMusicDbContext _context;
 
-        public LoginController()
+        public AccountController()
         {
             _context = new ReDoMusicDbContext();
         }
 
         // GET: /<controller>/
-
-
+        [HttpGet]
         public IActionResult Index()
+        {
+            String id = User.FindFirst(ClaimTypes.UserData)?.Value;
+            Console.WriteLine($" {id} account controller");
+            Customer currentCustomer = _context.Customers.FirstOrDefault(x => x.Id.ToString() == id);
+
+            return View(currentCustomer);
+        }
+
+        
+
+        public IActionResult Login()
         {
             
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> Index(string email, string password)
+        public async Task<IActionResult> Login(string email, string password)
         {
             try
             {
@@ -43,13 +53,18 @@ namespace ReDoProject.MVC.Controllers
                 {
                     var claims = new List<Claim>()
                     {
+                        new Claim(ClaimTypes.UserData,customer.Id.ToString()),
+                      //  new Claim(ClaimTypes.MobilePhone, customer.PhoneNumber),
+                      //  new Claim(ClaimTypes.Email, customer.Email),
                         new Claim(ClaimTypes.Name, customer.Name),
                         new Claim(ClaimTypes.Role, customer.Role.ToString()),
                     };
                     var userIdentitiy = new ClaimsIdentity(claims,"Login");
                     ClaimsPrincipal principal = new(userIdentitiy);
+                    
                     await HttpContext.SignInAsync(principal);
 
+                    
                     //giriş başarılı ise burdayız
 
                     // eğer admin ise başka sayfaya yönlendirebilirsin.
@@ -87,7 +102,7 @@ namespace ReDoProject.MVC.Controllers
                     _context.SaveChanges();
                     
 
-                    return Redirect("/Login");
+                    return Redirect("/Account/Login");
                }
                 catch
                 {
@@ -102,7 +117,7 @@ namespace ReDoProject.MVC.Controllers
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync();
-            return Redirect("/Login");
+            return Redirect("/Account/Login");
         }
 
 
