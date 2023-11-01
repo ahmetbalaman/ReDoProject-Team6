@@ -12,8 +12,8 @@ using ReDoProject.Persistence.Contexts;
 namespace ReDoProject.Persistence.Migrations
 {
     [DbContext(typeof(ReDoMusicDbContext))]
-    [Migration("20231031221331_mig_1")]
-    partial class mig_1
+    [Migration("20231101072934_new")]
+    partial class @new
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -37,9 +37,6 @@ namespace ReDoProject.Persistence.Migrations
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<Guid?>("CustomerId")
-                        .HasColumnType("uuid");
-
                     b.Property<string>("DeletedByUserId")
                         .HasColumnType("text");
 
@@ -49,9 +46,6 @@ namespace ReDoProject.Persistence.Migrations
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("boolean");
 
-                    b.Property<bool>("IsDelivered")
-                        .HasColumnType("boolean");
-
                     b.Property<string>("ModifiedByUserId")
                         .HasColumnType("text");
 
@@ -59,8 +53,6 @@ namespace ReDoProject.Persistence.Migrations
                         .HasColumnType("timestamp with time zone");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("CustomerId");
 
                     b.ToTable("Baskets");
                 });
@@ -132,6 +124,9 @@ namespace ReDoProject.Persistence.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<Guid?>("BasketId")
+                        .HasColumnType("uuid");
+
                     b.Property<DateTime?>("BirthDate")
                         .HasColumnType("timestamp with time zone");
 
@@ -180,6 +175,8 @@ namespace ReDoProject.Persistence.Migrations
                         .HasColumnType("text");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("BasketId");
 
                     b.ToTable("Customers");
                 });
@@ -288,6 +285,51 @@ namespace ReDoProject.Persistence.Migrations
                     b.ToTable("Logs");
                 });
 
+            modelBuilder.Entity("ReDoProject.Domain.Entities.Order", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("CreatedByUserId")
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<Guid?>("CustomerId")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("DeletedByUserId")
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("DeletedOn")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("boolean");
+
+                    b.Property<bool>("IsDelivered")
+                        .HasColumnType("boolean");
+
+                    b.Property<string>("ModifiedByUserId")
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("ModifiedOn")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<Guid>("OrderedBasketId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CustomerId");
+
+                    b.HasIndex("OrderedBasketId");
+
+                    b.ToTable("Orders");
+                });
+
             modelBuilder.Entity("ReDoProject.Domain.Entities.OrderedInstrument", b =>
                 {
                     b.Property<Guid>("Id")
@@ -302,9 +344,6 @@ namespace ReDoProject.Persistence.Migrations
 
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("timestamp with time zone");
-
-                    b.Property<Guid?>("CustomerId")
-                        .HasColumnType("uuid");
 
                     b.Property<string>("DeletedByUserId")
                         .HasColumnType("text");
@@ -331,18 +370,9 @@ namespace ReDoProject.Persistence.Migrations
 
                     b.HasIndex("BasketId");
 
-                    b.HasIndex("CustomerId");
-
                     b.HasIndex("InstrumentId");
 
-                    b.ToTable("OrderedInstruments");
-                });
-
-            modelBuilder.Entity("ReDoProject.Domain.Entities.Basket", b =>
-                {
-                    b.HasOne("ReDoProject.Domain.Entities.Customer", null)
-                        .WithMany("Orders")
-                        .HasForeignKey("CustomerId");
+                    b.ToTable("OrderedInstrument");
                 });
 
             modelBuilder.Entity("ReDoProject.Domain.Entities.Brand", b =>
@@ -350,6 +380,15 @@ namespace ReDoProject.Persistence.Migrations
                     b.HasOne("ReDoProject.Domain.Entities.Customer", null)
                         .WithMany("FavBrands")
                         .HasForeignKey("CustomerId");
+                });
+
+            modelBuilder.Entity("ReDoProject.Domain.Entities.Customer", b =>
+                {
+                    b.HasOne("ReDoProject.Domain.Entities.Basket", "Basket")
+                        .WithMany()
+                        .HasForeignKey("BasketId");
+
+                    b.Navigation("Basket");
                 });
 
             modelBuilder.Entity("ReDoProject.Domain.Entities.Instrument", b =>
@@ -367,15 +406,26 @@ namespace ReDoProject.Persistence.Migrations
                     b.Navigation("Brand");
                 });
 
+            modelBuilder.Entity("ReDoProject.Domain.Entities.Order", b =>
+                {
+                    b.HasOne("ReDoProject.Domain.Entities.Customer", null)
+                        .WithMany("Orders")
+                        .HasForeignKey("CustomerId");
+
+                    b.HasOne("ReDoProject.Domain.Entities.Basket", "OrderedBasket")
+                        .WithMany()
+                        .HasForeignKey("OrderedBasketId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("OrderedBasket");
+                });
+
             modelBuilder.Entity("ReDoProject.Domain.Entities.OrderedInstrument", b =>
                 {
                     b.HasOne("ReDoProject.Domain.Entities.Basket", null)
                         .WithMany("OrderedInstruments")
                         .HasForeignKey("BasketId");
-
-                    b.HasOne("ReDoProject.Domain.Entities.Customer", null)
-                        .WithMany("Basket")
-                        .HasForeignKey("CustomerId");
 
                     b.HasOne("ReDoProject.Domain.Entities.Instrument", "Instrument")
                         .WithMany()
@@ -393,8 +443,6 @@ namespace ReDoProject.Persistence.Migrations
 
             modelBuilder.Entity("ReDoProject.Domain.Entities.Customer", b =>
                 {
-                    b.Navigation("Basket");
-
                     b.Navigation("FavBrands");
 
                     b.Navigation("FavInstruments");

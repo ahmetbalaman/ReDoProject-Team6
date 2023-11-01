@@ -1,51 +1,71 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewData["Title"] - ReDoProject.MVC</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/ReDoProject.MVC.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/ReDoProject.MVC.styles.css" asp-append-version="true">
+    <style>
+        /* Arka plan rengi siyah, yazı rengi kırmızı olarak ayarla */
+        body {
+            background-color: black;
+            color: red;
+        }
+
+        /* Yatay menüdeki yazıları kırmızı yap */
+        .navbar-nav .nav-item .nav-link {
+            color: red;
+        }
+
+            /* Hover ile parlatma efekti ekle */
+            .navbar-nav .nav-item .nav-link:hover {
+                color: white; /* Hover durumunda yazı rengi beyaz olsun */
+                background-color: red; /* Hover durumunda arka plan rengi kırmızı olsun */
+                transition: background-color 0.3s, color 0.3s; /* Geçiş efekti ekleyin */
+            }
+    </style>
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">ReDoProject.MVC</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="Instrument" asp-action="Index">ReDoProject.MVC</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Brand" asp-action="Index">Show Brand</a>
+                            <a class="nav-link" asp-area="" asp-controller="Brand" asp-action="Index">Show Brand</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Brand" asp-action="Add">Add Brand</a>
+                            <a class="nav-link" asp-area="" asp-controller="Brand" asp-action="Add">Add Brand</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Instrument" asp-action="Index">Show Instruments</a>
+                            <a class="nav-link" asp-area="" asp-controller="Instrument" asp-action="Index">Show Instruments</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Instrument" asp-action="Add">Add Instruments</a>
+                            <a class="nav-link" asp-area="" asp-controller="Instrument" asp-action="Add">Add Instruments</a>
                         </li>
-                      
-
                         @if (Context.User.Identity.IsAuthenticated)
                         {
-                            <a asp-action="Index" asp-controller="Account" class="nav-link">My Accounts</a>
-                            <a asp-action="Logout" asp-controller="Account" class="nav-link">Log Out</a>
-                        }
-                        else
-                        {
-                            <a asp-action="Login" asp-controller="Account" class="nav-link">Giriş Yap</a>
-                            <a asp-action="Register" asp-controller="Account" class="nav-link">Kaydol</a>
-                        }
 
-
-                    </ul>
+                            <li class="nav-item">
+                                <a asp-action="Index" asp-controller="Account" class="nav-link">My Accounts</a>
+                            </li>
+                            <li class="nav-item">
+                                <a asp-action="Logout" asp-controller="Account" class="nav-link">Log Out</a>
+                            </li>
+                                }
+                                else
+                                {
+                                <a asp-action="Login" asp-controller="Account" class="nav-link">Giriş Yap</a>
+                                <a asp-action="Register" asp-controller="Account" class="nav-link">Kaydol</a>
+                                }
+                        </ul>
                 </div>
             </div>
         </nav>
@@ -55,17 +75,14 @@
             @RenderBody()
         </main>
     </div>
-
-    <footer class="border-top footer text-muted">
+    <footer class="border-top footer">
         <div class="container">
             &copy; 2023 - ReDoProject.MVC - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
-
-

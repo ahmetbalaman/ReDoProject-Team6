@@ -10,8 +10,8 @@ namespace ReDoProject.Persistence.Contexts
         public DbSet<Instrument> Instruments { get; set; }
         public DbSet<Brand> Brands { get; set; }
         public DbSet<Customer> Customers { get; set; }
-        public DbSet<Basket> Baskets { get; set; }
-        public DbSet<OrderedInstrument> OrderedInstruments { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<Basket> Baskets{ get; set; }
         public DbSet<MyLogger> Logs { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

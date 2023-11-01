@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using ReDoProject.Persistence.Contexts;
@@ -11,9 +12,11 @@ using ReDoProject.Persistence.Contexts;
 namespace ReDoProject.Persistence.Migrations
 {
     [DbContext(typeof(ReDoMusicDbContext))]
-    partial class ReDoMusicDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231101072346_mig_1_create")]
+    partial class mig_1_create
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -51,7 +54,7 @@ namespace ReDoProject.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Baskets");
+                    b.ToTable("Basket");
                 });
 
             modelBuilder.Entity("ReDoProject.Domain.Entities.Brand", b =>
@@ -324,7 +327,7 @@ namespace ReDoProject.Persistence.Migrations
 
                     b.HasIndex("OrderedBasketId");
 
-                    b.ToTable("Orders");
+                    b.ToTable("Baskets");
                 });
 
             modelBuilder.Entity("ReDoProject.Domain.Entities.OrderedInstrument", b =>
@@ -369,7 +372,7 @@ namespace ReDoProject.Persistence.Migrations
 
                     b.HasIndex("InstrumentId");
 
-                    b.ToTable("OrderedInstrument");
+                    b.ToTable("OrderedInstruments");
                 });
 
             modelBuilder.Entity("ReDoProject.Domain.Entities.Brand", b =>

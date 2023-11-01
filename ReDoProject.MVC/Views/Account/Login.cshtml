@@ -1,12 +1,13 @@
 ﻿@{
+
+
     ViewData["Title"] = "Login";
 }
 @model Customer
-
     <div class="container mt-5">
         <div class="row">
             <div class="col-md-6 offset-md-3">
-                <h2 class="text-center mb-4">Login</h2>
+                <h2 class="text-center mb-4">@TempData["Error"]</h2>
                 <form asp-controller="Account" asp-action="Login" method="post">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     <div class="form-group">

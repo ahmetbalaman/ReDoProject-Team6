@@ -24,11 +24,14 @@ namespace ReDoProject.MVC.Controllers
 
         public IActionResult Index() //All Instruments will be shown
         {
+         
             try
             {
                 String id = User.FindFirst(ClaimTypes.UserData)?.Value;
+
                 Console.WriteLine(id);
-                Customer currentCustomer = _dbContext.Customers.FirstOrDefault(x => x.Id.ToString() == id);
+            //    Customer currentCustomer = _dbContext.Customers.FirstOrDefault(x => x.Id.ToString() == id);
+                TempData["CurrentCustomerId"] = id; // currentCustomer'ı TempData'ye sakla
 
             }
             catch
@@ -45,7 +48,6 @@ namespace ReDoProject.MVC.Controllers
 
 
         [Authorize(Policy = "AdminPolicy")]
-        //[Authorize(Policy = "CustomerPolicy")]
         [HttpGet]
         public IActionResult Add()
         {
@@ -54,6 +56,7 @@ namespace ReDoProject.MVC.Controllers
             return View(brands);
         }
 
+        [Authorize(Policy = "AdminPolicy")]
         [HttpPost]
         public IActionResult Add(string name, string description, string brandId, string price, string barcode, string pictureUrl)
         {
@@ -90,6 +93,7 @@ namespace ReDoProject.MVC.Controllers
             return RedirectToAction("add");
         }
 
+
         [HttpGet]
         [Route("[controller]/[action]/{id}")]
         public IActionResult Inspect(string id)
@@ -98,10 +102,39 @@ namespace ReDoProject.MVC.Controllers
             return View(instrument);
         }
         [HttpGet]
-        [Route("[controller]/[action]/{id}")]
-        public IActionResult AddBasket(string id)
+        public IActionResult AddBasket()
         {
-            var instrument = _dbContext.Instruments.FirstOrDefault(x => x.Id == Guid.Parse(id));
+            return View();
+
+        }
+
+        [HttpPost]
+        
+        public IActionResult AddBasket(String Id)
+        {
+            Console.WriteLine(Id);
+            try
+            {
+                var currentCustomerId = User.FindFirst(ClaimTypes.UserData)?.Value;
+                Instrument instrument = _dbContext.Instruments.FirstOrDefault(x => x.Id == Guid.Parse(Id));
+                
+                Customer currentCustomer = _dbContext.Customers.FirstOrDefault(x => x.Id== Guid.Parse(currentCustomerId));
+                OrderedInstrument ordered = new OrderedInstrument()
+                {
+                    Instrument = instrument,
+                    Quantity = 1
+                };
+                currentCustomer.Basket = new Basket();
+                currentCustomer.Basket.OrderedInstruments = new List<OrderedInstrument>();
+                currentCustomer.Basket.OrderedInstruments.Add(ordered);
+                _dbContext.SaveChanges();
+
+            }
+            catch
+            {
+                return Redirect("/Instruments");
+            }
+            
 
             return Redirect("/Account");
 

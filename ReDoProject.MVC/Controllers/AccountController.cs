@@ -36,7 +36,7 @@ namespace ReDoProject.MVC.Controllers
 
         public IActionResult Login()
         {
-            
+            TempData["Error"] = "Login";
             return View();
         }
         [HttpPost]
@@ -44,7 +44,7 @@ namespace ReDoProject.MVC.Controllers
         {
             try
             {
-                Customer customer = _context.Customers.FirstOrDefault(x => x.Email == email && x.Password == password) as Customer;
+                Customer customer = _context.Customers.FirstOrDefault(x => x.Email == email.ToLower() && x.Password == password) as Customer;
                 if(customer == null)
                 {
                     TempData["Error"] = "Acces Denied";
@@ -57,6 +57,7 @@ namespace ReDoProject.MVC.Controllers
                       //  new Claim(ClaimTypes.MobilePhone, customer.PhoneNumber),
                       //  new Claim(ClaimTypes.Email, customer.Email),
                         new Claim(ClaimTypes.Name, customer.Name),
+
                         new Claim(ClaimTypes.Role, customer.Role.ToString()),
                     };
                     var userIdentitiy = new ClaimsIdentity(claims,"Login");
@@ -85,7 +86,7 @@ namespace ReDoProject.MVC.Controllers
         [HttpGet]
         public IActionResult Register()
         {
-
+            TempData["Error"] = "Register";
             return View();
         }
 
@@ -98,6 +99,7 @@ namespace ReDoProject.MVC.Controllers
             {
                 try
                 {
+                    model.Email = model.Email.ToLower();
                     _context.Customers.Add(model);
                     _context.SaveChanges();
                     

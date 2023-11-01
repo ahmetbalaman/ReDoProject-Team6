@@ -10,7 +10,25 @@
     <li>@Model.Password</li>
     <li>@Model.Id</li>
 
+    <li>@Context.User.Identity.
+    <li>
 
+    <li>@Context.User.Identity.Name</li>
+
+    <li>@Context.User.Identities.ToString()</li>
+
+    <li>@Context.User.Identity.Name</li>
+    @if (User.IsInRole("Admin"))
+    {
+        <!-- Yalnızca admin rolüne sahip kullanıcılara gösterilecek içerik -->
+        <div>
+            <h2>Admin Paneli</h2>
+            <!-- Diğer admin özel içerikleri burada eklenebilir -->
+        </div>
+    }
+
+    <li>@Context.User.Identity.AuthenticationType</li>
+    <h1>@Model.Basket.OrderedInstruments.FirstOrDefault().Instrument</h1>
     <h1> Sepetiniz ::</h1>
 
     <h3> @Model.Basket</h3>

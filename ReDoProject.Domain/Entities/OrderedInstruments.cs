@@ -8,7 +8,9 @@ namespace ReDoProject.Domain.Entities
         {
             public Instrument Instrument { get; set; }
             public int Quantity { get; set; }
-        }
+
+       
+    }
     
 }
 

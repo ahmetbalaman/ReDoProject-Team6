@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using ReDoProject.Domain.Entities;
 using ReDoProject.Persistence.Contexts;
 
@@ -23,12 +24,14 @@ namespace ReDoProject.MVC.Controllers
             return View(brands);
         }
 
+        [Authorize(Policy = "AdminPolicy")]
         [HttpGet]
         public IActionResult Add()
         {
             return View();
         }
 
+        [Authorize(Policy = "AdminPolicy")]
         [HttpPost]
         public IActionResult Add(string brandName, string brandDisplayingText, string brandAddress)
         {
@@ -50,6 +53,7 @@ namespace ReDoProject.MVC.Controllers
             return View();
         }
 
+        [Authorize(Policy = "AdminPolicy")]
         [Route("[controller]/[action]/{id}")]
         public IActionResult Delete(string id)
         {

@@ -1,44 +1,9 @@
 ﻿<Properties StartupConfiguration="{E26B4475-4C81-4815-A0DB-16A533CAB0B4}|https">
+  <MonoDevelop.Ide.ItemProperties.Presentation.ReDoProject.API PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
   <DisabledProjects>
     <String>ReDoProject.MVC/ReDoProject.API/ReDoProject.API.csproj</String>
   </DisabledProjects>
-  <MonoDevelop.Ide.ItemProperties.Presentation.ReDoProject.API PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="ReDoProject.MVC/Controllers/InstrumentController.cs">
-    <Files>
-      <File FileName="ReDoProject.Persistence/Contexts/ReDoMusicDbContext.cs" Line="19" Column="26" />
-      <File FileName="ReDoProject.MVC/Controllers/InstrumentController.cs" Line="47" Column="9" />
-      <File FileName="ReDoProject.Domain/ExampleData.cs" Line="10" Column="24" />
-      <File FileName="../../../../usr/local/share/dotnet/sdk/7.0.310/Microsoft.Common.CurrentVersion.targets" />
-      <File FileName="ReDoProject.MVC/Controllers/BrandController.cs" />
-      <File FileName="ReDoProject.Persistence/Migrations/20231031221331_mig_1.cs" Line="1" Column="1" />
-      <File FileName="ReDoProject.MVC/Program.cs" Line="16" Column="42" />
-    </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="ReDoProject">
-            <Node name="NuGet.Config files" expanded="True" />
-            <Node name="Core" expanded="True">
-              <Node name="ReDoProject.Domain" expanded="True" />
-            </Node>
-            <Node name="Presentation" expanded="True">
-              <Node name="ReDoProject.MVC">
-                <Node name="Controllers">
-                  <Node name="InstrumentController.cs" selected="True" />
-                </Node>
-                <Node name="Views" expanded="True" />
-              </Node>
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
-  </MonoDevelop.Ide.Workbench>
   <MultiItemStartupConfigurations>
     <MultiItemSolutionRunConfiguration Id="asd" Name="asd">
       <Items>
@@ -47,5 +12,50 @@
       </Items>
     </MultiItemSolutionRunConfiguration>
   </MultiItemStartupConfigurations>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.ItemProperties.Presentation.ReDoProject.MVC PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="ReDoProject.Persistence/Contexts/ReDoMusicDbContext.cs">
+    <Files>
+      <File FileName="ReDoProject.Persistence/Contexts/ReDoMusicDbContext.cs" Line="26" Column="1" />
+      <File FileName="ReDoProject.MVC/Controllers/InstrumentController.cs" Line="47" Column="9" />
+      <File FileName="ReDoProject.Domain/ExampleData.cs" />
+      <File FileName="../../../../usr/local/share/dotnet/sdk/7.0.310/Microsoft.Common.CurrentVersion.targets" />
+      <File FileName="ReDoProject.MVC/Controllers/BrandController.cs" />
+      <File FileName="ReDoProject.MVC/Program.cs" />
+      <File FileName="ReDoProject.Domain/Entities/Customer.cs" Line="7" Column="60" />
+      <File FileName="ReDoProject.Domain/Entities/Basket.cs" Line="9" Column="41" />
+      <File FileName="ReDoProject.Domain/Entities/OrderedInstruments.cs" Line="14" Column="1" />
+      <File FileName="ReDoProject.Domain/Entities/Basket.cs" Line="8" Column="30" />
+      <File FileName="ReDoProject.Domain/Entities/Person.cs" Line="8" Column="38" />
+      <File FileName="ReDoProject.Domain/Entities/Instrument.cs" Line="1" Column="1" />
+      <File FileName="ReDoProject.Persistence/Migrations/20231101072041_mig_2_changes.cs" Line="1" Column="1" />
+      <File FileName="ReDoProject.Persistence/Migrations/20231101072041_mig_2_changes.Designer.cs" Line="1" Column="1" />
+      <File FileName="ReDoProject.Persistence/Migrations/20231101072346_mig_1_create.cs" Line="1" Column="1" />
+      <File FileName="ReDoProject.Persistence/Migrations/20231101072346_mig_1_create.Designer.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="ReDoProject">
+            <Node name="NuGet.Config files" expanded="True" />
+            <Node name="Infrastructure">
+              <Node name="ReDoProject.Persistence" expanded="True">
+                <Node name="Contexts" expanded="True" />
+                <Node name="Migrations" selected="True" />
+              </Node>
+            </Node>
+            <Node name="Presentation" expanded="True">
+              <Node name="ReDoProject.MVC" expanded="True">
+                <Node name="Controllers" expanded="True" />
+                <Node name="Views" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
 </Properties>

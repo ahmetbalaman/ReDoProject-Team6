@@ -11,7 +11,10 @@
                 <h2 class="my-3">@Model.Name</h2>
                 <p>@Model.Description</p>
                 <p>Price: $@Model.Price</p>
-                <button href="/instrument/AddBasket/@Model.Id" class="btn btn-outline-success">Add Basket</button>
+                <form asp-controller="Instrument" asp-action="AddBasket" method="post">
+                    <input type="hidden" asp-for="@Model.Id" name="id" /> <!-- Id'yi gizli bir alan olarak ekleyin -->
+                    <button type="submit" asp-for="@Model.Id" class="btn btn-outline-success">Add Basket</button>
+                </form>
             </div>
         </div>
     </div>
