@@ -5,16 +5,180 @@
       "PackagePath": "staticwebassets/ReDoProject.MVC.bundle.scp.css"
     },
     {
+      "Id": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.MVC/wwwroot/.gitattributes",
+      "PackagePath": "staticwebassets/.gitattributes"
+    },
+    {
+      "Id": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.MVC/wwwroot/README.md",
+      "PackagePath": "staticwebassets/README.md"
+    },
+    {
+      "Id": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.MVC/wwwroot/blank.html",
+      "PackagePath": "staticwebassets/blank.html"
+    },
+    {
+      "Id": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.MVC/wwwroot/checkout.html",
+      "PackagePath": "staticwebassets/checkout.html"
+    },
+    {
+      "Id": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.MVC/wwwroot/css/bootstrap.min.css",
+      "PackagePath": "staticwebassets/css/bootstrap.min.css"
+    },
+    {
+      "Id": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.MVC/wwwroot/css/font-awesome.min.css",
+      "PackagePath": "staticwebassets/css/font-awesome.min.css"
+    },
+    {
+      "Id": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.MVC/wwwroot/css/nouislider.min.css",
+      "PackagePath": "staticwebassets/css/nouislider.min.css"
+    },
+    {
       "Id": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.MVC/wwwroot/css/site.css",
       "PackagePath": "staticwebassets/css/site.css"
+    },
+    {
+      "Id": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.MVC/wwwroot/css/slick-theme.css",
+      "PackagePath": "staticwebassets/css/slick-theme.css"
+    },
+    {
+      "Id": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.MVC/wwwroot/css/slick.css",
+      "PackagePath": "staticwebassets/css/slick.css"
+    },
+    {
+      "Id": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.MVC/wwwroot/css/style.css",
+      "PackagePath": "staticwebassets/css/style.css"
     },
     {
       "Id": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.MVC/wwwroot/favicon.ico",
       "PackagePath": "staticwebassets/favicon.ico"
     },
     {
+      "Id": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.MVC/wwwroot/fonts/FontAwesome.otf",
+      "PackagePath": "staticwebassets/fonts/FontAwesome.otf"
+    },
+    {
+      "Id": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.MVC/wwwroot/fonts/fontawesome-webfont.eot",
+      "PackagePath": "staticwebassets/fonts/fontawesome-webfont.eot"
+    },
+    {
+      "Id": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.MVC/wwwroot/fonts/fontawesome-webfont.svg",
+      "PackagePath": "staticwebassets/fonts/fontawesome-webfont.svg"
+    },
+    {
+      "Id": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.MVC/wwwroot/fonts/fontawesome-webfont.ttf",
+      "PackagePath": "staticwebassets/fonts/fontawesome-webfont.ttf"
+    },
+    {
+      "Id": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.MVC/wwwroot/fonts/fontawesome-webfont.woff",
+      "PackagePath": "staticwebassets/fonts/fontawesome-webfont.woff"
+    },
+    {
+      "Id": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.MVC/wwwroot/fonts/fontawesome-webfont.woff2",
+      "PackagePath": "staticwebassets/fonts/fontawesome-webfont.woff2"
+    },
+    {
+      "Id": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.MVC/wwwroot/fonts/slick.eot",
+      "PackagePath": "staticwebassets/fonts/slick.eot"
+    },
+    {
+      "Id": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.MVC/wwwroot/fonts/slick.svg",
+      "PackagePath": "staticwebassets/fonts/slick.svg"
+    },
+    {
+      "Id": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.MVC/wwwroot/fonts/slick.ttf",
+      "PackagePath": "staticwebassets/fonts/slick.ttf"
+    },
+    {
+      "Id": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.MVC/wwwroot/fonts/slick.woff",
+      "PackagePath": "staticwebassets/fonts/slick.woff"
+    },
+    {
+      "Id": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.MVC/wwwroot/img/hotdeal.png",
+      "PackagePath": "staticwebassets/img/hotdeal.png"
+    },
+    {
+      "Id": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.MVC/wwwroot/img/logo.png",
+      "PackagePath": "staticwebassets/img/logo.png"
+    },
+    {
+      "Id": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.MVC/wwwroot/img/product01.png",
+      "PackagePath": "staticwebassets/img/product01.png"
+    },
+    {
+      "Id": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.MVC/wwwroot/img/product02.png",
+      "PackagePath": "staticwebassets/img/product02.png"
+    },
+    {
+      "Id": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.MVC/wwwroot/img/product03.png",
+      "PackagePath": "staticwebassets/img/product03.png"
+    },
+    {
+      "Id": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.MVC/wwwroot/img/product04.png",
+      "PackagePath": "staticwebassets/img/product04.png"
+    },
+    {
+      "Id": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.MVC/wwwroot/img/product05.png",
+      "PackagePath": "staticwebassets/img/product05.png"
+    },
+    {
+      "Id": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.MVC/wwwroot/img/product06.png",
+      "PackagePath": "staticwebassets/img/product06.png"
+    },
+    {
+      "Id": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.MVC/wwwroot/img/product07.png",
+      "PackagePath": "staticwebassets/img/product07.png"
+    },
+    {
+      "Id": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.MVC/wwwroot/img/product08.png",
+      "PackagePath": "staticwebassets/img/product08.png"
+    },
+    {
+      "Id": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.MVC/wwwroot/img/product09.png",
+      "PackagePath": "staticwebassets/img/product09.png"
+    },
+    {
+      "Id": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.MVC/wwwroot/img/shop01.png",
+      "PackagePath": "staticwebassets/img/shop01.png"
+    },
+    {
+      "Id": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.MVC/wwwroot/img/shop02.png",
+      "PackagePath": "staticwebassets/img/shop02.png"
+    },
+    {
+      "Id": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.MVC/wwwroot/img/shop03.png",
+      "PackagePath": "staticwebassets/img/shop03.png"
+    },
+    {
+      "Id": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.MVC/wwwroot/index.html",
+      "PackagePath": "staticwebassets/index.html"
+    },
+    {
+      "Id": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.MVC/wwwroot/js/bootstrap.min.js",
+      "PackagePath": "staticwebassets/js/bootstrap.min.js"
+    },
+    {
+      "Id": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.MVC/wwwroot/js/jquery.min.js",
+      "PackagePath": "staticwebassets/js/jquery.min.js"
+    },
+    {
+      "Id": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.MVC/wwwroot/js/jquery.zoom.min.js",
+      "PackagePath": "staticwebassets/js/jquery.zoom.min.js"
+    },
+    {
+      "Id": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.MVC/wwwroot/js/main.js",
+      "PackagePath": "staticwebassets/js/main.js"
+    },
+    {
+      "Id": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.MVC/wwwroot/js/nouislider.min.js",
+      "PackagePath": "staticwebassets/js/nouislider.min.js"
+    },
+    {
       "Id": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.MVC/wwwroot/js/site.js",
       "PackagePath": "staticwebassets/js/site.js"
+    },
+    {
+      "Id": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.MVC/wwwroot/js/slick.min.js",
+      "PackagePath": "staticwebassets/js/slick.min.js"
     },
     {
       "Id": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.MVC/wwwroot/lib/bootstrap/LICENSE",
@@ -243,6 +407,34 @@
     {
       "Id": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.MVC/wwwroot/lib/jquery/dist/jquery.min.map",
       "PackagePath": "staticwebassets/lib/jquery/dist/jquery.min.map"
+    },
+    {
+      "Id": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.MVC/wwwroot/product.html",
+      "PackagePath": "staticwebassets/product.html"
+    },
+    {
+      "Id": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.MVC/wwwroot/screenshot/Checkout.png",
+      "PackagePath": "staticwebassets/screenshot/Checkout.png"
+    },
+    {
+      "Id": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.MVC/wwwroot/screenshot/Index.png",
+      "PackagePath": "staticwebassets/screenshot/Index.png"
+    },
+    {
+      "Id": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.MVC/wwwroot/screenshot/Product.png",
+      "PackagePath": "staticwebassets/screenshot/Product.png"
+    },
+    {
+      "Id": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.MVC/wwwroot/screenshot/Regular.png",
+      "PackagePath": "staticwebassets/screenshot/Regular.png"
+    },
+    {
+      "Id": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.MVC/wwwroot/screenshot/Store.png",
+      "PackagePath": "staticwebassets/screenshot/Store.png"
+    },
+    {
+      "Id": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.MVC/wwwroot/store.html",
+      "PackagePath": "staticwebassets/store.html"
     },
     {
       "Id": "obj/Debug/net7.0/staticwebassets/msbuild.ReDoProject.MVC.Microsoft.AspNetCore.StaticWebAssets.props",

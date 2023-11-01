@@ -1,15 +1,17 @@
 ﻿using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+
 //Authtenticationa Cookie ekleme ve şemayı düzenleme
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(
     x => {
-        x.LoginPath = "/Login";
+        x.LoginPath = "/Account/Login";
         x.LogoutPath = "/Instrument";
 
         // yetkisiz işlem erişim yaparsa bu sayfaya gitsin.
@@ -39,7 +41,10 @@ builder.Services.AddAuthorization(
 
     });
 
+
 var app = builder.Build();
+
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
