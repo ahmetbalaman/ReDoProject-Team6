@@ -14,6 +14,7 @@ namespace ReDoProject.MVC.Controllers
             _dbContext = new();
         }
 
+
         [HttpGet]
         public IActionResult Index()
         {

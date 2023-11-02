@@ -10,6 +10,7 @@ namespace ReDoProject.Domain.Entities
         {
             OrderedInstruments = new();
         }
+
     }
 }
 

@@ -3,12 +3,23 @@ using ReDoProject.Domain.Common;
 
 namespace ReDoProject.Domain.Entities
 {
-	
-        public class Order:EntityBase<Guid>
+
+    public class Order : EntityBase<Guid>
+    {
+        public Basket OrderedBasket { get; set; }
+        public bool IsDelivered { get; set; }
+
+        public Order()
         {
-            public Basket OrderedBasket { get; set; }
-            public bool IsDelivered { get; set; }
+            OrderedBasket = new();
         }
-    
+
+        public Order(Basket orderedBasket, bool isDelivered)
+        {
+            OrderedBasket = orderedBasket;
+            IsDelivered = isDelivered;
+        }
+    }
+
 }
 

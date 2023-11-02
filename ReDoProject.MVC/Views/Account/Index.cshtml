@@ -1,41 +1,55 @@
 ﻿@{
-    ViewData["Title"] = "Login";
+    ViewData["Title"] = "My Account";
 }
 @model Customer
-<h1> MY ACCOUNT PAGE</h1>
-<ul>
-
-    <li>@Model.Name</li>
-    <li>@Model.Surname</li>
-    <li>@Model.Password</li>
-    <li>@Model.Id</li>
-
-    <li>@Context.User.Identity.
-    <li>
-
-    <li>@Context.User.Identity.Name</li>
-
-    <li>@Context.User.Identities.ToString()</li>
-
-    <li>@Context.User.Identity.Name</li>
-    @if (User.IsInRole("Admin"))
-    {
-        <!-- Yalnızca admin rolüne sahip kullanıcılara gösterilecek içerik -->
-        <div>
-            <h2>Admin Paneli</h2>
-            <!-- Diğer admin özel içerikleri burada eklenebilir -->
+<div class="container">
+    <div class="row">
+        <!-- Hesap bilgilerini göstermek için sağ sütun -->
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Hesap Bilgilerim</h5>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Ad: @Model.Name</li>
+                        <li class="list-group-item">Soyad: @Model.Surname</li>
+                        <li class="list-group-item">Kullanıcı Adı: @Context.User.Identity.Name</li>
+                        <li class="list-group-item">Kimlik Doğrulama Türü: @Context.User.Identity.AuthenticationType</li>
+                    </ul>
+                    <a href="Logout" class="btn btn-danger">Çıkış Yap</a>
+                </div>
+            </div>
         </div>
-    }
 
-    <li>@Context.User.Identity.AuthenticationType</li>
+        <!-- Siparişleri göstermek için sol sütun -->
+        <div class="col-md-8">
+            <h1 class="mb-4">Siparişlerim</h1>
+            @if (Model.Orders.Count > 0)
+            {
+                @foreach (var order in Model.Orders)
+                    {
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">Sipariş No: @order.Id</h5>
+                            <p class="card-text">Sipariş Tarihi: @order.CreatedOn</p>
+                            <p class="card-text">Ürünler: @order.OrderedBasket.OrderedInstruments.ToList()</p>
+                            <p class="card-text">Toplam Tutar: @{
+                                decimal totalPrice = 0;
+                                foreach (var instrument in order.OrderedBasket.OrderedInstruments)
+                                {
+                                    totalPrice += (decimal)instrument.Instrument.Price;
+                                }
+                                Console.WriteLine(totalPrice);
+                                    }</p>
 
-    <h1> Sepetiniz ::</h1>
+</div>
 
-    <h3> @Model.Basket</h3>
-
-</ul>
-
-                        
-
-
-                          
+</div>
+                }
+            }
+            else
+            {
+                <p>Henüz siparişiniz bulunmamaktadır.</p>
+            }
+        </div>
+    </div>
+</div>

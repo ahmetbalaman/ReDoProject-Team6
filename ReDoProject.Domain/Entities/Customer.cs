@@ -9,6 +9,11 @@ namespace ReDoProject.Domain.Entities
         public List<Order>? Orders { get; set; }
         public Basket? Basket { get; set; }
 
+        public Customer()
+        {
+            Orders = new();
+        }
+
     }
 }
 

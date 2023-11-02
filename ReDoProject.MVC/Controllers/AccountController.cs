@@ -5,6 +5,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using ReDoProject.Domain.Entities;
 using ReDoProject.Persistence.Contexts;
 
@@ -14,37 +15,96 @@ namespace ReDoProject.MVC.Controllers
 {
     public class AccountController : Controller
     {
-        private readonly ReDoMusicDbContext _context;
-
+        private Customer currentCustomer;
+        private readonly ReDoMusicDbContext _dbContext;
+       
         public AccountController()
         {
-            _context = new ReDoMusicDbContext();
+            _dbContext = new ReDoMusicDbContext();
         }
+
+        public Customer GetCustomer()
+        {
+            if (currentCustomer is null)
+            {
+                var currentCustomerId = User.FindFirst(ClaimTypes.UserData)?.Value;
+                return _dbContext.Customers.Include(x => x.Basket).ThenInclude(x => x.OrderedInstruments).ThenInclude(x => x.Instrument).FirstOrDefault(x => x.Id == Guid.Parse(currentCustomerId));
+            }
+            return currentCustomer;
+
+        }
+
+
 
         // GET: /<controller>/
         [HttpGet]
         public IActionResult Index()
         {
-            String id = User.FindFirst(ClaimTypes.UserData)?.Value;
-            Console.WriteLine($" {id} account controller");
-            Customer currentCustomer = _context.Customers.FirstOrDefault(x => x.Id.ToString() == id);
-
+            Customer currentCustomer = GetCustomer();
+            Console.WriteLine(currentCustomer.Orders);
+            Console.WriteLine(currentCustomer.Orders.Count);
+            Console.WriteLine(currentCustomer.Orders);
             return View(currentCustomer);
         }
         [HttpGet]
         public IActionResult Basket()
         {
-            String id = User.FindFirst(ClaimTypes.UserData)?.Value;
-            Console.WriteLine($" {id} account controller");
-            Customer currentCustomer = _context.Customers.FirstOrDefault(x => x.Id.ToString() == id);
-            if(currentCustomer.Basket.OrderedInstruments is null)
+
+            Customer currentCustomer = GetCustomer();
+            var currentCustomerId = User.FindFirst(ClaimTypes.UserData)?.Value;
+            Basket basket = _dbContext.Baskets.Include(x => x.OrderedInstruments).ThenInclude(x=> x.Instrument).FirstOrDefault(x=> x.Id == currentCustomer.Basket.Id);
+
+            foreach(var model in basket.OrderedInstruments)
             {
-                return View(new OrderedInstrument());
+                Console.WriteLine(model.Quantity);
             }
 
-            return View(currentCustomer.Basket.OrderedInstruments);
+            return View(basket);
         }
+        [HttpGet]
+        [Route("[controller]/[action]/{id}")]
+        public IActionResult RemoveBasket(string id)
+        {
+            currentCustomer = GetCustomer();
+            Basket basket = _dbContext.Baskets
+                .Include(x => x.OrderedInstruments)
+                    .FirstOrDefault(x => x.Id == currentCustomer.Basket.Id);
 
+
+            var removeBasket = basket.OrderedInstruments.FirstOrDefault(x => x.Id == Guid.Parse(id));
+
+            if (removeBasket != null)
+            {
+                basket.OrderedInstruments.Remove(removeBasket);
+                _dbContext.SaveChanges();
+            }
+            //return View();
+            return Redirect("/Account/Basket");
+        }
+        [HttpGet]
+        [Route("[controller]/[action]/{id}")]
+        public IActionResult OrderBasket(string id)
+        {
+           //BURAYI KESİNLİKLE İNCELE REFERANS SİLMESİ YAŞANIYOR BASKETLERDE.
+            Customer currentCustomer = GetCustomer();
+            Basket basket = _dbContext.Baskets
+                .Include(x => x.OrderedInstruments)
+                    .FirstOrDefault(x => x.Id == currentCustomer.Basket.Id);
+            currentCustomer.Orders.Add(new Order(basket, false));
+
+
+            //REFERANS SİLMESİ YAPMA KALSIN BURDA.
+            basket.OrderedInstruments.Clear();
+            basket = new();
+            _dbContext.SaveChanges();
+
+
+
+
+
+            return View();
+            return Redirect("/Account/Index");
+        }
 
         public IActionResult Login()
         {
@@ -56,7 +116,7 @@ namespace ReDoProject.MVC.Controllers
         {
             try
             {
-                Customer customer = _context.Customers.FirstOrDefault(x => x.Email == email.ToLower() && x.Password == password) as Customer;
+                Customer customer = _dbContext.Customers.FirstOrDefault(x => x.Email == email.ToLower() && x.Password == password) as Customer;
                 if(customer == null)
                 {
                     TempData["Error"] = "Acces Denied";
@@ -112,8 +172,8 @@ namespace ReDoProject.MVC.Controllers
                 try
                 {
                     model.Email = model.Email.ToLower();
-                    _context.Customers.Add(model);
-                    _context.SaveChanges();
+                    _dbContext.Customers.Add(model);
+                    _dbContext.SaveChanges();
                     
 
                     return Redirect("/Account/Login");

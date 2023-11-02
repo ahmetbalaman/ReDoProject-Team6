@@ -10,6 +10,7 @@ namespace ReDoProject.Domain.Entities
             public int Quantity { get; set; }
 
        
+       
     }
     
 }

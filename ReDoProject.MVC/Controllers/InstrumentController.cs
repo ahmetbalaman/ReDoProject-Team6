@@ -19,13 +19,9 @@ namespace ReDoProject.MVC.Controllers
         public InstrumentController()
         {
             _dbContext = new();
-
-
-
-            
         }
 
-        public Customer CreateSession()
+        public Customer GetCustomer()
         {
             if(currentCustomer is null)
             {
@@ -123,7 +119,7 @@ namespace ReDoProject.MVC.Controllers
             try
             {
 
-                Customer currentCustomer = CreateSession();
+                Customer currentCustomer = GetCustomer();
                 Instrument instrument = _dbContext.Instruments.FirstOrDefault(x => x.Id == Guid.Parse(Id));
                 
                 
@@ -163,7 +159,7 @@ namespace ReDoProject.MVC.Controllers
             }
             
 
-            return Redirect("/Account");
+            return Redirect("/Account/Basket");
 
         }
     }
