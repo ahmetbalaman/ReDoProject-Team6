@@ -50,7 +50,7 @@ namespace ReDoProject.MVC.Controllers
             _dbContext.Brands.Add(brand);
 
             _dbContext.SaveChanges();
-
+            TempData["SuccessMessage"] = "Enstruman başarıyla eklendi.";
             return View();
         }
 

@@ -55,12 +55,17 @@ namespace ReDoProject.MVC.Controllers
            // _dbContext.SaveChanges();
             return View(products);
         }
-
+        public IActionResult ListByInstrumentType(InstrumentType instrumentType)
+        {
+            var instruments = _dbContext.Instruments.Where(i => i.Type == instrumentType).ToList();
+            return View(instruments);
+        }
 
         [Authorize(Policy = "AdminPolicy")]
         [HttpGet]
         public IActionResult Add()
         {
+            
             var brands = _dbContext.Brands.ToList();
 
             return View(brands);
@@ -99,7 +104,7 @@ namespace ReDoProject.MVC.Controllers
             _dbContext.Instruments.Add(instrument);
 
             _dbContext.SaveChanges();
-
+            TempData["SuccessMessage"] = "Enstruman başarıyla eklendi.";
             return RedirectToAction("add");
         }
 
@@ -180,5 +185,8 @@ namespace ReDoProject.MVC.Controllers
             }
             
         }
+
+     
+
     }
 }

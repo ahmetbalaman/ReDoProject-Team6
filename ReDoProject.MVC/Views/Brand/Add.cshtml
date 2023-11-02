@@ -1,5 +1,8 @@
 ﻿<h2>Add Brand</h2>
-
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+}
 <form method="post">
     <div class="mb-3 mt-3">
         <label class="form-label">Brand Name:</label>

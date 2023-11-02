@@ -1,5 +1,8 @@
 ﻿
 
+@using ReDoProject.Domain.Enums;
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -73,11 +76,11 @@
                 color: #000;
                 text-decoration: none;
             }
+
         .basket-container {
             display: flex;
             justify-content: center;
             align-items: center;
-     
         }
 
         .basket {
@@ -103,8 +106,6 @@
             align-items: center;
             font-size: 14px;
         }
-
-
     </style>
 </head>
 
@@ -123,7 +124,8 @@
     <!-- Header -->
     <header class="bg-primary py-4">
         <nav class="navbar navbar-expand-lg navbar-light container">
-            <a class="navbar-brand text-white" asp-area="" asp-controller="Instrument" asp-action="Index">ReDoProject.MVC</a>
+            <!-- Buraya bir logo alayım-->
+            <a class="navbar-brand text-white" asp-area="" asp-controller="Instrument" asp-action="Index"> Re Do Project</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -175,11 +177,35 @@
 
 
                 </ul>
-                
+
 
             </div>
         </nav>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                            <div class="navbar-nav">
+                                <a class="nav-item nav-link" href ="/Instrument"> All </a>
+                                @foreach (InstrumentType instrumentType in Enum.GetValues(typeof(InstrumentType)))
+                                {
+                                    <a class="nav-item nav-link" href="@Url.Action("ListByInstrumentType", new { instrumentType = instrumentType })">@instrumentType.GetDescription()</a>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </nav>
+
     </header>
+
 
     <!-- Main Content Container -->
     <div class="container mt-4">
