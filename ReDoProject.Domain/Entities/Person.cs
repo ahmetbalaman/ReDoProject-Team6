@@ -7,7 +7,7 @@ namespace ReDoProject.Domain.Entities
 {
 	public class Person:EntityBase<Guid>
 	{
-        [Required]
+        [Required(ErrorMessage ="Hop Kardeşim sen kimsin")]
         public string Name { get; set; }
         [Required]
         public string Surname { get; set; }

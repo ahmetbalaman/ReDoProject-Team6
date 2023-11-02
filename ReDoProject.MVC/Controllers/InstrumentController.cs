@@ -12,19 +12,32 @@ namespace ReDoProject.MVC.Controllers
    
     public class InstrumentController : Controller
     {
-        private readonly Customer currentCustomer;
+        private Customer currentCustomer;
         private readonly ReDoMusicDbContext _dbContext;
+
 
         public InstrumentController()
         {
             _dbContext = new();
 
+
+
+            
+        }
+
+        public Customer CreateSession()
+        {
+            if(currentCustomer is null)
+            {
+                var currentCustomerId = User.FindFirst(ClaimTypes.UserData)?.Value;
+                return _dbContext.Customers.Include(x => x.Basket).FirstOrDefault(x => x.Id == Guid.Parse(currentCustomerId));
+            }
+            return currentCustomer;
            
         }
 
         public IActionResult Index() //All Instruments will be shown
         {
-         
             try
             {
                 String id = User.FindFirst(ClaimTypes.UserData)?.Value;
@@ -68,19 +81,19 @@ namespace ReDoProject.MVC.Controllers
             }
 
 
-            Domain.Entities.Instrument instrument = new Domain.Entities.Instrument();
+            Instrument instrument = new Instrument();
 
 
-            instrument = new Domain.Entities.Instrument(){
+            instrument = new Instrument(){
                 Id = Guid.NewGuid(),
-               Name = "name",
-                Description = "description",
-                Barcode = "barcode",
+               Name = name,
+                Description = description,
+                Barcode = barcode,
                 Price = priceCorrect,
                 Color = new List<Domain.Enums.Color>(){Domain.Enums.Color.Black},
                 Brand = brand,
                 CreatedOn = DateTime.UtcNow,
-                PictureUrl = "pictureUrl",
+                PictureUrl = pictureUrl,
 
                Type = Domain.Enums.InstrumentType.AcousticPiano,
 
@@ -101,38 +114,33 @@ namespace ReDoProject.MVC.Controllers
             var instrument = _dbContext.Instruments.Where(x => x.Id == Guid.Parse(id)).FirstOrDefault();
             return View(instrument);
         }
+
         [HttpGet]
-        public IActionResult AddBasket()
-        {
-            return View();
-
-        }
-
-        [HttpPost]
         
         public IActionResult AddBasket(String Id)
         {
             Console.WriteLine(Id);
             try
             {
-                var currentCustomerId = User.FindFirst(ClaimTypes.UserData)?.Value;
+
+                Customer currentCustomer = CreateSession();
                 Instrument instrument = _dbContext.Instruments.FirstOrDefault(x => x.Id == Guid.Parse(Id));
                 
-                Customer currentCustomer = _dbContext.Customers.FirstOrDefault(x => x.Id== Guid.Parse(currentCustomerId));
+                
                 OrderedInstrument ordered = new OrderedInstrument()
                 {
                     Instrument = instrument,
                     Quantity = 1
                 };
-                currentCustomer.Basket = new Basket();
-                currentCustomer.Basket.OrderedInstruments = new List<OrderedInstrument>();
-                currentCustomer.Basket.OrderedInstruments.Add(ordered);
+                currentCustomer.Basket ??= new();
+              
+                currentCustomer.Basket.OrderedInstruments!.Add(ordered);
                 _dbContext.SaveChanges();
 
             }
             catch
             {
-                return Redirect("/Instruments");
+                return Redirect("/Instrument");
             }
             
 

@@ -59,11 +59,15 @@
                             <li class="nav-item">
                                 <a asp-action="Logout" asp-controller="Account" class="nav-link">Log Out</a>
                             </li>
-                                }
-                                else
-                                {
-                                <a asp-action="Login" asp-controller="Account" class="nav-link">Giriş Yap</a>
-                                <a asp-action="Register" asp-controller="Account" class="nav-link">Kaydol</a>
+                        }
+                        else
+                        {
+                    <li class="nav-item">
+                        <a asp-action="Login" asp-controller="Account" class="nav-link">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a asp-action="Register" asp-controller="Account" class="nav-link">Register</a>
+                    </li>
                                 }
                         </ul>
                 </div>
