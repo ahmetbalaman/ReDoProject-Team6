@@ -20,19 +20,42 @@
         <input type="text" class="form-control" placeholder="Enter Barcode" name="barcode">
     </div>
     <div class="mb-3">
-        <label class="form-label">Image:</label>
+        <label class="form-label">Image URL:</label>
         <input type="text" class="form-control" placeholder="Enter Barcode" name="pictureUrl">
     </div>
-    <br />
-    <select name="brandId">
-        @foreach (var brand in Model)
+    <div class="mb-3">
+        <label class="form-label">Color:</label>
+        @foreach (ReDoProject.Domain.Enums.Color color in Enum.GetValues(typeof(ReDoProject.Domain.Enums.Color)))
         {
-            <option value="@brand.Id">@brand.Name</option>
+            <div class="form-check -inline">
+                <input type="checkbox" class="form-check-input" id="@color" name="colors" value="@color">
+                <label class="form-check-label" for="@color">@color</label>
+            </div>
         }
-    </select>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Type:</label>
+        <select class="form-select" name="type">
+            @foreach (ReDoProject.Domain.Enums.InstrumentType type in Enum.GetValues(typeof(ReDoProject.Domain.Enums.InstrumentType)))
+            {
+                <option value="@type">@type</option>
+            }
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Brand Name:</label>
+        <select name="brandId">
+            @foreach (var brand in Model)
+            {
+                <option value="@brand.Id">@brand.Name</option>
+            }
+        </select>
+    </div>
     <br />
-    <br />
+   
 
 
     <button type="submit" class="btn btn-primary">Submit</button>
+    <br />
 </form> 

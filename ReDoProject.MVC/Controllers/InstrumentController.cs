@@ -6,6 +6,7 @@ using ReDoProject.Domain;
 using Microsoft.AspNetCore.Authorization;
 using ReDoProject.Domain.Entities;
 using System.Security.Claims;
+using ReDoProject.Domain.Enums;
 
 namespace ReDoProject.MVC.Controllers
 {
@@ -67,7 +68,7 @@ namespace ReDoProject.MVC.Controllers
 
         [Authorize(Policy = "AdminPolicy")]
         [HttpPost]
-        public IActionResult Add(string name, string description, string brandId, string price, string barcode, string pictureUrl)
+        public IActionResult Add(string name, string description, string brandId, string price, string barcode, string pictureUrl, List<Color> colors, InstrumentType type)
         {
             var brand = _dbContext.Brands.Where(x => x.Id == Guid.Parse(brandId)).FirstOrDefault();
             decimal priceCorrect = 0;
@@ -80,18 +81,18 @@ namespace ReDoProject.MVC.Controllers
             Instrument instrument = new Instrument();
 
 
-            instrument = new Instrument(){
+            instrument = new Instrument() {
                 Id = Guid.NewGuid(),
-               Name = name,
+                Name = name,
                 Description = description,
                 Barcode = barcode,
                 Price = priceCorrect,
-                Color = new List<Domain.Enums.Color>(){Domain.Enums.Color.Black},
+                Color = colors,
                 Brand = brand,
                 CreatedOn = DateTime.UtcNow,
                 PictureUrl = pictureUrl,
 
-               Type = Domain.Enums.InstrumentType.AcousticPiano,
+               Type = type,
 
             };
 
@@ -161,6 +162,23 @@ namespace ReDoProject.MVC.Controllers
 
             return Redirect("/Account/Basket");
 
+        }
+        [HttpGet]
+        [Route("[controller]/[action]/{id}")]
+        public IActionResult Delete(string id)
+        {
+            try
+            {
+                Instrument instrument = _dbContext.Instruments.FirstOrDefault(x => x.Id == Guid.Parse(id));
+                _dbContext.Instruments.Remove(instrument);
+                _dbContext.SaveChanges();
+                return Redirect("/Instrument/Index");
+            }
+            catch
+            {   
+                return Redirect($"/Instrument/Inspect/{id}");
+            }
+            
         }
     }
 }

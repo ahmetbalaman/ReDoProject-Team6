@@ -4,6 +4,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ReDoProject.Domain.Entities;
@@ -13,6 +14,7 @@ using ReDoProject.Persistence.Contexts;
 
 namespace ReDoProject.MVC.Controllers
 {
+   
     public class AccountController : Controller
     {
         private Customer currentCustomer;
@@ -37,6 +39,7 @@ namespace ReDoProject.MVC.Controllers
 
 
         // GET: /<controller>/
+        [Authorize(Policy = "CustomerPolicy")]
         [HttpGet]
         public IActionResult Index()
         {
@@ -46,10 +49,14 @@ namespace ReDoProject.MVC.Controllers
             Console.WriteLine(currentCustomer.Orders);
             return View(currentCustomer);
         }
+
+
+        [Authorize(Policy = "CustomerPolicy")]
         [HttpGet]
         public IActionResult Basket()
         {
 
+          
             Customer currentCustomer = GetCustomer();
             var currentCustomerId = User.FindFirst(ClaimTypes.UserData)?.Value;
             Basket basket = _dbContext.Baskets.Include(x => x.OrderedInstruments).ThenInclude(x=> x.Instrument).FirstOrDefault(x=> x.Id == currentCustomer.Basket.Id);
@@ -61,6 +68,8 @@ namespace ReDoProject.MVC.Controllers
 
             return View(basket);
         }
+
+
         [HttpGet]
         [Route("[controller]/[action]/{id}")]
         public IActionResult RemoveBasket(string id)

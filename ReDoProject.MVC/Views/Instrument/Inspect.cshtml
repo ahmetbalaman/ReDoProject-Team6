@@ -12,7 +12,8 @@
                 <h2 class="my-3">@Model.Name</h2>
                 <p>@Model.Description</p>
                 <p>Price: $@Model.Price</p>
-
+                @if (Context.User.Identity.IsAuthenticated)
+                    {<a type="submit" asp-route-id="@Model.Id" asp-controller="Instrument" asp-action="Delete" class="btn btn-outline-danger">Delete Product</a>}
                 <a type="submit" asp-route-id="@Model.Id" asp-controller="Instrument" asp-action="AddBasket" class="btn btn-outline-success">Add Basket</a>
 
             </div>

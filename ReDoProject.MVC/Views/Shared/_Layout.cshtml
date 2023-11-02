@@ -81,6 +81,7 @@
         }
 
         .basket {
+            color: red;
             position: relative;
         }
 
@@ -132,27 +133,35 @@
                     <li class="nav-item">
                         <a class="nav-link" asp-area="" asp-controller="Brand" asp-action="Index">Show Brand</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" asp-area="" asp-controller="Brand" asp-action="Add">Add Brand</a>
-                        @*   <a href="/Brand/Add">About</a>*@
 
-                    </li>
                     <li class="nav-item">
                         <a class="nav-link" asp-area="" asp-controller="Instrument" asp-action="Index">Show Instruments</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" asp-area="" asp-controller="Instrument" asp-action="Add">Add Instruments</a>
                     </li>
 
 
                     @if (Context.User.Identity.IsAuthenticated)
                     {
                         <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Instrument" asp-action="Add">Add Instruments</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Brand" asp-action="Add">Add Brand</a>
+                        </li>
+                        <li class="nav-item">
                             <a asp-action="Index" asp-controller="Account" class="nav-link">My Accounts</a>
                         </li>
                         <li class="nav-item">
                             <a asp-action="Logout" asp-controller="Account" class="nav-link">Log Out</a>
                         </li>
+                        <a href="/account/basket">
+                            <div class="basket-container">
+                                <div class="basket">
+                                    <i class="icon ion-ios-basket">Basket</i>
+                                    <span class="basket-count">3</span>
+                                </div>
+                            </div>
+                        </a>
                     }
                     else
                     {
@@ -163,14 +172,7 @@
                             <a asp-action="Register" asp-controller="Account" class="nav-link">Register</a>
                         </li>
                     }
-                    <a href="/account/basket">
-                        <div class="basket-container">
-                            <div class="basket">
-                                <i class="icon ion-ios-basket">Basket</i>
-                                <span class="basket-count">3</span>
-                            </div>
-                        </div>
-                    </a>
+
 
                 </ul>
                 

@@ -109,7 +109,7 @@ namespace ReDoProject.Domain
                 Price = 300.00m,
                 Color = new List<Color>() { Color.Gold },
                 Barcode = "TRMP456789",
-                PictureUrl = "https://m.media-amazon.com/images/I/71XiJcmLuGL._AC_UF1000,1000_QL80_.jpg",
+                PictureUrl = "  ",
                 Type = InstrumentType.Trumpet
             });
 
