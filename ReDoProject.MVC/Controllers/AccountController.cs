@@ -31,8 +31,20 @@ namespace ReDoProject.MVC.Controllers
 
             return View(currentCustomer);
         }
+        [HttpGet]
+        public IActionResult Basket()
+        {
+            String id = User.FindFirst(ClaimTypes.UserData)?.Value;
+            Console.WriteLine($" {id} account controller");
+            Customer currentCustomer = _context.Customers.FirstOrDefault(x => x.Id.ToString() == id);
+            if(currentCustomer.Basket.OrderedInstruments is null)
+            {
+                return View(new OrderedInstrument());
+            }
 
-        
+            return View(currentCustomer.Basket.OrderedInstruments);
+        }
+
 
         public IActionResult Login()
         {
@@ -75,7 +87,7 @@ namespace ReDoProject.MVC.Controllers
             }
             catch
             {
-                TempData["Error"] = "What Did U DO??";
+                TempData["Error"] = "Server Eror?";
             }
 
             

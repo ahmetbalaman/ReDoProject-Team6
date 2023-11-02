@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@using System.Security.Claims;
+
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -25,6 +28,45 @@
                 background-color: red; /* Hover durumunda arka plan rengi kırmızı olsun */
                 transition: background-color 0.3s, color 0.3s; /* Geçiş efekti ekleyin */
             }
+
+        .basket-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+         
+        }
+
+        .basket {
+            position: relative;
+        }
+
+        .basket-icon {
+            background-color: #007bff;
+            width: 80px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-size: 20px;
+        }
+
+        .basket-count {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background-color: red;
+            color: #fff;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 14px;
+        }
+
     </style>
 </head>
 <body>
@@ -36,6 +78,8 @@
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+
+
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
@@ -62,16 +106,27 @@
                         }
                         else
                         {
-                    <li class="nav-item">
-                        <a asp-action="Login" asp-controller="Account" class="nav-link">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a asp-action="Register" asp-controller="Account" class="nav-link">Register</a>
-                    </li>
-                                }
-                        </ul>
+                            <li class="nav-item">
+                                <a asp-action="Login" asp-controller="Account" class="nav-link">Login</a>
+                            </li>
+                            <li class="nav-item">
+                                <a asp-action="Register" asp-controller="Account" class="nav-link">Register</a>
+                            </li>
+                        }
+                    </ul>
                 </div>
-            </div>
+
+                <a href="/Account/Basket">
+                    <div class="basket-container">
+                        <div class="basket">
+                            <div class="basket-icon">
+                                Basket
+                                <span class="basket-count">2</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </a>
         </nav>
     </header>
     <div class="container">

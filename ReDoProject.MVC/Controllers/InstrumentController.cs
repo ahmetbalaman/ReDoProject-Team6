@@ -133,7 +133,26 @@ namespace ReDoProject.MVC.Controllers
                     Quantity = 1
                 };
                 currentCustomer.Basket ??= new();
-              
+              /*
+               *   var basketCount = ViewData["basketCount"] as string; // ViewData'dan string olarak veriyi al
+                if (string.IsNullOrEmpty(basketCount))
+                {
+                    basketCount = "1"; // Eğer veri yoksa veya nullsa, varsayılan değeri "1" yap
+                }
+                else
+                {
+                    if (int.TryParse(basketCount, out int count))
+                    {
+                        basketCount = (count + 1).ToString(); // Geçerli bir integer ise artır ve string'e çevir
+                    }
+                    else
+                    {
+                        // Geçerli bir integer değilse, uygun bir hata işleme mekanizması uygulayın
+                    }
+                }
+
+                ViewBag.BasketCount = 123;
+              */
                 currentCustomer.Basket.OrderedInstruments!.Add(ordered);
                 _dbContext.SaveChanges();
 
