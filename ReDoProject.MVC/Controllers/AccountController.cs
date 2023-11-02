@@ -111,7 +111,7 @@ namespace ReDoProject.MVC.Controllers
 
 
 
-            return View();
+            // return View();
             return Redirect("/Account/Index");
         }
 

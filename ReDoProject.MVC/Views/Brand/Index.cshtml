@@ -9,7 +9,8 @@
                 <th>Title</th>
                 <th>Desc.</th>
                 <th>Address</th>
-                <th width="20px">Delete</th>
+                @if (Context.User.Identity.IsAuthenticated)
+                    {   <th width="20px">Delete</th>}
             </tr>
         </thead>
         <tbody>
@@ -19,7 +20,8 @@
                     <td>@brand.Name</td>
                     <td>@brand.DisplayingText</td>
                     <td>@brand.Address</td>
-                    <td><a href="/brand/delete/@brand.Id" class="btn btn-danger">Delete</a></td>
+                    @if (Context.User.Identity.IsAuthenticated)
+                        {<td><a href="/brand/delete/@brand.Id" class="btn btn-danger">Delete</a></td>}
                 </tr>
             }
         </tbody>
