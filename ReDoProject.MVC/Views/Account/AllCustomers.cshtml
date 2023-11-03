@@ -1,0 +1,41 @@
+﻿@{
+    ViewData["Title"] = "My Account";
+}
+@model List<Customer>
+
+<div class="row">
+    @foreach (var customer in Model)
+    {
+        <div class="col-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">@customer.Name @customer.Surname</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Email: @customer.Email</h6>
+                    <p class="card-text">Address: @customer.Address</p>
+                    <p class="card-text">Phone: @customer.PhoneNumber</p>
+                    <p class="card-text">Role: @customer.Role</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    @foreach (var order in customer.Orders)
+                    {
+                        <li class="list-group-item">Order ID: @order.Id</li>
+                        <li class="list-group-item">Basket Items: </li>
+                        <p class="list-group-item">
+                            Ürünler: <br /> @foreach (var instrument in order.OrderedBasket.BasketItems)
+                            {
+
+                            <p class="list-group-item">   <img src="@instrument.Instrument.PictureUrl" width="50" /> @instrument.Quantity Adet : @instrument.Instrument.Name</p>
+                              }
+                            </p>
+                           
+
+                            <li class="list-group-item">
+                                Total Amount: @order.OrderedBasket.BasketItems.Sum(instrument => ((decimal)instrument.Instrument.Price * instrument.Quantity));
+                            </li>
+                            <!-- Add more order details as needed -->
+                        }
+                </ul>
+            </div>
+        </div>
+    }
+</div>

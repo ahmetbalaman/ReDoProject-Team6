@@ -89,7 +89,7 @@
         }
 
         .icon {
-            font-size: 40px;
+            font-size: 25px;
         }
 
         .basket-count {
@@ -141,12 +141,16 @@
                     </li>
                     @if (User.IsInRole("Admin"))
                     {
+
                         <li class="nav-item">
                             <a class="nav-link" asp-area="" asp-controller="Instrument" asp-action="Add">Add Instruments</a>
                         </li>
 
                         <li class="nav-item">
                             <a class="nav-link" asp-area="" asp-controller="Brand" asp-action="Add">Add Brand</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Account" asp-action="AllCustomers">All Orders</a>
                         </li>
                     }
 

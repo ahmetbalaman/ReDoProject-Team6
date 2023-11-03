@@ -16,6 +16,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = /Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.MVC
 build_property._RazorSourceGeneratorDebug = 
 
+[/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.MVC/Views/Account/AllCustomers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9BbGxDdXN0b21lcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.MVC/Views/Account/Basket.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9CYXNrZXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

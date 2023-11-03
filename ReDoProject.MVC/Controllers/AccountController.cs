@@ -51,11 +51,8 @@ namespace ReDoProject.MVC.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            var currentCustomerId = User.FindFirst(ClaimTypes.UserData)?.Value;
-            Customer currentCustomer = _dbContext.Customers.Include(x => x.Orders).ThenInclude(x => x.OrderedBasket).ThenInclude(x => x.BasketItems).ThenInclude(x=> x.Instrument).FirstOrDefault(x => x.Id == Guid.Parse(currentCustomerId));
-
-
-            foreach(var order in currentCustomer.Orders)
+            Customer currentCustomer = GetCustomer();
+            foreach (var order in currentCustomer.Orders)
             {
                 foreach(var instrument in order.OrderedBasket.BasketItems)
                 {
@@ -191,6 +188,22 @@ namespace ReDoProject.MVC.Controllers
             
 
             return View();
+        }
+        [Authorize(Policy = "AdminPolicy")]
+        [HttpGet]
+        public IActionResult AllCustomers()
+        {
+            try
+            {
+                List<Customer> allCustomers = _dbContext.Customers.Include(x => x.Orders).ThenInclude(x => x.OrderedBasket).ThenInclude(x => x.BasketItems).ThenInclude(x => x.Instrument).Where(x=> x.Role == Domain.Enums.Role.Customer).ToList();
+
+                return View(allCustomers);
+            }
+            catch
+            {
+                return Redirect("/Instrument");
+            }
+            
         }
 
         [HttpGet]
