@@ -38,8 +38,6 @@ namespace ReDoProject.MVC.Controllers
                     .ThenInclude(basketDB => basketDB.BasketItems)
                     .ThenInclude(orderedDB=> orderedDB.Instrument)
                     .FirstOrDefault(customerDB => customerDB.Id == Guid.Parse(currentCustomerId));
-
-
             }
             return currentCustomer;
 
@@ -225,6 +223,7 @@ namespace ReDoProject.MVC.Controllers
                 try
                 {
                     model.Email = model.Email.ToLower();
+                  
                     _dbContext.Customers.Add(model);
                     _dbContext.SaveChanges();
                     

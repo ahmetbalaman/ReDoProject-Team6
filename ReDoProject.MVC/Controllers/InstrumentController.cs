@@ -122,7 +122,10 @@ namespace ReDoProject.MVC.Controllers
         public IActionResult AddBasket(String Id)
         {
             int count;
-
+            if (!User.Identity.IsAuthenticated)
+            {
+                return Redirect("/Account/Basket");
+            }
             Console.WriteLine(Id);
             try
             {
@@ -161,8 +164,6 @@ namespace ReDoProject.MVC.Controllers
             {
                 return Redirect("/Instrument");
             }
-            
-
             return Redirect("/Account/Basket");
 
         }
