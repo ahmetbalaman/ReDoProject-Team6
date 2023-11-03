@@ -1,0 +1,55 @@
+﻿@using ReDoProject.Domain.Entities;
+@model Customer
+
+
+<h1>Your Fav Instruments:</h1>
+@if (@Model.FavInstruments.Count == 0)
+{
+    <h3>There is no Instrument you added favorites</h3>
+}
+else
+{
+    <div class="row">
+        @foreach (var product in Model.FavInstruments)
+        {
+            <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+                <div class="card" style="width:100%;">
+                    <a href="/instrument/inspect/@product.Id">
+                        <img class="card-img-top" src="@product.PictureUrl" alt="Card image">
+                    </a>
+                    <div class="card-body">
+                        <h4 class="card-title">@product.Name</h4>
+                        <p class="card-text">@product.Description</p>
+                        <a href="/instrument/inspect/@product.Id" class="btn btn-primary">Inspect</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}
+
+<br />
+<br />
+<br />
+<h1>Your Fav Brands:</h1>
+@if (@Model.FavInstruments.Count == 0)
+{
+    <h3>There is no Brands you added favorites</h3>
+}
+else
+{
+
+    <div class="row">
+        @foreach (var product in Model.FavBrands)
+        {
+            <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+                <div class="card" style="width:100%;">
+
+                    <div class="card-body">
+                        <h4 class="card-title">@product.Name</h4>
+                        <p class="card-text">@product.Address</p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>}

@@ -18,7 +18,7 @@ namespace ReDoProject.MVC.Controllers
 
 
         public InstrumentController()
-        {
+        { 
             _dbContext = new();
         }
 
@@ -121,41 +121,33 @@ namespace ReDoProject.MVC.Controllers
         
         public IActionResult AddBasket(String Id)
         {
+            int count;
+
             Console.WriteLine(Id);
             try
             {
 
                 Customer currentCustomer = GetCustomer();
                 Instrument instrument = _dbContext.Instruments.FirstOrDefault(x => x.Id == Guid.Parse(Id));
+
                 
-                
-                OrderedInstrument ordered = new OrderedInstrument()
+                BasketItems ordered = new BasketItems()
                 {
                     Instrument = instrument,
-                    Quantity = 1
+                    Quantity = 1,
                 };
+                ordered.CreatedByUserId = currentCustomer.Id.ToString();
                 currentCustomer.Basket ??= new();
-              /*
-               *   var basketCount = ViewData["basketCount"] as string; // ViewData'dan string olarak veriyi al
-                if (string.IsNullOrEmpty(basketCount))
-                {
-                    basketCount = "1"; // Eğer veri yoksa veya nullsa, varsayılan değeri "1" yap
-                }
-                else
-                {
-                    if (int.TryParse(basketCount, out int count))
+                currentCustomer.Basket.CreatedByUserId = currentCustomer.Id.ToString();
+                if (TempData["basketCount"] != null){
+                    
+                    if (int.TryParse(TempData["basketCount"].ToString(),out count))
                     {
-                        basketCount = (count + 1).ToString(); // Geçerli bir integer ise artır ve string'e çevir
-                    }
-                    else
-                    {
-                        // Geçerli bir integer değilse, uygun bir hata işleme mekanizması uygulayın
+                        count++;
+                        TempData["basketCount"] = count;
                     }
                 }
-
-                ViewBag.BasketCount = 123;
-              */
-                currentCustomer.Basket.OrderedInstruments!.Add(ordered);
+                currentCustomer.Basket.BasketItems!.Add(ordered);
                 _dbContext.SaveChanges();
 
             }

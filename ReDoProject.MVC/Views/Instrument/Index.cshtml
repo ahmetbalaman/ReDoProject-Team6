@@ -16,6 +16,11 @@
     </style>
 </head>
 
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">@TempData["Error"]</div>
+}
+
 <div class="row">
     @foreach (var product in Model)
     {

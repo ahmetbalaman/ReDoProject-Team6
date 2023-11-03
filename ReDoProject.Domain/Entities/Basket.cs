@@ -5,10 +5,13 @@ namespace ReDoProject.Domain.Entities
 {
 	public class Basket: EntityBase<Guid>
     {
-        public List<OrderedInstrument>? OrderedInstruments { get; set; }
+
+        // implict operator override
+        public List<BasketItems>? BasketItems { get; set; }
+        public bool IsOrdered { get; set; }
         public Basket()
         {
-            OrderedInstruments = new();
+            BasketItems = new();
         }
 
     }

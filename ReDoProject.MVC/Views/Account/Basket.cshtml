@@ -1,15 +1,22 @@
 ﻿@{
     decimal totalPrice = 0;
 }
-
+x
 @model Basket
+@if(Model.BasketItems.Count == 0)
+{
 
+
+<h1>There is no product in basket...</h1>
+}
+else
+{
    <div class="container mt-5">
         <div class="row">
             <div class="col-lg-8">
                 <h2>Sepetiniz</h2>
-                @foreach (var instrument in Model.OrderedInstruments)
-                {
+                @foreach (var instrument in Model.BasketItems)
+                    {
                         <p>@instrument.Id</p>
                     <div class="card mb-3">
                         <div class="row g-0">
@@ -34,21 +41,22 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Order Details</h5>
-                        <p class="card-text">Toplam ürün sayısı: @Model.OrderedInstruments.Count</p>
+                        <p class="card-text">Toplam ürün sayısı: @Model.BasketItems.Count</p>
                         <h2>Items</h2>
                         <p class="card-text">
 
-                            @foreach (var instrument in Model.OrderedInstruments)
-                            {
+                            @foreach (var instrument in Model.BasketItems)
+                                {
                                 <li>@instrument.Instrument.Name - @instrument.Instrument.Price $</li>
                                 totalPrice += (decimal)instrument.Instrument.Price; // Ürün fiyatlarını topla
 
                             }
                         </p>
                         <h1>Total Price: @totalPrice</h1>
-                        <a  type="submit" class="btn btn-danger" asp-route-id="@Model.Id" asp-controller="Account" asp-action="OrderBasket" class="btn btn-primary">Satın Al</a>
+                        <a  type="submit" class="btn btn-success" asp-route-id="@Model.Id" asp-controller="Account" asp-action="OrderBasket" class="btn btn-primary">Buy</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    }

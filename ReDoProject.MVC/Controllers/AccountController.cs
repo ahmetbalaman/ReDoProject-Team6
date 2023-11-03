@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Metrics;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
@@ -27,10 +28,17 @@ namespace ReDoProject.MVC.Controllers
 
         public Customer GetCustomer()
         {
+            
             if (currentCustomer is null)
             {
                 var currentCustomerId = User.FindFirst(ClaimTypes.UserData)?.Value;
-                return _dbContext.Customers.Include(x => x.Basket).ThenInclude(x => x.OrderedInstruments).ThenInclude(x => x.Instrument).FirstOrDefault(x => x.Id == Guid.Parse(currentCustomerId));
+                return _dbContext.Customers
+                    .Include(customersDB => customersDB.Basket)
+                    .ThenInclude(basketDB => basketDB.BasketItems)
+                    .ThenInclude(orderedDB=> orderedDB.Instrument)
+                    .FirstOrDefault(customerDB => customerDB.Id == Guid.Parse(currentCustomerId));
+
+
             }
             return currentCustomer;
 
@@ -43,10 +51,23 @@ namespace ReDoProject.MVC.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            Customer currentCustomer = GetCustomer();
-            Console.WriteLine(currentCustomer.Orders);
-            Console.WriteLine(currentCustomer.Orders.Count);
-            Console.WriteLine(currentCustomer.Orders);
+            var currentCustomerId = User.FindFirst(ClaimTypes.UserData)?.Value;
+            Customer currentCustomer = _dbContext.Customers.Include(x => x.Orders).ThenInclude(x => x.OrderedBasket).ThenInclude(x => x.BasketItems).ThenInclude(x=> x.Instrument).FirstOrDefault(x => x.Id == Guid.Parse(currentCustomerId));
+
+
+            foreach(var order in currentCustomer.Orders)
+            {
+                foreach(var instrument in order.OrderedBasket.BasketItems)
+                {
+
+                    Console.WriteLine(instrument.Quantity);
+                    Console.WriteLine(instrument.Instrument.Price);
+                }
+                Console.WriteLine("Toplam Fiyat:");
+                Console.WriteLine(order.OrderedBasket.BasketItems.Sum(instrument => (int)instrument.Instrument.Price));
+
+            }
+
             return View(currentCustomer);
         }
 
@@ -56,17 +77,28 @@ namespace ReDoProject.MVC.Controllers
         public IActionResult Basket()
         {
 
-          
             Customer currentCustomer = GetCustomer();
-            var currentCustomerId = User.FindFirst(ClaimTypes.UserData)?.Value;
-            Basket basket = _dbContext.Baskets.Include(x => x.OrderedInstruments).ThenInclude(x=> x.Instrument).FirstOrDefault(x=> x.Id == currentCustomer.Basket.Id);
-
-            foreach(var model in basket.OrderedInstruments)
+            try
             {
-                Console.WriteLine(model.Quantity);
+                var currentCustomerId = User.FindFirst(ClaimTypes.UserData)?.Value;
+                Basket basket = _dbContext.Baskets.Include(x => x.BasketItems).ThenInclude(x => x.Instrument).FirstOrDefault(x => x.Id == currentCustomer.Basket.Id);
+                foreach (var model in basket.BasketItems)
+                {
+                    Console.WriteLine(model.Quantity);
+                }
+
+                return View(basket);
+            }
+            catch
+            {
+                TempData["Error"] = "Please Add At Least Product to see Basket";
+                return Redirect("/Instrument");
             }
 
-            return View(basket);
+
+
+           
+           
         }
 
 
@@ -76,15 +108,15 @@ namespace ReDoProject.MVC.Controllers
         {
             currentCustomer = GetCustomer();
             Basket basket = _dbContext.Baskets
-                .Include(x => x.OrderedInstruments)
+                .Include(x => x.BasketItems)
                     .FirstOrDefault(x => x.Id == currentCustomer.Basket.Id);
 
 
-            var removeBasket = basket.OrderedInstruments.FirstOrDefault(x => x.Id == Guid.Parse(id));
+            var removeBasket = basket.BasketItems.FirstOrDefault(x => x.Id == Guid.Parse(id));
 
             if (removeBasket != null)
             {
-                basket.OrderedInstruments.Remove(removeBasket);
+                basket.BasketItems.Remove(removeBasket);
                 _dbContext.SaveChanges();
             }
             //return View();
@@ -97,16 +129,13 @@ namespace ReDoProject.MVC.Controllers
            //BURAYI KESİNLİKLE İNCELE REFERANS SİLMESİ YAŞANIYOR BASKETLERDE.
             Customer currentCustomer = GetCustomer();
             Basket basket = _dbContext.Baskets
-                .Include(x => x.OrderedInstruments)
+                .Include(x => x.BasketItems)
                     .FirstOrDefault(x => x.Id == currentCustomer.Basket.Id);
             currentCustomer.Orders.Add(new Order(basket, false));
-
-
-            //REFERANS SİLMESİ YAPMA KALSIN BURDA.
-            basket.OrderedInstruments.Clear();
-            basket = new();
+            basket.IsOrdered = true;
+            currentCustomer.Basket = new Basket();
             _dbContext.SaveChanges();
-
+            
 
 
 
@@ -192,7 +221,6 @@ namespace ReDoProject.MVC.Controllers
                     TempData["Error"] = "Register Denied";
                 }
             }
-
 
             return View();
         }

@@ -16,8 +16,11 @@ namespace ReDoProject.Domain.Entities
         [Required(ErrorMessage = "If I accept it, how will you enter without it??")]
         public string Password { get; set; }
         [Required(ErrorMessage = "I mean i need ur address for all orders :'(")]
+        
         public string Address { get; set; }
-        [Phone(ErrorMessage = "hehehehe give it to me :) i swear i will not call u after night")]
+
+        [Required(ErrorMessage = "hehehehe give it to me :) i swear i will not call u after night sss")]
+        [Phone(ErrorMessage = "its not even a number wtf :/")]
         public string PhoneNumber { get; set; }
 
         public DateTime? BirthDate { get; set; }

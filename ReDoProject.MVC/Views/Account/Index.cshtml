@@ -2,20 +2,28 @@
     ViewData["Title"] = "My Account";
 }
 @model Customer
+
 <div class="container">
     <div class="row">
         <!-- Hesap bilgilerini göstermek için sağ sütun -->
         <div class="col-md-4">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Hesap Bilgilerim</h5>
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <h1>Admin Paneli</h1>
+                    }
+                    else
+                    {
+                        <h5 class="card-title">Hesap Bilgilerim</h5>
+                    }
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">Ad: @Model.Name</li>
                         <li class="list-group-item">Soyad: @Model.Surname</li>
                         <li class="list-group-item">Kullanıcı Adı: @Context.User.Identity.Name</li>
-                        <li class="list-group-item">Kimlik Doğrulama Türü: @Context.User.Identity.AuthenticationType</li>
+                        <li class="list-group-item">Adres: @Model.Address</li>
                     </ul>
-                    <a href="Logout" class="btn btn-danger">Çıkış Yap</a>
+                    <a asp-action="Logout" asp-controller="Account" class="btn btn-danger">Sign Out</a>
                 </div>
             </div>
         </div>
@@ -23,6 +31,7 @@
         <!-- Siparişleri göstermek için sol sütun -->
         <div class="col-md-8">
             <h1 class="mb-4">Siparişlerim</h1>
+
             @if (Model.Orders.Count > 0)
             {
                 @foreach (var order in Model.Orders)
@@ -31,23 +40,34 @@
                         <div class="card-body">
                             <h5 class="card-title">Sipariş No: @order.Id</h5>
                             <p class="card-text">Sipariş Tarihi: @order.CreatedOn</p>
-                            <p class="card-text">Ürünler: @order.OrderedBasket.OrderedInstruments.ToList()</p>
-                            <p class="card-text">Toplam Tutar: @{
-                                decimal totalPrice = 0;
-                                foreach (var instrument in order.OrderedBasket.OrderedInstruments)
-                                {
-                                    totalPrice += (decimal)instrument.Instrument.Price;
-                                }
-                                Console.WriteLine(totalPrice);
-                                    }</p>
 
-</div>
+                            <p class="card-text">
+                                Ürünler: <br /> @foreach (var instrument in order.OrderedBasket.BasketItems)
+                                    {
+                                     
+                                        <p class="card-text">   <img src="@instrument.Instrument.PictureUrl" width="50" /> @instrument.Quantity Adet : @instrument.Instrument.Name</p>
+                                    }
+                            </p>
+                            <p class="card-text">
+                                Toplam Tutar: @order.OrderedBasket.BasketItems.Sum(instrument => ((decimal)instrument.Instrument.Price * instrument.Quantity));
 
-</div>
+                            </p>
+
+                             Teslim Edilme Durumu : @if(order.IsDelivered){ <h3>Teslim Edildi</h3> } else { <h3>Hala Yolda</h3>; }
+                            
+
+
+
+               </div>
+
+
+
+
+            </div>
                 }
-            }
-            else
-            {
+                                }
+                                else
+                                {
                 <p>Henüz siparişiniz bulunmamaktadır.</p>
             }
         </div>

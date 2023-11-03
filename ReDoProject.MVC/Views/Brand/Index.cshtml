@@ -9,7 +9,7 @@
                 <th>Title</th>
                 <th>Desc.</th>
                 <th>Address</th>
-                @if (Context.User.Identity.IsAuthenticated)
+                @if (User.IsInRole("Admin"))
                     {   <th width="20px">Delete</th>}
             </tr>
         </thead>
@@ -20,7 +20,7 @@
                     <td>@brand.Name</td>
                     <td>@brand.DisplayingText</td>
                     <td>@brand.Address</td>
-                    @if (Context.User.Identity.IsAuthenticated)
+                    @if (User.IsInRole("Admin"))
                         {<td><a href="/brand/delete/@brand.Id" class="btn btn-danger">Delete</a></td>}
                 </tr>
             }

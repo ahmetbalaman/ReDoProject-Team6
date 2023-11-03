@@ -34,24 +34,31 @@ namespace ReDoProject.MVC.Controllers
 
         [Authorize(Policy = "AdminPolicy")]
         [HttpPost]
-        public IActionResult Add(string brandName, string brandDisplayingText, string brandAddress)
+        public IActionResult Add(string brandName, string brandDisplayingText, string brandAddress,string brandSMail,string brandSPhone)
         {
-            var brand = new Brand()
+            if (ModelState.IsValid)
             {
-                Name = brandName,
-                DisplayingText = brandDisplayingText,
-                Address = brandAddress,
-                Id = Guid.NewGuid(),
-                CreatedOn = DateTime.UtcNow,
-                SupportMail = "1231231",
-                SupportPhone = "1231321",
-            };
+                var brand = new Brand()
+                {
+                    Name = brandName,
+                    DisplayingText = brandDisplayingText,
+                    Address = brandAddress,
+                    Id = Guid.NewGuid(),
+                    CreatedOn = DateTime.UtcNow,
+                    SupportMail = brandSMail,
+                    SupportPhone = brandSPhone,
+                };
 
-            _dbContext.Brands.Add(brand);
+                _dbContext.Brands.Add(brand);
 
-            _dbContext.SaveChanges();
-            TempData["SuccessMessage"] = "Enstruman başarıyla eklendi.";
+                _dbContext.SaveChanges();
+
+                TempData["SuccessMessage"] = "Marka başarıyla eklendi.";
+                return Redirect("Account/Register");
+            }
+
             return View();
+
         }
 
         [Authorize(Policy = "AdminPolicy")]
