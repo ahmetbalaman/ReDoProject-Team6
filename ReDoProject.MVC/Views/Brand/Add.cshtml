@@ -1,16 +1,22 @@
 ﻿<h2>Add Brand</h2>
+
 @if (TempData["SuccessMessage"] != null)
 {
     <div class="alert alert-success">@TempData["SuccessMessage"]</div>
 }
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">@TempData["Error"]</div>
+
+}
 <form method="post">
     <div class="mb-3 mt-3">
         <label class="form-label">Brand Name:</label>
-        <input asp-validation-for="[Required]" type="text" class="form-control" placeholder="Enter Brand Name" name="brandName">
+        <input  type="text" class="form-control" placeholder="Enter Brand Name" name="brandName">
     </div>
     <div class="mb-3 mt-3">
         <label class="form-label">Displaing Text:</label>
-        <input type="text" class="form-control" placeholder="Enter Displaing Text" name="brandDisplayingText">
+        <input  type="text" class="form-control" placeholder="Enter Displaing Text" name="brandDisplayingText">
     </div>
     <div class="mb-3 mt-3">
         <label class="form-label">Address:</label>
@@ -18,11 +24,11 @@
     </div>
     <div class="mb-3 mt-3">
         <label class="form-label">Support Mail:</label>
-        <input type="email" class="form-control" placeholder="Enter Support Mail" name="brandSMail">
+        <input  type="email" class="form-control" placeholder="Enter Support Mail" name="brandSMail">
     </div>
     <div class="mb-3 mt-3">
         <label class="form-label">Support Phone:</label>
-        <input type="number" class="form-control" placeholder="Enter Support Phone" name="brandSPhone" >
+        <input  type="number" class="form-control" placeholder="Enter Support Phone" name="brandSPhone">
     </div>
     <button type="submit" class="btn btn-primary">Create</button>
 </form> 

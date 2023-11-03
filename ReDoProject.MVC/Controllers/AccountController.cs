@@ -33,7 +33,7 @@ namespace ReDoProject.MVC.Controllers
             {
                 var currentCustomerId = User.FindFirst(ClaimTypes.UserData)?.Value;
                 return _dbContext.Customers
-                    .Include(customersDB => customersDB.Basket)
+                    .Include(customersDB => customersDB.Orders).ThenInclude(x=> x.OrderedBasket)
                     .ThenInclude(basketDB => basketDB.BasketItems)
                     .ThenInclude(orderedDB=> orderedDB.Instrument)
                     .FirstOrDefault(customerDB => customerDB.Id == Guid.Parse(currentCustomerId));
@@ -56,7 +56,7 @@ namespace ReDoProject.MVC.Controllers
             {
                 foreach(var instrument in order.OrderedBasket.BasketItems)
                 {
-
+                    Console.WriteLine("Please Work ");
                     Console.WriteLine(instrument.Quantity);
                     Console.WriteLine(instrument.Instrument.Price);
                 }
@@ -131,6 +131,7 @@ namespace ReDoProject.MVC.Controllers
             currentCustomer.Orders.Add(new Order(basket, false));
             basket.IsOrdered = true;
             currentCustomer.Basket = new Basket();
+            currentCustomer.Basket.CreatedByUserId = currentCustomer.Id.ToString();
             _dbContext.SaveChanges();
             
 

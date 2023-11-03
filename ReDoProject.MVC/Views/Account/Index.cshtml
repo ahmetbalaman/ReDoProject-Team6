@@ -2,7 +2,6 @@
     ViewData["Title"] = "My Account";
 }
 @model Customer
-
 <div class="container">
     <div class="row">
         <!-- Hesap bilgilerini göstermek için sağ sütun -->
@@ -27,11 +26,9 @@
                 </div>
             </div>
         </div>
-
         <!-- Siparişleri göstermek için sol sütun -->
         <div class="col-md-8">
             <h1 class="mb-4">Siparişlerim</h1>
-
             @if (Model.Orders.Count > 0)
             {
                 @foreach (var order in Model.Orders)
@@ -43,27 +40,23 @@
 
                             <p class="card-text">
                                 Ürünler: <br /> @foreach (var instrument in order.OrderedBasket.BasketItems)
-                                    {
-                                     
-                                        <p class="card-text">   <img src="@instrument.Instrument.PictureUrl" width="50" /> @instrument.Quantity Adet : @instrument.Instrument.Name</p>
-                                    }
-                            </p>
-                            <p class="card-text">
-                                Toplam Tutar: @order.OrderedBasket.BasketItems.Sum(instrument => ((decimal)instrument.Instrument.Price * instrument.Quantity));
+                                {
 
-                            </p>
+                                <p class="card-text">   <img src="@instrument.Instrument.PictureUrl" width="50" /> @instrument.Quantity Adet : @instrument.Instrument.Name</p>
+                            }
+                                </p>
+                                <p class="card-text">
+                                    Toplam Tutar: @order.OrderedBasket.BasketItems.Sum(instrument => ((decimal)instrument.Instrument.Price * instrument.Quantity));
 
-                             Teslim Edilme Durumu : @if(order.IsDelivered){ <h3>Teslim Edildi</h3> } else { <h3>Hala Yolda</h3>; }
-                            
+                                </p>
 
-
-
-               </div>
-
-
-
-
-            </div>
+                                Teslim Edilme Durumu : @if (order.IsDelivered)
+                                {<h3>Teslim Edildi</h3> }
+                                else
+                                { <h3>Hala Yolda</h3>;
+                                }
+                            </div>
+                        </div>
                 }
                                 }
                                 else

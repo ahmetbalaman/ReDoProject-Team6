@@ -36,7 +36,7 @@ namespace ReDoProject.MVC.Controllers
         [HttpPost]
         public IActionResult Add(string brandName, string brandDisplayingText, string brandAddress,string brandSMail,string brandSPhone)
         {
-            if (ModelState.IsValid)
+            try
             {
                 var brand = new Brand()
                 {
@@ -54,7 +54,10 @@ namespace ReDoProject.MVC.Controllers
                 _dbContext.SaveChanges();
 
                 TempData["SuccessMessage"] = "Marka başarıyla eklendi.";
-                return Redirect("Account/Register");
+            }
+            catch
+            {
+                TempData["Error"] = "Please Fill All TextFields";
             }
 
             return View();
