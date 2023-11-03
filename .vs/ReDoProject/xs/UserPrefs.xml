@@ -1,47 +1,4 @@
 ﻿<Properties StartupConfiguration="{E26B4475-4C81-4815-A0DB-16A533CAB0B4}|https">
-  <MonoDevelop.Ide.Workbench ActiveDocument="ReDoProject.MVC/Views/Instrument/ListByInstrumentType.cshtml">
-    <Files>
-      <File FileName="ReDoProject.MVC/Views/Instrument/ListByInstrumentType.cshtml" Line="21" Column="21" />
-    </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="ReDoProject">
-            <Node name="Core">
-              <Node name="ReDoProject.Domain">
-                <Node name="Entities" expanded="True" />
-                <Node name="Enums" expanded="True" />
-              </Node>
-            </Node>
-            <Node name="Infrastructure">
-              <Node name="ReDoProject.Persistence" expanded="True">
-                <Node name="Contexts" expanded="True" />
-              </Node>
-            </Node>
-            <Node name="Presentation">
-              <Node name="ReDoProject.MVC" expanded="True">
-                <Node name="Controllers" expanded="True" />
-                <Node name="Views" expanded="True">
-                  <Node name="Account" expanded="True" />
-                  <Node name="Brand" expanded="True" />
-                  <Node name="Favorites" expanded="True" />
-                  <Node name="Instrument" expanded="True" />
-                  <Node name="Shared" expanded="True" />
-                </Node>
-                <Node name="appsettings.json" expanded="True" />
-              </Node>
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
-  </MonoDevelop.Ide.Workbench>
-  <DisabledProjects>
-    <String>ReDoProject.MVC/ReDoProject.API/ReDoProject.API.csproj</String>
-  </DisabledProjects>
-  <MonoDevelop.Ide.ItemProperties.Presentation.ReDoProject.API PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
-  <MonoDevelop.Ide.ItemProperties.Presentation.ReDoProject.MVC PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MultiItemStartupConfigurations>
     <MultiItemSolutionRunConfiguration Id="asd" Name="asd">
       <Items>
@@ -50,8 +7,50 @@
       </Items>
     </MultiItemSolutionRunConfiguration>
   </MultiItemStartupConfigurations>
+  <MonoDevelop.Ide.ItemProperties.Presentation.ReDoProject.MVC PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="ReDoProject.MVC/Controllers/InstrumentController.cs">
+    <Files>
+      <File FileName="ReDoProject.MVC/Views/Account/Login.cshtml" />
+      <File FileName="ReDoProject.MVC/Views/Account/Index.cshtml" />
+      <File FileName="ReDoProject.MVC/Views/Brand/Add.cshtml" Line="18" Column="47" />
+      <File FileName="ReDoProject.MVC/Controllers/AccountController.cs" />
+      <File FileName="ReDoProject.MVC/Controllers/BrandController.cs" />
+      <File FileName="ReDoProject.MVC/Controllers/InstrumentController.cs" Line="41" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="ReDoProject">
+            <Node name="Core" expanded="True">
+              <Node name="ReDoProject.Domain" expanded="True">
+                <Node name="Entities" expanded="True" />
+              </Node>
+            </Node>
+            <Node name="Presentation">
+              <Node name="ReDoProject.MVC" expanded="True">
+                <Node name="Controllers" expanded="True">
+                  <Node name="InstrumentController.cs" selected="True" />
+                </Node>
+                <Node name="Views" expanded="True">
+                  <Node name="Account" expanded="True" />
+                  <Node name="Brand" expanded="True" />
+                  <Node name="Instrument" expanded="True" />
+                  <Node name="Shared" expanded="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <DisabledProjects>
+    <String>ReDoProject.MVC/ReDoProject.API/ReDoProject.API.csproj</String>
+  </DisabledProjects>
+  <MonoDevelop.Ide.ItemProperties.Presentation.ReDoProject.API PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
 </Properties>

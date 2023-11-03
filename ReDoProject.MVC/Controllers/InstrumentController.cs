@@ -137,8 +137,13 @@ namespace ReDoProject.MVC.Controllers
                     Quantity = 1,
                 };
                 ordered.CreatedByUserId = currentCustomer.Id.ToString();
-                currentCustomer.Basket ??= new();
-                currentCustomer.Basket.CreatedByUserId = currentCustomer.Id.ToString();
+                if(currentCustomer.Basket == null)
+                {
+                    currentCustomer.Basket = new Basket();
+                    currentCustomer.Basket.CreatedByUserId = currentCustomer.Id.ToString();
+                    _dbContext.Baskets.Add(currentCustomer.Basket);
+                }
+
                 if (TempData["basketCount"] != null){
                     
                     if (int.TryParse(TempData["basketCount"].ToString(),out count))
@@ -148,6 +153,7 @@ namespace ReDoProject.MVC.Controllers
                     }
                 }
                 currentCustomer.Basket.BasketItems!.Add(ordered);
+               
                 _dbContext.SaveChanges();
 
             }

@@ -33,7 +33,8 @@ namespace ReDoProject.MVC.Controllers
             {
                 var currentCustomerId = User.FindFirst(ClaimTypes.UserData)?.Value;
                 return _dbContext.Customers
-                    .Include(customersDB => customersDB.Orders).ThenInclude(x=> x.OrderedBasket)
+                    .Include(customersDB => customersDB.Orders).
+                    ThenInclude(x=> x.OrderedBasket)
                     .ThenInclude(basketDB => basketDB.BasketItems)
                     .ThenInclude(orderedDB=> orderedDB.Instrument)
                     .FirstOrDefault(customerDB => customerDB.Id == Guid.Parse(currentCustomerId));
