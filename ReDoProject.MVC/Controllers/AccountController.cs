@@ -32,7 +32,7 @@ namespace ReDoProject.MVC.Controllers
             if (currentCustomer is null)
             {
                 var currentCustomerId = User.FindFirst(ClaimTypes.UserData)?.Value;
-                return _dbContext.Customers
+                return _dbContext.Customers.Include(x=>x.Basket)
                     .Include(customersDB => customersDB.Orders).
                     ThenInclude(x=> x.OrderedBasket)
                     .ThenInclude(basketDB => basketDB.BasketItems)
