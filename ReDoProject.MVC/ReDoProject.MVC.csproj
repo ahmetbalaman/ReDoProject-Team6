@@ -22,10 +22,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Remove="Views\Account\" />
-    <None Remove="Views\Favorites\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Account\" />
-    <Folder Include="Views\Favorites\" />
   </ItemGroup>
 </Project>

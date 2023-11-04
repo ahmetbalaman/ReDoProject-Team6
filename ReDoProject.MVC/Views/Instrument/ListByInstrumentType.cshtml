@@ -7,6 +7,7 @@
 @if(Model.Count == 0)
 {
 <h1>Unfortunately, we do not have any products in this category</h1>
+<br /><br /><br /><br />
 }
 else
 {
@@ -21,7 +22,17 @@ else
                 </a>
                 <div class="card-body">
                     <h4 class="card-title">@product.Name</h4>
-                    <p class="card-text">@product.Description</p>
+                    <p class="card-text">
+                        @if (product.Description.Length > 30)
+                        {
+                            @product.Description.Substring(0, 30)
+                            <span>...</span>
+                        }
+                        else
+                        {
+                            @product.Description
+                        }
+                    </p>
                     <a href="/instrument/inspect/@product.Id" class="btn btn-primary">Inspect</a>
                 </div>
             </div>

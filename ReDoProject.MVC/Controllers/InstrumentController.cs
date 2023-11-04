@@ -35,22 +35,8 @@ namespace ReDoProject.MVC.Controllers
 
         public IActionResult Index() //All Instruments will be shown
         {
-            try
-            {
-                String id = User.FindFirst(ClaimTypes.UserData)?.Value;
-
-                Console.WriteLine(id);
-            //    Customer currentCustomer = _dbContext.Customers.FirstOrDefault(x => x.Id.ToString() == id);
-                TempData["CurrentCustomerId"] = id; // currentCustomer'ı TempData'ye sakla
-
-            }
-            catch
-            {
-                Console.WriteLine("Current user invalid");
-            }
-
-
-            var products = _dbContext.Instruments.ToList();
+            
+            var products = _dbContext.Instruments.Where(x=> x.IsDeleted == false).ToList();
            // _dbContext.Instruments.AddRange(ExampleData.GetInstruments());
            // _dbContext.SaveChanges();
             return View(products);
@@ -73,6 +59,7 @@ namespace ReDoProject.MVC.Controllers
 
         [Authorize(Policy = "AdminPolicy")]
         [HttpPost]
+        //ADD INSTRUMENTS
         public IActionResult Add(string name, string description, string brandId, string price, string barcode, string pictureUrl, List<Color> colors, InstrumentType type)
         {
             var brand = _dbContext.Brands.Where(x => x.Id == Guid.Parse(brandId)).FirstOrDefault();
@@ -107,6 +94,29 @@ namespace ReDoProject.MVC.Controllers
             TempData["SuccessMessage"] = "Enstruman başarıyla eklendi.";
             return RedirectToAction("add");
         }
+
+        [HttpGet]
+        [Route("[controller]/[action]/{id}")]
+        public IActionResult AddFavorites(string id)
+        {
+            try
+            {
+                Instrument instrument = _dbContext.Instruments.FirstOrDefault(x => x.Id == Guid.Parse(id));
+                currentCustomer = GetCustomer();
+                if (!currentCustomer.FavInstruments.Contains(instrument))
+                {
+                    currentCustomer.FavInstruments.Add(instrument);
+                }              
+                _dbContext.SaveChanges();
+                return Redirect("/Favorites/Index");
+            }
+            catch
+            {
+                return Redirect($"/Instrument/Inspect/{id}");
+            }
+
+        }
+
 
 
         [HttpGet]
@@ -174,7 +184,8 @@ namespace ReDoProject.MVC.Controllers
             try
             {
                 Instrument instrument = _dbContext.Instruments.FirstOrDefault(x => x.Id == Guid.Parse(id));
-                _dbContext.Instruments.Remove(instrument);
+                instrument.IsDeleted = true;
+                //_dbContext.Instruments.Remove(instrument);
                 _dbContext.SaveChanges();
                 return Redirect("/Instrument/Index");
             }

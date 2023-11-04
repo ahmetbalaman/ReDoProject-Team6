@@ -1,23 +1,18 @@
 ﻿<Properties StartupConfiguration="{E26B4475-4C81-4815-A0DB-16A533CAB0B4}|https">
-  <MultiItemStartupConfigurations>
-    <MultiItemSolutionRunConfiguration Id="asd" Name="asd">
-      <Items>
-        <StartupItem ItemId="{BC76E6BD-BD6A-44B3-A9E8-9C0F3E0B603A}" ItemName="ReDoProject.API" ConfigurationId="https" />
-        <StartupItem ItemId="{E26B4475-4C81-4815-A0DB-16A533CAB0B4}" ItemName="ReDoProject.MVC" ConfigurationId="https" />
-      </Items>
-    </MultiItemSolutionRunConfiguration>
-  </MultiItemStartupConfigurations>
-  <MonoDevelop.Ide.ItemProperties.Presentation.ReDoProject.MVC PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
+  <DisabledProjects>
+    <String>ReDoProject.MVC/ReDoProject.API/ReDoProject.API.csproj</String>
+  </DisabledProjects>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="ReDoProject.MVC/Controllers/InstrumentController.cs">
     <Files>
-      <File FileName="ReDoProject.MVC/Views/Account/Login.cshtml" />
+      <File FileName="ReDoProject.MVC/Views/Account/Login.cshtml" Line="1" Column="1" />
       <File FileName="ReDoProject.MVC/Views/Account/Index.cshtml" />
-      <File FileName="ReDoProject.MVC/Views/Brand/Add.cshtml" Line="18" Column="47" />
-      <File FileName="ReDoProject.MVC/Controllers/AccountController.cs" />
-      <File FileName="ReDoProject.MVC/Controllers/BrandController.cs" />
-      <File FileName="ReDoProject.MVC/Controllers/InstrumentController.cs" Line="41" Column="1" />
+      <File FileName="ReDoProject.MVC/Controllers/InstrumentController.cs" Line="167" Column="45" />
+      <File FileName="ReDoProject.MVC/Views/Brand/Add.cshtml" />
+      <File FileName="ReDoProject.MVC/Controllers/AccountController.cs" Line="90" Column="34" />
+      <File FileName="ReDoProject.MVC/Views/Account/Basket.cshtml" Line="23" Column="55" />
+      <File FileName="ReDoProject.MVC/Program.cs" Line="72" Column="1" />
+      <File FileName="ReDoProject.MVC/Views/Account/Register.cshtml" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -28,11 +23,9 @@
                 <Node name="Entities" expanded="True" />
               </Node>
             </Node>
-            <Node name="Presentation">
+            <Node name="Presentation" expanded="True">
               <Node name="ReDoProject.MVC" expanded="True">
-                <Node name="Controllers" expanded="True">
-                  <Node name="InstrumentController.cs" selected="True" />
-                </Node>
+                <Node name="Controllers" expanded="True" />
                 <Node name="Views" expanded="True">
                   <Node name="Account" expanded="True" />
                   <Node name="Brand" expanded="True" />
@@ -46,11 +39,18 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MultiItemStartupConfigurations>
+    <MultiItemSolutionRunConfiguration Id="asd" Name="asd">
+      <Items>
+        <StartupItem ItemId="{BC76E6BD-BD6A-44B3-A9E8-9C0F3E0B603A}" ItemName="ReDoProject.API" ConfigurationId="https" />
+        <StartupItem ItemId="{E26B4475-4C81-4815-A0DB-16A533CAB0B4}" ItemName="ReDoProject.MVC" ConfigurationId="https" />
+      </Items>
+    </MultiItemSolutionRunConfiguration>
+  </MultiItemStartupConfigurations>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <DisabledProjects>
-    <String>ReDoProject.MVC/ReDoProject.API/ReDoProject.API.csproj</String>
-  </DisabledProjects>
   <MonoDevelop.Ide.ItemProperties.Presentation.ReDoProject.API PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
+  <MonoDevelop.Ide.ItemProperties.Presentation.ReDoProject.MVC PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
 </Properties>

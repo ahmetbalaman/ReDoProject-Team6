@@ -10,52 +10,55 @@
 }
 else
 {
-   <div class="container mt-5">
-        <div class="row">
-            <div class="col-lg-8">
-                <h2>Sepetiniz</h2>
-                @foreach (var instrument in Model.BasketItems)
-                    {
-                        <p>@instrument.Id</p>
-                    <div class="card mb-3">
-                        <div class="row g-0">
-                            <div class="col-md-3">
-                                <img src="@instrument.Instrument.PictureUrl" alt="@instrument.Instrument.Name" class="img-fluid">
-                            </div>
-                            <div class="col-md-9">
-                                <div class="card-body">
-                                    <h5 class="card-title">@instrument.Instrument.Name</h5>
-                                    <p class="card-text">@instrument.Instrument.Description</p>
-                                    <p class="card-text">Price: @instrument.Instrument.Price</p>
-                                    <a type="submit" class="btn btn-danger" asp-route-id="@instrument.Id" asp-controller="Account" asp-action="RemoveBasket">Remove</a>
-                                </div>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-8">
+            <h2>Sepetiniz</h2>
+            @foreach (var instrument in Model.BasketItems)
+            {
+                <p>@instrument.Id</p>
+                <div class="card mb-3">
+                    <div class="row g-0">
+                        <div class="col-md-3">
+                            <img src="@instrument.Instrument.PictureUrl" alt="@instrument.Instrument.Name" class="img-fluid">
+                        </div>
+                        <div class="col-md-9">
+                            <div class="card-body">
+                                <h5 class="card-title">@instrument.Instrument.Name</h5>
+                                <p class="card-text">@instrument.Instrument.Description</p>
+                                <p class="card-text">Price: @instrument.Instrument.Price</p>
+                                <a type="submit" class="btn btn-danger" asp-route-id="@instrument.Id" asp-controller="Account" asp-action="RemoveBasket">Remove</a>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                }
+            }
 
-            </div>
-            <div class="col-lg-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Order Details</h5>
-                        <p class="card-text">Toplam ürün sayısı: @Model.BasketItems.Count</p>
-                        <h2>Items</h2>
-                        <p class="card-text">
+        </div>
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Order Details</h5>
+                    <p class="card-text">Toplam ürün sayısı: @Model.BasketItems.Count</p>
+                    <h2>Items</h2>
+                    <p class="card-text">
 
-                            @foreach (var instrument in Model.BasketItems)
-                                {
-                                <li>@instrument.Instrument.Name - @instrument.Instrument.Price $</li>
-                                totalPrice += (decimal)instrument.Instrument.Price; // Ürün fiyatlarını topla
+                        @foreach (var instrument in Model.BasketItems)
+                        {
+                            <li>@instrument.Instrument.Name - @instrument.Instrument.Price $</li>
+                            totalPrice += (decimal)instrument.Instrument.Price; // Ürün fiyatlarını topla
 
-                            }
-                        </p>
-                        <h1>Total Price: @totalPrice</h1>
-                        <a  type="submit" class="btn btn-success" asp-route-id="@Model.Id" asp-controller="Account" asp-action="OrderBasket" class="btn btn-primary">Buy</a>
-                    </div>
+                        }
+                    </p>
+                    <h1>Total Price: @totalPrice</h1>
+                    <a type="submit" class="btn btn-success" asp-route-id="@Model.Id" asp-controller="Account" asp-action="OrderBasket" class="btn btn-primary">Buy</a>
+                    <br /><br />
                 </div>
             </div>
         </div>
     </div>
+    <br />
+</div>
+<br />
     }

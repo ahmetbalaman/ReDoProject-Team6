@@ -157,10 +157,6 @@
                     @if (Context.User.Identity.IsAuthenticated)
                     {
                         <li class="nav-item">
-                            <a asp-action="Index" asp-controller="Favorites" class="nav-link">Show Favorites</a>
-                        </li>
-
-                        <li class="nav-item">
                             <a asp-action="Index" asp-controller="Account" class="nav-link">My Accounts</a>
                         </li>
                         <li class="nav-item">
@@ -172,7 +168,10 @@
                         <a href="/account/basket">
                             <div class="basket-container">
                                 <div class="basket">
-                                    <i class="icon ion-ios-basket">Basket</i>
+                                    <i class="icon ion-ios-basket">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/5218/5218600.png" width="30"/>
+
+                                    </i>
                                     <span class="basket-count">@TempData["basketCount"]</span>
                                 </div>
                             </div>

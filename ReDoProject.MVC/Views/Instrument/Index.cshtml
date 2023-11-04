@@ -24,17 +24,30 @@
 <div class="row">
     @foreach (var product in Model)
     {
-        <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 col-12">
             <div class="card" style="width:100%;">
                 <a href="/instrument/inspect/@product.Id">
                     <img class="card-img-top" src="@product.PictureUrl" alt="Card image">
                 </a>
                 <div class="card-body">
                     <h4 class="card-title">@product.Name</h4>
-                    <p class="card-text">@product.Description</p>
+                    <p class="card-text">
+                        @if (product.Description.Length > 30)
+                        {
+                            @product.Description.Substring(0, 30)
+                            <span>...</span>
+                        }
+                        else
+                        {
+                            @product.Description
+                        }
+                    </p>
+
                     <a href="/instrument/inspect/@product.Id" class="btn btn-primary">Inspect</a>
                 </div>
             </div>
         </div>
+
     }
 </div>
+<br /><br /><br />
