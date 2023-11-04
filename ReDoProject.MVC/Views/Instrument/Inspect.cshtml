@@ -12,18 +12,20 @@
                     <p>@Model.Description</p>
                     <p>Price: $@Model.Price</p>
                     @if (User.IsInRole("Admin"))
-                    {<a type="submit" asp-route-id="@Model.Id" asp-controller="Instrument" asp-action="Delete" class="btn btn-outline-danger">Delete Product</a>}
+                    {
+                        <a type="submit" asp-route-id="@Model.Id" asp-controller="Instrument" asp-action="Delete" class="btn btn-outline-danger mb-3">Delete Product</a>
+                    }
 
                     <div class="quantity-control">
                         <button class="decrease-quantity" onclick="decreaseQuantity()">-</button>
                         <span id="product-quantity">1</span>
                         <button class="increase-quantity" onclick="increaseQuantity()">+</button>
                     </div>
-                 
-                        <input type="hidden" id="quantity" name="quantity" value="1">
-                        <a type="submit" asp-route-id="@Model.Id" asp-controller="Instrument" asp-action="AddBasket" class="btn btn-outline-success">Add Basket</a>
-                     
+                    <br />
+                    <input type="hidden" id="quantity" name="quantity" value="1">
+                    <a type="submit" asp-route-id="@Model.Id" asp-controller="Instrument" asp-action="AddBasket" class="btn btn-outline-success mb-3">Add Basket</a>
                 </div>
+
 
             </div>
 
