@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "NmkjCHlG7qxmQwooBOzwaCYssp6hUYRKhnnmTYKlWAs=",
+  "Hash": "HEZtvM1HEANXbdehE41QUOuo4wfm8ITubaZKkfpGtmo=",
   "Source": "ReDoProject.MVC",
   "BasePath": "_content/ReDoProject.MVC",
   "Mode": "Default",
@@ -16,40 +16,6 @@
     }
   ],
   "Assets": [
-    {
-      "Identity": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.MVC/obj/Debug/net7.0/scopedcss/bundle/ReDoProject.MVC.styles.css",
-      "SourceId": "ReDoProject.MVC",
-      "SourceType": "Computed",
-      "ContentRoot": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.MVC/obj/Debug/net7.0/scopedcss/bundle/",
-      "BasePath": "_content/ReDoProject.MVC",
-      "RelativePath": "ReDoProject.MVC.styles.css",
-      "AssetKind": "All",
-      "AssetMode": "CurrentProject",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "ScopedCss",
-      "AssetTraitValue": "ApplicationBundle",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.MVC/obj/Debug/net7.0/scopedcss/bundle/ReDoProject.MVC.styles.css"
-    },
-    {
-      "Identity": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.MVC/obj/Debug/net7.0/scopedcss/projectbundle/ReDoProject.MVC.bundle.scp.css",
-      "SourceId": "ReDoProject.MVC",
-      "SourceType": "Computed",
-      "ContentRoot": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.MVC/obj/Debug/net7.0/scopedcss/projectbundle/",
-      "BasePath": "_content/ReDoProject.MVC",
-      "RelativePath": "ReDoProject.MVC.bundle.scp.css",
-      "AssetKind": "All",
-      "AssetMode": "Reference",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "ScopedCss",
-      "AssetTraitValue": "ProjectBundle",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.MVC/obj/Debug/net7.0/scopedcss/projectbundle/ReDoProject.MVC.bundle.scp.css"
-    },
     {
       "Identity": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.MVC/wwwroot/.gitattributes",
       "SourceId": "ReDoProject.MVC",

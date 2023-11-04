@@ -1,10 +1,6 @@
 {
   "Files": [
     {
-      "Id": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.MVC/obj/Debug/net7.0/scopedcss/projectbundle/ReDoProject.MVC.bundle.scp.css",
-      "PackagePath": "staticwebassets/ReDoProject.MVC.bundle.scp.css"
-    },
-    {
       "Id": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.MVC/wwwroot/.gitattributes",
       "PackagePath": "staticwebassets/.gitattributes"
     },
