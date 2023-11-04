@@ -20,7 +20,6 @@ namespace ReDoProject.MVC.Controllers
     {
         private Customer currentCustomer;
         private readonly ReDoMusicDbContext _dbContext;
-       
         public AccountController()
         {
             _dbContext = new ReDoMusicDbContext();
@@ -132,11 +131,6 @@ namespace ReDoProject.MVC.Controllers
             currentCustomer.Basket = new Basket();
             currentCustomer.Basket.CreatedByUserId = currentCustomer.Id.ToString();
             _dbContext.SaveChanges();
-            
-
-
-
-
             // return View();
             return Redirect("/Account/Index");
         }
@@ -171,6 +165,8 @@ namespace ReDoProject.MVC.Controllers
                     ClaimsPrincipal principal = new(userIdentitiy);
                     
                     await HttpContext.SignInAsync(principal);
+                    _dbContext.Logs.Add(new MyLogger($"{customer.Name} Logged In"));
+                    _dbContext.SaveChanges();
 
                     
                     //giriş başarılı ise burdayız
@@ -205,6 +201,22 @@ namespace ReDoProject.MVC.Controllers
             }
             
         }
+        [Authorize(Policy = "AdminPolicy")]
+        [HttpGet]
+        public IActionResult ChangeArrive(String Id)
+        {
+            try
+            {
+                Order order = _dbContext.Orders.FirstOrDefault(x => x.Id == Guid.Parse(Id));
+                order.IsDelivered = !order.IsDelivered;
+                _dbContext.SaveChanges();
+            }
+            catch
+            {
+                TempData["Error"] = "Something wrong happen";
+            }
+            return Redirect("/Account/AllCustomers");
+        }
 
         [HttpGet]
         public IActionResult Register()
@@ -223,10 +235,10 @@ namespace ReDoProject.MVC.Controllers
                 try
                 {
                     model.Email = model.Email.ToLower();
-                  
+                    model.CreatedOn = DateTime.UtcNow;
                     _dbContext.Customers.Add(model);
+                    _dbContext.Logs.Add(new MyLogger($"{model.Name} Registered!"));
                     _dbContext.SaveChanges();
-                    
 
                     return Redirect("/Account/Login");
                }
@@ -242,7 +254,11 @@ namespace ReDoProject.MVC.Controllers
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync();
+            currentCustomer = GetCustomer();
+            _dbContext.Logs.Add(new MyLogger($"{currentCustomer.Name} Logged Out"));
+            _dbContext.SaveChanges();
             return Redirect("/Account/Login");
+           
         }
 
 

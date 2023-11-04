@@ -89,36 +89,13 @@ namespace ReDoProject.MVC.Controllers
             };
 
             _dbContext.Instruments.Add(instrument);
+            currentCustomer = GetCustomer();
+            _dbContext.Logs.Add(new MyLogger($"Instrument: {instrument.Id}-{instrument.Name} added by {currentCustomer.Id}-{currentCustomer.Name}"));
 
             _dbContext.SaveChanges();
             TempData["SuccessMessage"] = "Enstruman başarıyla eklendi.";
             return RedirectToAction("add");
         }
-
-        [HttpGet]
-        [Route("[controller]/[action]/{id}")]
-        public IActionResult AddFavorites(string id)
-        {
-            try
-            {
-                Instrument instrument = _dbContext.Instruments.FirstOrDefault(x => x.Id == Guid.Parse(id));
-                currentCustomer = GetCustomer();
-                if (!currentCustomer.FavInstruments.Contains(instrument))
-                {
-                    currentCustomer.FavInstruments.Add(instrument);
-                }              
-                _dbContext.SaveChanges();
-                return Redirect("/Favorites/Index");
-            }
-            catch
-            {
-                return Redirect($"/Instrument/Inspect/{id}");
-            }
-
-        }
-
-
-
         [HttpGet]
         [Route("[controller]/[action]/{id}")]
         public IActionResult Inspect(string id)
@@ -183,9 +160,12 @@ namespace ReDoProject.MVC.Controllers
         {
             try
             {
+                currentCustomer = GetCustomer();
                 Instrument instrument = _dbContext.Instruments.FirstOrDefault(x => x.Id == Guid.Parse(id));
                 instrument.IsDeleted = true;
                 //_dbContext.Instruments.Remove(instrument);
+                _dbContext.Logs.Add(new MyLogger($"Instrument: {instrument.Id}-{instrument.Name} deleted by {currentCustomer.Id}-{currentCustomer.Name}"));
+
                 _dbContext.SaveChanges();
                 return Redirect("/Instrument/Index");
             }

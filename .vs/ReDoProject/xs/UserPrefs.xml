@@ -1,18 +1,36 @@
 ﻿<Properties StartupConfiguration="{E26B4475-4C81-4815-A0DB-16A533CAB0B4}|https">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Presentation.ReDoProject.MVC PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
   <DisabledProjects>
     <String>ReDoProject.MVC/ReDoProject.API/ReDoProject.API.csproj</String>
   </DisabledProjects>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workbench ActiveDocument="ReDoProject.MVC/Controllers/InstrumentController.cs">
+  <MultiItemStartupConfigurations>
+    <MultiItemSolutionRunConfiguration Id="asd" Name="asd">
+      <Items>
+        <StartupItem ItemId="{BC76E6BD-BD6A-44B3-A9E8-9C0F3E0B603A}" ItemName="ReDoProject.API" ConfigurationId="https" />
+        <StartupItem ItemId="{E26B4475-4C81-4815-A0DB-16A533CAB0B4}" ItemName="ReDoProject.MVC" ConfigurationId="https" />
+      </Items>
+    </MultiItemSolutionRunConfiguration>
+  </MultiItemStartupConfigurations>
+  <MonoDevelop.Ide.ItemProperties.Presentation.ReDoProject.API PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="ReDoProject.MVC/Views/Account/AllCustomers.cshtml">
     <Files>
-      <File FileName="ReDoProject.MVC/Views/Account/Login.cshtml" Line="1" Column="1" />
-      <File FileName="ReDoProject.MVC/Views/Account/Index.cshtml" />
-      <File FileName="ReDoProject.MVC/Controllers/InstrumentController.cs" Line="167" Column="45" />
-      <File FileName="ReDoProject.MVC/Views/Brand/Add.cshtml" />
-      <File FileName="ReDoProject.MVC/Controllers/AccountController.cs" Line="90" Column="34" />
-      <File FileName="ReDoProject.MVC/Views/Account/Basket.cshtml" Line="23" Column="55" />
-      <File FileName="ReDoProject.MVC/Program.cs" Line="72" Column="1" />
-      <File FileName="ReDoProject.MVC/Views/Account/Register.cshtml" Line="1" Column="1" />
+      <File FileName="ReDoProject.MVC/Views/Account/Login.cshtml" />
+      <File FileName="ReDoProject.MVC/Views/Account/Index.cshtml" Line="1" Column="1" />
+      <File FileName="ReDoProject.MVC/Controllers/InstrumentController.cs" Line="93" Column="1" />
+      <File FileName="ReDoProject.MVC/Views/Brand/Add.cshtml" Line="1" Column="1" />
+      <File FileName="ReDoProject.MVC/Controllers/AccountController.cs" Line="137" Column="1" />
+      <File FileName="ReDoProject.MVC/Views/Account/Basket.cshtml" Line="63" Column="7" />
+      <File FileName="ReDoProject.MVC/Program.cs" />
+      <File FileName="ReDoProject.MVC/Views/Account/Register.cshtml" />
+      <File FileName="ReDoProject.MVC/Views/Instrument/Add.cshtml" Line="25" Column="11" />
+      <File FileName="ReDoProject.MVC/Views/Instrument/Index.cshtml" Line="45" Column="1" />
+      <File FileName="ReDoProject.MVC/Views/Shared/_ValidationScriptsPartial.cshtml" Line="1" Column="1" />
+      <File FileName="ReDoProject.MVC/Views/Shared/_Layout.cshtml" Line="158" Column="22" />
+      <File FileName="ReDoProject.MVC/Views/Instrument/Inspect.cshtml" Line="11" Column="54" />
+      <File FileName="ReDoProject.MVC/Views/Instrument/ListByInstrumentType.cshtml" Line="35" Column="25" />
+      <File FileName="ReDoProject.MVC/Views/Account/AllCustomers.cshtml" Line="12" Column="6" />
+      <File FileName="ReDoProject.Domain/Entities/Instrument.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -39,18 +57,8 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MultiItemStartupConfigurations>
-    <MultiItemSolutionRunConfiguration Id="asd" Name="asd">
-      <Items>
-        <StartupItem ItemId="{BC76E6BD-BD6A-44B3-A9E8-9C0F3E0B603A}" ItemName="ReDoProject.API" ConfigurationId="https" />
-        <StartupItem ItemId="{E26B4475-4C81-4815-A0DB-16A533CAB0B4}" ItemName="ReDoProject.MVC" ConfigurationId="https" />
-      </Items>
-    </MultiItemSolutionRunConfiguration>
-  </MultiItemStartupConfigurations>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.ItemProperties.Presentation.ReDoProject.API PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
-  <MonoDevelop.Ide.ItemProperties.Presentation.ReDoProject.MVC PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
