@@ -1,0 +1,23 @@
+﻿@using ReDoProject.Domain.Entities;
+@model List<MyLogger>
+
+<div class="container mt-3">
+    <h2>Logs</h2>
+    <table class="table table-dark table-hover">
+        <thead>
+            <tr>
+                <th>Created On</th>
+                <th>Log Message</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var log in Model)
+            {
+                <tr>
+                    <td>@log.CreatedOn</td>
+                    <td>@log.logMessage</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
