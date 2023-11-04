@@ -9,8 +9,12 @@
                 <th>Title</th>
                 <th>Desc.</th>
                 <th>Address</th>
+                <th>Support Mail</th>
+                <th>Support Phone</th>
                 @if (User.IsInRole("Admin"))
-                    {   <th width="20px">Delete</th>}
+                {
+                    <th width="20px">Delete</th>
+                }
             </tr>
         </thead>
         <tbody>
@@ -20,8 +24,12 @@
                     <td>@brand.Name</td>
                     <td>@brand.DisplayingText</td>
                     <td>@brand.Address</td>
+                    <td>@brand.SupportMail</td>
+                    <td>@brand.SupportPhone</td>
                     @if (User.IsInRole("Admin"))
-                        {<td><a href="/brand/delete/@brand.Id" class="btn btn-danger">Delete</a></td>}
+                    {
+                        <td><a href="/brand/delete/@brand.Id" class="btn btn-danger">Delete</a></td>
+                    }
                 </tr>
             }
         </tbody>

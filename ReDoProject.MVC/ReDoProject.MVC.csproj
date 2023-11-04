@@ -22,8 +22,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Remove="Views\Account\" />
+    <None Remove="Views\Log\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Account\" />
+    <Folder Include="Views\Log\" />
   </ItemGroup>
 </Project>

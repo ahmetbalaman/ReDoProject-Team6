@@ -19,10 +19,14 @@
                         <label asp-for=@Model.Password></label>
                         <input asp-for="@Model.Password" class="form-control" name="password" type="password" />
                         <span asp-validation-for=@Model.Password class="text-danger"></span>
-                    </div>
+                    </div> <br /> <br />
                     <button type="submit" class="btn btn-primary btn-block">Login</button>
-                    <p>Don't have an account? <a class="btn btn-success" asp-controller="Account" asp-action="Register">Register</a></p>
 
+                    <div class="mt-4 mb-4">
+                        <p>Don't have an account? <a class="btn btn-success" asp-controller="Account" asp-action="Register">Register</a></p>
+                    </div>
+
+                    <br /> <br />
                 </form>
               
             </div>
