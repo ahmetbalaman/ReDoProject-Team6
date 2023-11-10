@@ -39,7 +39,7 @@ else
                                 @if (order.IsDelivered)
                                 {<h4>Teslim Edildi</h4> }
                                 else
-                                { <h4>Hala Yolda</h4>;
+                                { <h4>Halen Yolda</h4>;
                                 }
                             </h3>
                             <a type="submit" asp-route-id="@order.Id" asp-controller="Account" asp-action="ChangeArrive" class="btn btn-outline-success">Teslim Durumu Değiştir</a>

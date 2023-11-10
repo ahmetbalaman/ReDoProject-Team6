@@ -1,55 +1,4 @@
 ﻿<Properties StartupConfiguration="{E26B4475-4C81-4815-A0DB-16A533CAB0B4}|https">
-  <MonoDevelop.Ide.ItemProperties.Presentation.ReDoProject.API PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="ReDoProject.MVC/Controllers/InstrumentController.cs">
-    <Files>
-      <File FileName="ReDoProject.MVC/Views/Instrument/Inspect.cshtml" Line="15" Column="22" />
-      <File FileName="ReDoProject.MVC/Views/Brand/Index.cshtml" Line="18" Column="18" />
-      <File FileName="ReDoProject.MVC/Views/Log/Index.cshtml" Line="5" Column="13" />
-      <File FileName="ReDoProject.Persistence/Contexts/ReDoMusicDbContext.cs" Line="11" Column="27" />
-      <File FileName="ReDoProject.MVC/Controllers/LogController.cs" Line="28" Column="60" />
-      <File FileName="ReDoProject.MVC/Views/_ViewImports.cshtml" Line="1" Column="1" />
-      <File FileName="ReDoProject.MVC/Views/Shared/_Layout.cshtml" Line="15" Column="1" />
-      <File FileName="ReDoProject.MVC/Controllers/AccountController.cs" Line="200" Column="25" />
-      <File FileName="ReDoProject.MVC/Views/Account/Login.cshtml" Line="15" Column="25" />
-      <File FileName="ReDoProject.MVC/Views/Account/Register.cshtml" Line="50" Column="21" />
-      <File FileName="ReDoProject.API/Controllers/BrandsController.cs" Line="168" Column="18" />
-      <File FileName="ReDoProject.API/Controllers/InstrumentsController.cs" Line="1" Column="1" />
-      <File FileName="ReDoProject.API/Controllers/AccountsController.cs" Line="180" Column="36" />
-      <File FileName="ReDoProject.API/Validators/ValidationCustomer.cs" Line="16" Column="21" />
-      <File FileName="ReDoProject.Domain/Entities/Customer.cs" Line="8" Column="26" />
-      <File FileName="ReDoProject.Domain/Entities/Person.cs" Line="8" Column="15" />
-      <File FileName="ReDoProject.MVC/Views/Shared/_Layout.cshtml.css" Line="11" Column="19" />
-      <File FileName="ReDoProject.MVC/Controllers/InstrumentController.cs" Line="38" Column="13" />
-    </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="ReDoProject">
-            <Node name="Core" expanded="True" />
-            <Node name="Infrastructure" expanded="True" />
-            <Node name="Presentation">
-              <Node name="ReDoProject.MVC">
-                <Node name="Controllers" expanded="True">
-                  <Node name="InstrumentController.cs" selected="True" />
-                </Node>
-                <Node name="Views">
-                  <Node name="Account" expanded="True" />
-                  <Node name="Brand" expanded="True" />
-                  <Node name="Log" expanded="True" />
-                  <Node name="Shared">
-                    <Node name="_Layout.cshtml" expanded="True" />
-                  </Node>
-                </Node>
-              </Node>
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
-  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MultiItemStartupConfigurations>
     <MultiItemSolutionRunConfiguration Id="asd" Name="asd">
@@ -59,9 +8,58 @@
       </Items>
     </MultiItemSolutionRunConfiguration>
   </MultiItemStartupConfigurations>
-  <MonoDevelop.Ide.ItemProperties.Presentation.ReDoProject.MVC PreferredExecutionTarget="/Applications/Microsoft Edge.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="ReDoProject.MVC/Controllers/InstrumentController.cs">
+    <Files>
+      <File FileName="ReDoProject.MVC/Views/Instrument/Inspect.cshtml" />
+      <File FileName="ReDoProject.MVC/Views/Brand/Index.cshtml" />
+      <File FileName="ReDoProject.MVC/Views/Log/Index.cshtml" />
+      <File FileName="ReDoProject.Persistence/Contexts/ReDoMusicDbContext.cs" />
+      <File FileName="ReDoProject.MVC/Controllers/LogController.cs" />
+      <File FileName="ReDoProject.MVC/Views/_ViewImports.cshtml" />
+      <File FileName="ReDoProject.MVC/Views/Shared/_Layout.cshtml" />
+      <File FileName="ReDoProject.MVC/Controllers/AccountController.cs" />
+      <File FileName="ReDoProject.MVC/Views/Account/Login.cshtml" />
+      <File FileName="ReDoProject.MVC/Views/Account/Register.cshtml" />
+      <File FileName="ReDoProject.API/Controllers/BrandsController.cs" />
+      <File FileName="ReDoProject.API/Controllers/InstrumentsController.cs" />
+      <File FileName="ReDoProject.API/Controllers/AccountsController.cs" />
+      <File FileName="ReDoProject.API/Validators/ValidationCustomer.cs" />
+      <File FileName="ReDoProject.Domain/Entities/Customer.cs" />
+      <File FileName="ReDoProject.Domain/Entities/Person.cs" />
+      <File FileName="ReDoProject.MVC/Controllers/InstrumentController.cs" Line="37" Column="10" />
+      <File FileName="ReDoProject.MVC/Views/Instrument/Index.cshtml" />
+      <File FileName="ReDoProject.MVC/Views/Instrument/ListByInstrumentType.cshtml" Line="30" Column="1" />
+      <File FileName="ReDoProject.MVC/Views/Instrument/Add.cshtml" />
+      <File FileName="ReDoProject.MVC/Views/Account/AllCustomers.cshtml" />
+      <File FileName="ReDoProject.MVC/Views/Account/Index.cshtml" Line="54" Column="32" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="ReDoProject">
+            <Node name="Presentation">
+              <Node name="ReDoProject.MVC">
+                <Node name="Controllers">
+                  <Node name="InstrumentController.cs" selected="True" />
+                </Node>
+                <Node name="Views" expanded="True">
+                  <Node name="Account" expanded="True" />
+                  <Node name="Instrument" expanded="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.Presentation.ReDoProject.API PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <DisabledProjects>
     <String>ReDoProject.MVC/ReDoProject.API/ReDoProject.API.csproj</String>
   </DisabledProjects>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.Presentation.ReDoProject.MVC PreferredExecutionTarget="/Applications/Microsoft Edge.app" />
 </Properties>

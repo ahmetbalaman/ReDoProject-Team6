@@ -43,7 +43,7 @@ namespace ReDoProject.MVC.Controllers
         }
         public IActionResult ListByInstrumentType(InstrumentType instrumentType)
         {
-            var instruments = _dbContext.Instruments.Where(i => i.Type == instrumentType).ToList();
+            var instruments = _dbContext.Instruments.Where(i => i.Type == instrumentType && i.IsDeleted == false).ToList();
             return View(instruments);
         }
 
