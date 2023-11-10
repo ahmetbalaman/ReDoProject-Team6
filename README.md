@@ -1,5 +1,6 @@
 # ReDoProject
-![ScreenShot]("https://github.com/ahmetbalaman/ReDoProject-Team6/assets/56163828/6f451395-5ae9-4827-bc64-4eff2fedd7da")
+<img width="1631" alt="Screenshot" src="https://github.com/ahmetbalaman/ReDoProject-Team6/assets/56163828/f425bbb1-0df3-4b53-9f71-18c248592c10">
+
 ## Projenin Amacı
 Bu projede amaçlanan internet sitesi üzerinden enstrüman satışı yapmak ve müşterilere iyi bir alışveriş deneyimi sunmaktır. Müşteriler, bu internet sitesi aracılığıyla geniş bir enstrüman yelpazesi arasından seçim yapabilir, ürünlerin detaylı açıklamalarını inceleyebilir ve almak istedikleri ürünleri sipariş verebilirler. 
 <br/>
