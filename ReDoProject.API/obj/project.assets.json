@@ -1716,11 +1716,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.API/ReDoProject.API.csproj",
+      "projectUniqueName": "/Users/ahmetbalaman/Desktop/flutter_apps/ReDoProject-Team6/ReDoProject.API/ReDoProject.API.csproj",
       "projectName": "ReDoProject.API",
-      "projectPath": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.API/ReDoProject.API.csproj",
+      "projectPath": "/Users/ahmetbalaman/Desktop/flutter_apps/ReDoProject-Team6/ReDoProject.API/ReDoProject.API.csproj",
       "packagesPath": "/Users/ahmetbalaman/.nuget/packages/",
-      "outputPath": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.API/obj/",
+      "outputPath": "/Users/ahmetbalaman/Desktop/flutter_apps/ReDoProject-Team6/ReDoProject.API/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/ahmetbalaman/.nuget/NuGet/NuGet.Config"
@@ -1736,11 +1736,11 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.Domain/ReDoProject.Domain.csproj": {
-              "projectPath": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.Domain/ReDoProject.Domain.csproj"
+            "/Users/ahmetbalaman/Desktop/flutter_apps/ReDoProject-Team6/ReDoProject.Domain/ReDoProject.Domain.csproj": {
+              "projectPath": "/Users/ahmetbalaman/Desktop/flutter_apps/ReDoProject-Team6/ReDoProject.Domain/ReDoProject.Domain.csproj"
             },
-            "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.Persistence/ReDoProject.Persistence.csproj": {
-              "projectPath": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.Persistence/ReDoProject.Persistence.csproj"
+            "/Users/ahmetbalaman/Desktop/flutter_apps/ReDoProject-Team6/ReDoProject.Persistence/ReDoProject.Persistence.csproj": {
+              "projectPath": "/Users/ahmetbalaman/Desktop/flutter_apps/ReDoProject-Team6/ReDoProject.Persistence/ReDoProject.Persistence.csproj"
             }
           }
         }

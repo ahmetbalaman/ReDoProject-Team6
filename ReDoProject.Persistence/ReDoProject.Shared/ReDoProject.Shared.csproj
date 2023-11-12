@@ -1,0 +1,44 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\" />
+    <None Remove="Resources\Helpers\" />
+    <None Remove="Services\" />
+    <None Remove="Utilities\" />
+    <None Remove="Helpers\" />
+    <None Remove="Resources\Helpers\CommonTranslations.en-GB" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+    <Folder Include="Resources\Helpers\" />
+    <Folder Include="Services\" />
+    <Folder Include="Utilities\" />
+    <Folder Include="Helpers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Helpers\CommonTranslations.en-GB.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CommonTranslations.en-GB.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\Helpers\CommonTranslations.tr-TR.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CommonTranslations.tr-TR.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Resources\Helpers\CommonTranslations.tr-TR.Designer.cs">
+      <DependentUpon>CommonTranslations.tr-TR.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\Helpers\CommonTranslations.en-GB.Designer.cs">
+      <DependentUpon>CommonTranslations.en-GB.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+</Project>

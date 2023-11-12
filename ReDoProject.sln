@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReDoProject.MVC", "ReDoProj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReDoProject.API", "ReDoProject.API\ReDoProject.API.csproj", "{BC76E6BD-BD6A-44B3-A9E8-9C0F3E0B603A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReDoProject.Shared", "ReDoProject.Persistence\ReDoProject.Shared\ReDoProject.Shared.csproj", "{99E68691-D3AB-4722-A979-607E9D6CE5A0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{BC76E6BD-BD6A-44B3-A9E8-9C0F3E0B603A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC76E6BD-BD6A-44B3-A9E8-9C0F3E0B603A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC76E6BD-BD6A-44B3-A9E8-9C0F3E0B603A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99E68691-D3AB-4722-A979-607E9D6CE5A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99E68691-D3AB-4722-A979-607E9D6CE5A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99E68691-D3AB-4722-A979-607E9D6CE5A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99E68691-D3AB-4722-A979-607E9D6CE5A0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -51,5 +57,6 @@ Global
 		{B4BD31BF-40FD-4D4E-85F0-6A724705C503} = {FF538181-F21A-4D98-82EC-014A4CBDA90D}
 		{E26B4475-4C81-4815-A0DB-16A533CAB0B4} = {B7EA9429-0261-4BEF-928E-72796E962A75}
 		{BC76E6BD-BD6A-44B3-A9E8-9C0F3E0B603A} = {B7EA9429-0261-4BEF-928E-72796E962A75}
+		{99E68691-D3AB-4722-A979-607E9D6CE5A0} = {FF538181-F21A-4D98-82EC-014A4CBDA90D}
 	EndGlobalSection
 EndGlobal

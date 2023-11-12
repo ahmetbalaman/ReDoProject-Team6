@@ -1,14 +1,8 @@
 ﻿<Properties StartupConfiguration="{E26B4475-4C81-4815-A0DB-16A533CAB0B4}|https">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MultiItemStartupConfigurations>
-    <MultiItemSolutionRunConfiguration Id="asd" Name="asd">
-      <Items>
-        <StartupItem ItemId="{BC76E6BD-BD6A-44B3-A9E8-9C0F3E0B603A}" ItemName="ReDoProject.API" ConfigurationId="https" />
-        <StartupItem ItemId="{E26B4475-4C81-4815-A0DB-16A533CAB0B4}" ItemName="ReDoProject.MVC" ConfigurationId="https" />
-      </Items>
-    </MultiItemSolutionRunConfiguration>
-  </MultiItemStartupConfigurations>
-  <MonoDevelop.Ide.Workbench ActiveDocument="ReDoProject.MVC/Controllers/InstrumentController.cs">
+  <DisabledProjects>
+    <String>ReDoProject.MVC/ReDoProject.API/ReDoProject.API.csproj</String>
+  </DisabledProjects>
+  <MonoDevelop.Ide.Workbench ActiveDocument="ReDoProject.sln">
     <Files>
       <File FileName="ReDoProject.MVC/Views/Instrument/Inspect.cshtml" />
       <File FileName="ReDoProject.MVC/Views/Brand/Index.cshtml" />
@@ -26,24 +20,32 @@
       <File FileName="ReDoProject.API/Validators/ValidationCustomer.cs" />
       <File FileName="ReDoProject.Domain/Entities/Customer.cs" />
       <File FileName="ReDoProject.Domain/Entities/Person.cs" />
-      <File FileName="ReDoProject.MVC/Controllers/InstrumentController.cs" Line="37" Column="10" />
+      <File FileName="ReDoProject.MVC/Controllers/InstrumentController.cs" />
       <File FileName="ReDoProject.MVC/Views/Instrument/Index.cshtml" />
-      <File FileName="ReDoProject.MVC/Views/Instrument/ListByInstrumentType.cshtml" Line="30" Column="1" />
+      <File FileName="ReDoProject.MVC/Views/Instrument/ListByInstrumentType.cshtml" />
       <File FileName="ReDoProject.MVC/Views/Instrument/Add.cshtml" />
       <File FileName="ReDoProject.MVC/Views/Account/AllCustomers.cshtml" />
-      <File FileName="ReDoProject.MVC/Views/Account/Index.cshtml" Line="54" Column="32" />
+      <File FileName="ReDoProject.MVC/Views/Account/Index.cshtml" />
+      <File FileName="ReDoProject.Persistence/ReDoProject.Shared/Helpers/CommonTranslations.cs" />
+      <File FileName="ReDoProject.Persistence/ReDoProject.Shared/Helpers/CommonTranslationKeys.cs" />
+      <File FileName="ReDoProject.Persistence/ReDoProject.Shared/Resources/Helpers/CommonTranslations.tr-TR.resx" Line="132" Column="8" />
+      <File FileName="ReDoProject.Persistence/ReDoProject.Shared/Resources/Helpers/CommonTranslations.en-GB.Designer.cs" />
+      <File FileName="ReDoProject.sln" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="ReDoProject">
-            <Node name="Presentation">
-              <Node name="ReDoProject.MVC">
-                <Node name="Controllers">
-                  <Node name="InstrumentController.cs" selected="True" />
+          <Node name="ReDoProject" selected="True">
+            <Node name="Infrastructure">
+              <Node name="ReDoProject.Shared" expanded="True">
+                <Node name="Resources" expanded="True">
+                  <Node name="Helpers" expanded="True" />
                 </Node>
+              </Node>
+            </Node>
+            <Node name="Presentation" expanded="True">
+              <Node name="ReDoProject.MVC" expanded="True">
                 <Node name="Views" expanded="True">
-                  <Node name="Account" expanded="True" />
                   <Node name="Instrument" expanded="True" />
                 </Node>
               </Node>
@@ -54,12 +56,19 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.Presentation.ReDoProject.API PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
+  <MonoDevelop.Ide.ItemProperties.Infrastructure.ReDoProject.Shared FirstBuild="True" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <DisabledProjects>
-    <String>ReDoProject.MVC/ReDoProject.API/ReDoProject.API.csproj</String>
-  </DisabledProjects>
+  <MonoDevelop.Ide.ItemProperties.Presentation.ReDoProject.API PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
+  <MultiItemStartupConfigurations>
+    <MultiItemSolutionRunConfiguration Id="asd" Name="asd">
+      <Items>
+        <StartupItem ItemId="{BC76E6BD-BD6A-44B3-A9E8-9C0F3E0B603A}" ItemName="ReDoProject.API" ConfigurationId="https" />
+        <StartupItem ItemId="{E26B4475-4C81-4815-A0DB-16A533CAB0B4}" ItemName="ReDoProject.MVC" ConfigurationId="https" />
+      </Items>
+    </MultiItemSolutionRunConfiguration>
+  </MultiItemStartupConfigurations>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.Presentation.ReDoProject.MVC PreferredExecutionTarget="/Applications/Microsoft Edge.app" />
 </Properties>

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.Domain/ReDoProject.Domain.csproj": {}
+    "/Users/ahmetbalaman/Desktop/flutter_apps/ReDoProject-Team6/ReDoProject.Domain/ReDoProject.Domain.csproj": {}
   },
   "projects": {
-    "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.Domain/ReDoProject.Domain.csproj": {
+    "/Users/ahmetbalaman/Desktop/flutter_apps/ReDoProject-Team6/ReDoProject.Domain/ReDoProject.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.Domain/ReDoProject.Domain.csproj",
+        "projectUniqueName": "/Users/ahmetbalaman/Desktop/flutter_apps/ReDoProject-Team6/ReDoProject.Domain/ReDoProject.Domain.csproj",
         "projectName": "ReDoProject.Domain",
-        "projectPath": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.Domain/ReDoProject.Domain.csproj",
+        "projectPath": "/Users/ahmetbalaman/Desktop/flutter_apps/ReDoProject-Team6/ReDoProject.Domain/ReDoProject.Domain.csproj",
         "packagesPath": "/Users/ahmetbalaman/.nuget/packages/",
-        "outputPath": "/Users/ahmetbalaman/Projects/ReDoProject/ReDoProject.Domain/obj/",
+        "outputPath": "/Users/ahmetbalaman/Desktop/flutter_apps/ReDoProject-Team6/ReDoProject.Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/ahmetbalaman/.nuget/NuGet/NuGet.Config"

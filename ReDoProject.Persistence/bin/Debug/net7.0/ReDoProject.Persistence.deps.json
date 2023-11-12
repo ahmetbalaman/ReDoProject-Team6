@@ -18,6 +18,14 @@
         },
         "runtime": {
           "ReDoProject.Persistence.dll": {}
+        },
+        "resources": {
+          "en-GB/ReDoProject.Persistence.resources.dll": {
+            "locale": "en-GB"
+          },
+          "tr-TR/ReDoProject.Persistence.resources.dll": {
+            "locale": "tr-TR"
+          }
         }
       },
       "FluentValidation/11.8.0": {
