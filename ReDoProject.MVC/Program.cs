@@ -1,6 +1,7 @@
 ﻿using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using ReDoProject.Persistence.Contexts;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -36,10 +37,10 @@ builder.Services.AddAuthorization(
         x.AddPolicy("CustomerPolicy", policy => {
             policy.RequireClaim(ClaimTypes.Role, "Admin","Customer");
         });
-
-        
-
     });
+
+    var connectionString = builder.Configuration.GetSection( key: "YetgenPostgreSQLDB").Value;
+    builder.Services.AddDbContext<ReDoMusicDbContext>(options => options.UseNpgsql(connectionString));
 
 
 var app = builder.Build();

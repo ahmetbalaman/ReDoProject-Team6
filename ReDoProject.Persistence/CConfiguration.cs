@@ -3,7 +3,7 @@ using Microsoft.Extensions.Configuration;
 
 namespace ReDoProject.Persistence
 {
-    public static class Configurations
+    public static class CConfigurations
     {
         public static string GetString(string key)
         {

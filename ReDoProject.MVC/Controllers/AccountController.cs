@@ -20,9 +20,11 @@ namespace ReDoProject.MVC.Controllers
     {
         private Customer currentCustomer;
         private readonly ReDoMusicDbContext _dbContext;
-        public AccountController()
+
+        public AccountController(
+            ReDoMusicDbContext _dbContext)
         {
-            _dbContext = new ReDoMusicDbContext();
+            _dbContext = _dbContext;
         }
 
         public Customer GetCustomer()

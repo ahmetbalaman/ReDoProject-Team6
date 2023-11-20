@@ -1,4 +1,7 @@
-﻿var builder = WebApplication.CreateBuilder(args);
+﻿using Microsoft.EntityFrameworkCore;
+using ReDoProject.Persistence.Contexts;
+
+var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
@@ -16,6 +19,10 @@ builder.Services.AddCors(options =>
             .SetIsOriginAllowed((host) => true)
             .AllowAnyHeader());
 });
+
+var connectionString = builder.Configuration.GetSection( key: "YetgenPostgreSQLDB").Value;
+builder.Services.AddDbContext<ReDoMusicDbContext>(options => options.UseNpgsql(connectionString));
+
 
 
 var app = builder.Build();

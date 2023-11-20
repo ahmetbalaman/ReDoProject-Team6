@@ -17,9 +17,12 @@ namespace ReDoProject.MVC.Controllers
         private readonly ReDoMusicDbContext _dbContext;
 
 
-        public InstrumentController()
+        public InstrumentController(
+            
+            ReDoMusicDbContext _dbContext
+            )
         { 
-            _dbContext = new();
+            _dbContext = _dbContext;
         }
 
         public Customer GetCustomer()

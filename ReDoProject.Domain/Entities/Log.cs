@@ -12,6 +12,7 @@ namespace ReDoProject.Domain.Entities
             this.CreatedOn = DateTime.UtcNow;
             this.logMessage = logMessage;
         }
+
     }
 }
 

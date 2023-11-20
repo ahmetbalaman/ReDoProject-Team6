@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System.Reflection;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using ReDoProject.Domain.Entities;
 using ReDoProject.Persistence;
@@ -13,13 +14,19 @@ namespace ReDoProject.Persistence.Contexts
         public DbSet<Order> Orders { get; set; }
         public DbSet<Basket> Baskets{ get; set; }
         public DbSet<MyLogger> Logs { get; set; }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        
+        public ReDoMusicDbContext(DbContextOptions<ReDoMusicDbContext> options) : base(options)
         {
-            // optionsBuilder.UseNpgsql(Configurations.GetString("ConnectionStrings:PostgreSQL
-            //            optionsBuilder.UseNpgsql("Server=91.151.83.102;Port=5432;Database=!!!06TeamReDoProject;User Id=yunusemresenteam;Password=3*ZM44j3bgIBULDrlsyjKB595;");
-            optionsBuilder.UseNpgsql("Server=91.151.83.102;Port=5432;Database=!!!!06TeamReDoProject;User Id=ahmetkokteam;Password=obXRMG*U6rJ4R0cbHszpgEuFd");
-            optionsBuilder.EnableSensitiveDataLogging();
+            
         }
+        
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly()); 
+            base.OnModelCreating(modelBuilder);
+        }
+     
+
     }
 }

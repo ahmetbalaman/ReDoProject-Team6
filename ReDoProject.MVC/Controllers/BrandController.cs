@@ -11,9 +11,11 @@ namespace ReDoProject.MVC.Controllers
     {
         private readonly ReDoMusicDbContext _dbContext;
         private readonly Customer currentCustomer;
-        public BrandController()
+        public BrandController(
+            ReDoMusicDbContext _dbContext)
         {
-            _dbContext = new();
+            _dbContext = _dbContext;
+
         }
 
 
@@ -93,5 +95,7 @@ namespace ReDoProject.MVC.Controllers
 
             return RedirectToAction("index");
         }
+
+     
     }
 }

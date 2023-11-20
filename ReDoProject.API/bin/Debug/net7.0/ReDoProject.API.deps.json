@@ -272,6 +272,14 @@
         },
         "runtime": {
           "ReDoProject.Persistence.dll": {}
+        },
+        "resources": {
+          "tr-TR/ReDoProject.Persistence.resources.dll": {
+            "locale": "tr-TR"
+          },
+          "en-GB/ReDoProject.Persistence.resources.dll": {
+            "locale": "en-GB"
+          }
         }
       }
     }
