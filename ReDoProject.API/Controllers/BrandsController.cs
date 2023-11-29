@@ -18,7 +18,6 @@ namespace ReDoProject.API.Controllers
         private readonly ReDoMusicDbContext _context;
         private readonly ValidationBrand _validation;
         public BrandsController(
-            ReDoMusicDbContext _dbContext
             )
         {
             _error = new ErrorModel()
@@ -27,7 +26,7 @@ namespace ReDoProject.API.Controllers
                 ErrorMessage = new List<string>(),
             };
 
-            _context = _dbContext;
+            _context = new ReDoMusicDbContext();
             _validation = new ValidationBrand(_context);
         }
 

@@ -15,9 +15,9 @@ namespace ReDoProject.MVC.Controllers
     {
         private readonly ReDoMusicDbContext _dbContext;
 
-        public LogController(ReDoMusicDbContext _dbContext)
+        public LogController()
         {
-            _dbContext = _dbContext;
+            _dbContext = new ReDoMusicDbContext();
         }
 
         [Authorize(Policy = "AdminPolicy")]

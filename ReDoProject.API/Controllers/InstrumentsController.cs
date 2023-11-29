@@ -20,7 +20,7 @@ namespace ReDoProject.API.Controllers.Instrunments
         private readonly ErrorModel _error;
         private readonly ReDoMusicDbContext _context;
         private readonly ValidationInstrument _validation;
-        public InstrumentsController(ReDoMusicDbContext _dbContext)
+        public InstrumentsController()
         {
             _error = new ErrorModel()
             {
@@ -28,7 +28,7 @@ namespace ReDoProject.API.Controllers.Instrunments
                 ErrorMessage = new List<string>(),
             };
 
-            _context = _dbContext;
+            _context = new ReDoMusicDbContext();
             _validation = new ValidationInstrument(_context);
         }
 

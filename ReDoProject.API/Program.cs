@@ -20,8 +20,8 @@ builder.Services.AddCors(options =>
             .AllowAnyHeader());
 });
 
-var connectionString = builder.Configuration.GetSection( key: "YetgenPostgreSQLDB").Value;
-builder.Services.AddDbContext<ReDoMusicDbContext>(options => options.UseNpgsql(connectionString));
+//var connectionString = builder.Configuration.GetSection( key: "YetgenPostgreSQLDB").Value;
+//builder.Services.AddDbContext<ReDoMusicDbContext>(options => options.UseNpgsql(connectionString));
 
 
 

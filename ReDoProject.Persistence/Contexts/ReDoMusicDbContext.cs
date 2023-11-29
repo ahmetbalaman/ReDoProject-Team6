@@ -15,18 +15,21 @@ namespace ReDoProject.Persistence.Contexts
         public DbSet<Basket> Baskets{ get; set; }
         public DbSet<MyLogger> Logs { get; set; }
         
-        public ReDoMusicDbContext(DbContextOptions<ReDoMusicDbContext> options) : base(options)
+   /*     public ReDoMusicDbContext(DbContextOptions<ReDoMusicDbContext> options) : base(options)
         {
             
         }
-        
+      */  
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
+     /*   protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly()); 
             base.OnModelCreating(modelBuilder);
-        }
-     
-
+        }*/
+     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+     {
+         optionsBuilder.UseNpgsql("Server=91.151.83.102;Port=5432;Database=!!!!06TeamReDoProject;User Id=ahmetkokteam;Password=obXRMG*U6rJ4R0cbHszpgEuFd;");
+         base.OnConfiguring(optionsBuilder);
+     }
     }
 }
